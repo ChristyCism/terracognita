@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_26_151225) do
+ActiveRecord::Schema.define(version: 2018_11_26_165719) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2018_11_26_151225) do
     t.bigint "user_id"
     t.integer "length"
     t.integer "width"
-    t.boolean "freeze"
+    t.boolean "freezing"
     t.string "orientation"
     t.string "start_month"
     t.datetime "created_at", null: false
