@@ -1,2 +1,48 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://res.cloudinary.com/earlyad/image/upload/v1543249479/terracognita/l5lfb3uyixp6dkcse4sg.jpg');">
+
+  <div class="banner-content">
+      <h1>Concevoir un potager durable et productif simplement</h1>
+      <br><br>
+      <a class="btn btn-home btn-lg">Je commence</a>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
+      <%= cl_image_tag("terracognita/lettuce",
+      height: 40) %>
+      <h2>Une approche  durable</h2>
+      <p>Il s’agit de répondre à nos besoins tout <strong>en améliorant en continue notre environnement</strong> : développement de la biodiversité, enrichissement de la terre…<p>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <%= cl_image_tag("terracognita/tomato",
+      height: 40) %>
+      <h2>Un potager  résilient</h2>
+      <p>Pratiquer des <strong>associations positives de plantes</strong>  permet de créer un potager plus résilient, elles interagissent entre elles de manière vertueuse.<p>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <%= cl_image_tag("terracognita/spring-onion",
+      height: 40) %>
+      <h2>Un outil  simple</h2>
+      <p>Notre objectif est de vous prêter main forte dans la <strong>mise en place de votre potager</strong>. En quelques étapes, vous obtiendrez une suggestion de plan de culture.<p>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    Made with <i class="fas fa-heart"></i> by Greg, Phil, Annabelle & Christy
+  </div>
+</div>
+
+
+
+
