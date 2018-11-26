@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.4.5'
 
+gem 'cloudinary', '~> 1.9.1'
 gem 'bootsnap', require: false
 gem 'devise'
 gem 'jbuilder', '~> 2.0'
@@ -29,4 +30,5 @@ group :development, :test do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'dotenv-rails'
+
 end
