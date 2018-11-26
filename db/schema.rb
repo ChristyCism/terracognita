@@ -10,10 +10,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_26_145224) do
+ActiveRecord::Schema.define(version: 2018_11_26_151225) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "choices", force: :cascade do |t|
+    t.bigint "potager_id"
+    t.bigint "vegetable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["potager_id"], name: "index_choices_on_potager_id"
+    t.index ["vegetable_id"], name: "index_choices_on_vegetable_id"
+  end
+
+  create_table "parcels", force: :cascade do |t|
+    t.bigint "potager_id"
+    t.integer "length"
+    t.integer "width"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["potager_id"], name: "index_parcels_on_potager_id"
+  end
+
+  create_table "potagers", force: :cascade do |t|
+    t.bigint "user_id"
+    t.integer "length"
+    t.integer "width"
+    t.boolean "freeze"
+    t.string "orientation"
+    t.string "start_month"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_potagers_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -43,4 +73,19 @@ ActiveRecord::Schema.define(version: 2018_11_26_145224) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "vegetables_parcels", force: :cascade do |t|
+    t.bigint "parcel_id"
+    t.bigint "vegetable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["parcel_id"], name: "index_vegetables_parcels_on_parcel_id"
+    t.index ["vegetable_id"], name: "index_vegetables_parcels_on_vegetable_id"
+  end
+
+  add_foreign_key "choices", "potagers"
+  add_foreign_key "choices", "vegetables"
+  add_foreign_key "parcels", "potagers"
+  add_foreign_key "potagers", "users"
+  add_foreign_key "vegetables_parcels", "parcels"
+  add_foreign_key "vegetables_parcels", "vegetables"
 end
