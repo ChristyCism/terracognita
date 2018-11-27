@@ -3,6 +3,7 @@ class ChoicesController < ApplicationController
 
   def new
     @choice = Choice.new
+    @vegetable_month_selected = Vegetable.sample.take(4)
   end
 
   def create
