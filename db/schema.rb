@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_26_165719) do
+ActiveRecord::Schema.define(version: 2018_11_27_101347) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(version: 2018_11_26_165719) do
 
   create_table "vegetables", force: :cascade do |t|
     t.string "name"
-    t.string "type"
+    t.string "vegetabletype"
     t.string "month_planted", array: true
     t.integer "distance_between"
     t.integer "luminosity"
@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(version: 2018_11_26_165719) do
     t.string "ennemies", array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "frost_resistant"
   end
 
   create_table "vegetables_parcels", force: :cascade do |t|

@@ -3,7 +3,7 @@ class ChoicesController < ApplicationController
 
   def new
     @choice = Choice.new
-    @vegetables = Vegetable.where("Juin".include(Vegetable.month_planted))
+    @vegetables = Vegetable.where("'Novembre'=ANY(month_planted)")
     p @vegetables
 
   end
