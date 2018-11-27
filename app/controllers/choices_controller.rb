@@ -3,7 +3,9 @@ class ChoicesController < ApplicationController
 
   def new
     @choice = Choice.new
-    @vegetable_month_selected = Vegetable.sample.take(4)
+    @vegetables = Vegetable.where("Juin".include(Vegetable.month_planted))
+    p @vegetables
+
   end
 
   def create
