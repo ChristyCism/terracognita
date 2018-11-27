@@ -5,6 +5,7 @@ class ChoicesController < ApplicationController
     @choice = Choice.new
     @vegetables = Vegetable.where("Juin".include(Vegetable.month_planted))
     p @vegetables
+
   end
 
   def create

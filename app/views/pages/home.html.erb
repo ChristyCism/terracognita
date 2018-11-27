@@ -3,29 +3,39 @@
   <div class="banner-content">
       <h1>Concevoir un potager durable et productif simplement</h1>
       <br><br>
-      <a class="btn btn-home btn-lg">Je commence</a>
+      <%= link_to "Je commence", new_potager_path, class:"btn btn-home btn-lg" %>
   </div>
 </div>
 
-<div class="container">
+<div class="container container-home">
   <div class="row">
+
     <div class="col-xs-12 col-sm-4">
-      <%= cl_image_tag("terracognita/lettuce",
+      <div class="title-column">
+        <%= cl_image_tag("terracognita/lettuce",
       height: 40) %>
-      <h2>Une approche  durable</h2>
+        <h2>Une approche  durable</h2>
+      </div>
       <p>Il s’agit de répondre à nos besoins tout <strong>en améliorant en continue notre environnement</strong> : développement de la biodiversité, enrichissement de la terre…<p>
     </div>
+
     <div class="col-xs-12 col-sm-4">
-      <%= cl_image_tag("terracognita/tomato",
+      <div class="title-column">
+        <%= cl_image_tag("terracognita/tomato",
       height: 40) %>
-      <h2>Un potager  résilient</h2>
+        <h2>Un potager  résilient</h2>
+      </div>
       <p>Pratiquer des <strong>associations positives de plantes</strong>  permet de créer un potager plus résilient, elles interagissent entre elles de manière vertueuse.<p>
     </div>
+
     <div class="col-xs-12 col-sm-4">
-      <%= cl_image_tag("terracognita/spring-onion",
+      <div class="title-column">
+        <%= cl_image_tag("terracognita/spring-onion",
       height: 40) %>
-      <h2>Un outil  simple</h2>
-      <p>Notre objectif est de vous prêter main forte dans la <strong>mise en place de votre potager</strong>. En quelques étapes, vous obtiendrez une suggestion de plan de culture.<p>
+        <h2>Un outil  simple</h2>
+      </div>
+      <p>Notre objectif est de vous prêter main forte dans la <strong>mise en place de votre potager</strong>.</p>
+      <p>En quelques étapes, vous obtiendrez une suggestion de plan de culture.</p>
     </div>
   </div>
 </div>

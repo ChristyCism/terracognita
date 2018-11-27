@@ -3,6 +3,20 @@
   .navbar-wagon {
     background: transparent;
     position: fixed;
+    width: 100%;
+    box-shadow: none;
+  }
+}
+
+.pages-home {
+  .dropdown {
+    color: white;
+  }
+}
+
+.pages-home {
+  .navbar-wagon-right a {
+    color: white;
   }
 }
 
@@ -31,10 +45,36 @@
   margin-bottom: 30px;
 }
 
-.container h2 {
+.container-home {
+  text-align: justify;
+}
+
+.container-home h2 {
   font-size: 20px;
   font-weight: bold;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
+
+.container-home .row {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.title-column {
+  display: flex;
+  padding-top: 25px;
+  text-align: center;
+  align-items: center;
+}
+
+.container-home p {
+  line-height: 1.6;
+}
+
+.icone-vegetable {
+  padding-left: 10px;
 }
 
 
