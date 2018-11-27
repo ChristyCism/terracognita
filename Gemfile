@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.4.5'
 
-gem 'cloudinary', '~> 1.9.1'
+gem 'cloudinary'
 gem 'bootsnap', require: false
 gem 'devise'
 gem 'jbuilder', '~> 2.0'
