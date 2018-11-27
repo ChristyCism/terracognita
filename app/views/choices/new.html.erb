@@ -2,5 +2,6 @@
 <ul>
 <% @vegetables.each do |veg| %>
 <li><%= veg.name %></li>
+<li><%= cl_image_tag(veg.photo, height: 40) %></li>
 <% end %>
 </ul>
