@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-
   </head>
   <body>
     <div class="wrapper">
@@ -24,17 +23,58 @@
 
           <div class="dimensions" id="dimensions">
             <h2>Définir les dimensions de mon potager</h2>
+              <div class="grid">
+                <p class="longueur">Longueur</p>
+                <div id="potager">
+                  <div id="parent">
+                    <div class="item-draggable">
+                      <p class="default-sizes">3m x 3m</p>
+                    </div>
+                  </div>
+                </div>
+                <p class="largeur">Largeur</p>
+              </div>
             <div>
-              <a class="btn btn-primary" href=#orientation>Continuer</a>
+              <p>Placer un formulaire ici avec deux champs qui récupèrent les valeurs de longueurs et largeur.</p>
+              <div class="form">
+                <p> </p>
+                <%= form_tag("/search", method: "get") do %>
+                  <%= label_tag(:q, "Largeur :") %>
+                  <%= text_field_tag(:largeur, ) %>
+                  <%= label_tag(:q, "Longueur :") %>
+                  <%= text_field_tag(:longueur, ) %>
+                <% end %>
+              </div>
+            </div>
+            <div>
+              <a class="continue btn btn-primary" href=#orientation>Continuer</a>
             </div>
           </div>
 
+
+
+
+
+
           <div class="orientation" id="orientation">
             <h2>Ajuster l'orientation du potager</h2>
+
+            <div class="overlay">
+              <div class="tap-target">
+                <i class="far fa-compass"></i>
+              </div>
+
+              <div class="potager-final"></div>
+            </div>
+
+
             <div>
-              <a class="btn btn-primary" href=#terre>Continuer</a>
+              <a class="continue btn btn-primary" href=#terre>Continuer</a>
             </div>
           </div>
+
+
+
 
           <div class="terre"  id="terre">
             <h2>Définir mon type de terre</h2>
