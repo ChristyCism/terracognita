@@ -13,8 +13,8 @@ class PotagersController < ApplicationController
     else
       p "error"
     end
-    create_parcel
-    create_parcel_vegetables
+    # create_parcel
+    # create_parcel_vegetables
   end
 
   private
@@ -23,19 +23,25 @@ class PotagersController < ApplicationController
     params.require(:potager).permit(:length, :width, :freezing, :orientation, :start_month)
   end
 
-  def create_parcel
-    # Parcel.new
-    # @potager.width
-    # @potager.length
-    # @potager
+  # def create_parcel
+  #   @parcel = Parcel.new
+  #   @parcel_width_side = ["a", "c"]
+  #   @parcel_length_side = ["b", "d"]
+  #   if @parcel_width_side.include?(params[:potager][:orientation])
+  #     @parcel.length = 1
+  #     @parcel.width = @new_potager.width
+  #     @number_of_parcels = @new_potager.length
+  #   else
+  #     @parcel.length = @new_potager.length
+  #     @parcel.width = 1
+  #     @number_of_parcels = @new_potager.width
+  #   end
+  # end
 
-  end
-
-  def create_parcel_vegetables
+  # def create_parcel_vegetables
     # ParcelVegetable.new
     # @parcel
     # Vegatable.find
-
-  end
+  # end
 
 end
