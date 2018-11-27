@@ -1,7 +1,15 @@
+<div class="container">
+
 <h1>Quels légumes souhaitez-vous planter ?</h1>
-<ul>
-<% @vegetables.each do |veg| %>
-<li><%= veg.name %></li>
-<li><%= cl_image_tag(veg.photo, height: 40) %></li>
-<% end %>
-</ul>
+<br><br>
+
+  <div class="row">
+    <% @vegetables.each do |veg| %>
+      <div class="col-sm-3 couple-nom-photo">
+        <p><%= cl_image_tag(veg.photo, height: 40) %></p>
+        <p><%= veg.name.capitalize %></p>
+      </div>
+    <% end %>
+  </div>
+
+</div>
