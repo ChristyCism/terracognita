@@ -24,10 +24,20 @@ class PotagersController < ApplicationController
   end
 
   def create_parcel
-    # Parcel.new
-    # @potager.width
-    # @potager.length
-    # @potager
+    @parcel = Parcel.new
+    @parcel_width_side = ["a", "c"]
+    @parcel_length_side = ["b", "d"]
+    if @parcel_width_side.include?(params[:potager][:orientation])
+      @parcel.length = 1
+      @parcel.width = @new_potager.width
+      @number_of_parcels = @new_potager.length
+    else
+      @parcel.length = @new_potager.length
+      @parcel.width = 1
+      @number_of_parcels = @new_potager.width
+
+    end
+
 
   end
 
