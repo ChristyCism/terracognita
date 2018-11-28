@@ -5,7 +5,7 @@
   <body>
     <div class="wrapper">
       <div class="container">
-          <div class="introduction">
+          <div class="introduction" id="introduction">
             <h1>Fabrication du potager</h1>
             <p>Sur cette page nous vous demander quelques renseignements permettant de mieux affiner l'organisation de votre potager que nous allons vous suggérer.</p>
             <p>Les prochaines étapes s'intéressent :</p>
@@ -46,55 +46,59 @@
                 <% end %>
               </div>
             </div>
-            <div>
-              <a class="continue btn btn-primary" href=#orientation>Continuer</a>
+            <div class="list-inline text-center">
+              <li><a class="continue btn btn-primary" href=#introduction>Retour</a></li>
+              <li><a class="continue btn btn-primary" href=#orientation>Continuer</a></li>
             </div>
           </div>
-
-
-
-
-
 
           <div class="orientation" id="orientation">
             <h2>Ajuster l'orientation du potager</h2>
-
-            <div class="overlay">
-              <div class="tap-target">
-                <i class="far fa-compass"></i>
-              </div>
-
+            <div class="compass">
               <div class="potager-final"></div>
+              <div class="drag-rotate"><p class="text-center">N<br><i class="fas fa-sync"></i><br>S</p></div>
             </div>
-
-
-            <div>
-              <a class="continue btn btn-primary" href=#terre>Continuer</a>
+            <div class="formulaire">
+              <p>Placer un formulaire ici avec un champ qui récupère la valeur d'angle.</p>
+              <div class="form">
+                <%= form_tag("/search", method: "get") do %>
+                  <%= label_tag(:q, "Angle :") %>
+                  <%= text_field_tag(:angle, ) %>
+                <% end %>
+              </div>
+            </div>
+            <div class="list-inline text-center">
+              <li><a class="continue btn btn-primary" href=#dimensions>Retour</a></li>
+              <li><a class="continue btn btn-primary" href=#terre>Continuer</a></li>
             </div>
           </div>
 
-
-
-
           <div class="terre"  id="terre">
             <h2>Définir mon type de terre</h2>
-            <div>
-              <a class="btn btn-primary" href=#gel>Continuer</a>
+            <div><a class="btn btn-primary" href=#gel>Continuer</a></div>
+            <div class="list-inline text-center">
+              <li><a class="continue btn btn-primary" href=#orientation>Retour</a></li>
+              <li><a class="continue btn btn-primary" href=#gel>Continuer</a></li>
             </div>
           </div>
 
           <div class="gel" id="gel">
             <h2>Est-ce que ma terre gèle ?</h2>
-            <div>
-              <a class="btn btn-primary" href=#date-de-debut>Continuer</a>
+            <div><a class="btn btn-primary" href=#date-de-debut>Continuer</a></div>
+            <div class="list-inline text-center">
+              <li><a class="continue btn btn-primary" href=#terre>Retour</a></li>
+              <li><a class="continue btn btn-primary" href=#date-de-debut>Continuer</a></li>
             </div>
           </div>
 
           <div class="date-de-debut" id="date-de-debut">
             <h2>Quand est-ce que je veux démarrer mon potager ?</h2>
-            <div>
-              <a class="btn btn-primary" href="#" >Continuer</a>
+            <div><a class="btn btn-primary" href="#" >Continuer</a></div>
+            <div class="list-inline text-center">
+              <li><a class="continue btn btn-primary" href=#gel>Retour</a></li>
+              <li><a class="continue btn btn-primary" href=#>Continuer</a></li>
             </div>
+
           </div>
 
       </div>

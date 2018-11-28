@@ -9,13 +9,7 @@ const castPixelsToMeters = (pixelString) => {
 
 
 interact('.item-draggable')
-  // .draggable({
-  //   onmove: window.dragMoveListener,
-  //   restrict: {
-  //     restriction: 'parent',
-  //     elementRect: { top: 0, left: 0, bottom: 1, right: 1 }
-  //   },
-  // })
+
   .resizable({
     // resize from all edges and corners
     edges: { left: false, right: true, bottom: false, top: true },

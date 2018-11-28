@@ -1,41 +1,77 @@
 /* - - - - - - ORIENTATION SPECIFIC - - - - - - - */
 
-.overlay{
-  position: relative;
+.orientation {
+  padding: 50px;
+  width: 90%;
+  margin: 20px auto;
+  background-color: white;
+  box-shadow: 1px 1px 1px #666666;
+  height: 100vh;
+}
+
+.orientation .formulaire p {
+  margin-top: 50px;
+}
+
+.orientation .form {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.drag-rotate {
+  position:absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 1px dotted white;
+  color: blue;
+  padding: 4%;
+  transform: rotate(0);
+  transform-origin: center center;
+  user-select: none;
+  touch-action: none;
+    p {
+      font-size: 30px;
+      color: white;
+      position: relative;
+      float: left;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
 }
 
 .potager-final {
+  position:relative;
   margin: 0 auto;
-  width: 300px;
-  height: 100px;
+  width: 500px;
+  height: 300px;
   background-color: #A0733E;
   border-radius: 8px;
 }
 
-.tap-target {
-  width: 200px;
-  height: 200px;
-  margin: 10% auto;
-  border-radius: 100%;
-  font-size: 1.125em;
-  text-align: center;
-  border: 1px solid green;
-  cursor: pointer;
-  touch-action: none;
-  transition: all 0.3s;
-}
-
-.tap-target i {
-  font-size: 200px;
-}
-
-.rotate {
-  -webkit-transform: rotate(+45deg);
-  transform: rotate(+45deg);
+.compass {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  margin: 0 auto;
+  margin-top: 50px;
 }
 
 
 /* - - - - - - DIMENSIONS SPECIFIC - - - - - - - */
+
+
+.dimensions {
+  padding: 20px;
+  width: 90%;
+  margin: 20px auto;
+  background-color: white;
+  box-shadow: 1px 1px 1px #666666;
+  height: 100vh;
+}
 
 #parent {
   display: inline-block;
@@ -134,23 +170,6 @@
   height: 100vh;
 }
 
-.dimensions {
-  padding: 20px;
-  width: 90%;
-  margin: 20px auto;
-  background-color: white;
-  box-shadow: 1px 1px 1px #666666;
-  height: 100vh;
-}
-
-.orientation {
-  padding: 20px;
-  width: 90%;
-  margin: 20px auto;
-  background-color: white;
-  box-shadow: 1px 1px 1px #666666;
-  height: 100vh;
-}
 
 .terre {
   padding: 20px;
