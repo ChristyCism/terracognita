@@ -1,6 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Slider - Slider bound to select</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    var select = $( "#minbeds" );
+    var slider = $( "<div id='slider'></div>" ).insertAfter( select ).slider({
+      min: 1,
+      max: 12,
+      range: "min",
+      value: select[ 0 ].selectedIndex + 1,
+      slide: function( event, ui ) {
+        select[ 0 ].selectedIndex = ui.value - 1;
+      }
+    });
+    $( "#minbeds" ).on( "change", function() {
+      slider.slider( "value", this.selectedIndex + 1 );
+    });
+  } );
+  </script>
   </head>
   <body>
     <div class="wrapper">
@@ -135,11 +159,32 @@
           </div>
 
           <div class="date-de-debut" id="date-de-debut">
-            <h2>Calendrier</h2>
-            <h3>Quand est-ce que je veux démarrer mon potager ?</h3>
-            <div class="list-inline text-center">
-              <li><a class="continue btn btn-primary" href=#gel>Retour</a></li>
-              <li><a class="continue btn btn-primary" href="https://terracognita.herokuapp.com/potagers/2/choices/new">Continuer</a></li>
+
+            <h2>Quand est-ce que je veux démarrer mon potager ?</h2>
+            <div class="dateselection">
+         <form id="date_de_debut">
+          <label for="minbeds">Mois de lancement</label>
+          <select name="minbeds" id="minbeds">
+            <option>Janvier</option>
+            <option>Février</option>
+            <option>Mars</option>
+            <option>Avril</option>
+            <option>Mai</option>
+            <option>Juin</option>
+            <option>Juillet</option>
+            <option>Août</option>
+            <option>Septembre</option>
+            <option>Octobre</option>
+            <option>Novembre</option>
+            <option>Décembre</option>
+            </select>
+        </form>
+
+            </div>
+              <div class="bouton-month-selection">
+              <a class="btn btn-primary" href="#" >Continuer</a>
+              </div>
+
             </div>
 
           </div>
