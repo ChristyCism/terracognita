@@ -29,6 +29,7 @@
   <body>
     <div class="wrapper">
       <div class="container">
+<!--
           <div class="introduction" id="introduction">
             <h1>Fabrication du potager</h1>
             <p>Sur cette page nous vous demander quelques renseignements permettant de mieux affiner l'organisation de votre potager que nous allons vous suggérer.</p>
@@ -44,10 +45,9 @@
               <a class="btn btn-primary" href=#dimensions>Continuer</a>
             </div>
           </div>
-
+-->
           <div class="dimensions" id="dimensions">
-            <h2>Dimensions</h2>
-            <h3>Définir les dimensions de mon potager</h3>
+            <h3>Je définis les dimensions de mon potager</h3>
               <div class="grid">
                 <p class="longueur">Longueur</p>
                 <div id="potager">
@@ -77,8 +77,7 @@
           </div>
 
           <div class="orientation" id="orientation">
-            <h2>Orientation</h2>
-            <h3>Ajuster l'orientation du potager</h3>
+            <h3>J'ajuste l'orientation de mon potager</h3>
             <div class="grid">
               <div class="compass">
                 <div class="potager-final"></div>
@@ -101,8 +100,7 @@
           </div>
 
           <div class="terre"  id="terre">
-            <h2>Sol</h2>
-            <h3>Définir mon type de terre</h3>
+            <h3>Je définis mon type de terre</h3>
 
 <%= simple_form_for @potager do |f| %>
   <div class="grid">
@@ -153,8 +151,9 @@
           </div>
 
           <div class="gel" id="gel">
-            <h2>Température</h2>
             <h3>Est-ce que ma terre gèle ?</h3>
+            <p>Oui</p>
+            <p>Non</p>
             <div class="list-inline text-center">
               <li><a class="continue btn btn-primary" href=#terre>Retour</a></li>
               <li><a class="continue btn btn-primary" href=#date-de-debut>Continuer</a></li>
@@ -163,7 +162,7 @@
 
           <div class="date-de-debut" id="date-de-debut">
 
-            <h2>Quand est-ce que je veux démarrer mon potager ?</h2>
+            <h3>Quand est-ce que je veux démarrer mon potager ?</h3>
             <div class="dateselection">
          <form id="date_de_debut">
           <label for="minbeds">Mois de lancement</label>
@@ -185,7 +184,7 @@
 
             </div>
               <div class="bouton-month-selection">
-              <a class="btn btn-primary" href="https://terracognita.herokuapp.com/potagers/2/choices/new" >Créer mon potager</a>
+              <a class="btn btn-primary" href="https://terracognita.herokuapp.com/potagers/2/choices/new" >Continuer</a>
               </div>
 
             </div>
