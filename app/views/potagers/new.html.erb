@@ -106,38 +106,41 @@
 
 <%= simple_form_for @potager do |f| %>
   <div class="grid">
-    <label class="tile">
+
+
+    <input id="id-argileux" type="radio" value='argileux' name="terre" />
+    <label for="id-argileux" class="tile">
           <%= cl_image_tag('terracognita/sol_argileux', height: 100) %>
-          <input type="radio" value='Argileux' name="terre" />
           <p>Argileux</p>
     </label>
 
-    <label class="tile">
+
+    <input id="id-sableux" type="radio" value='sableux' name="terre" />
+    <label for="id-sableux" class="tile">
           <%= cl_image_tag('terracognita/sol_sableux', height: 100) %>
-          <input type="radio" value='sableux' name="terre" />
           <p>Sableux</p>
     </label>
 
-    <label class="tile">
+
+    <input id="id-limoneux" type="radio" value='limoneux' name="terre" />
+    <label for="id-limoneux" class="tile">
           <%= cl_image_tag('terracognita/sol_limoneux', height: 100) %>
-          <input type="radio" value='limoneux' name="terre" />
           <p>Limoneux</p>
     </label>
 
-    <label class="tile">
-          <div class='photo-terre'>
+
+    <input id="id-humifere" type="radio" value='humifere' name="terre" />
+    <label for="id-humifere" class="tile">
           <%= cl_image_tag('terracognita/sol_humifere', height: 100) %>
-        </div>
-          <input type="radio" value='humifere' name="terre" />
           <p>Humifere</p>
     </label>
 
-    <label class="tile">
+
+    <input id="id-calcaire" type="radio" value='calcaire' name="terre" />
+    <label for="id-calcaire" class="tile">
           <%= cl_image_tag('terracognita/sol_calcaire', height: 100) %>
-          <input type="radio" value='calcaire' name="terre" />
           <p>Calcaire</p>
     </label>
-
   </div>
 <% end %>
 
