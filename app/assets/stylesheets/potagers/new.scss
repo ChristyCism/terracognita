@@ -11,19 +11,27 @@
 
 .terre .grid {
   display:grid;
-  grid-template-columns: 15% 15% 15% 15% 15%;
+  grid-template-columns: 102px 102px 102px 102px 102px;
   grid-template-rows: 1fr;
   width: 90%;
   margin: 0 auto;
   margin-top: 100px;
   color: black;
-  justify-content: center;
+  justify-content: space-around;
+}
+
+.tile {
+  border: 1px solid transparent;
 }
 
 
-.tile
+
+.tile p
 {
-  box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  color: grey;
+  justify-content: center;
+  text-align: center;
+  padding-top: 10px;
 }
 
 .tile:hover {
@@ -304,6 +312,12 @@
 }
 
 
+/* SELECT TERRE */
+
+.tile input[type="radio"] {
+  display: none;
+
+
 
 // ----------------------------------------------------Date Selection ----------------------------------
 
@@ -317,4 +331,5 @@
 .bouton-month-selection {
   margin-top: 100px;
   text-align: center;
+
 }

@@ -103,13 +103,46 @@
           <div class="terre"  id="terre">
             <h2>Sol</h2>
             <h3>Définir mon type de terre</h3>
-            <div class="grid">
-              <div class="argileux tile">Argileux</div>
-              <div class="sableux tile">Sableux</div>
-              <div class="limoneux tile">Limoneux</div>
-              <div class="humifere tile">Humifère</div>
-              <div class="calcaire tile">Calcaire</div>
-            </div>
+
+<%= simple_form_for @potager do |f| %>
+  <div class="grid">
+    <label class="tile">
+          <%= cl_image_tag('terracognita/sol_argileux', height: 100) %>
+          <input type="radio" value='Argileux' name="terre" />
+          <p>Argileux</p>
+    </label>
+
+    <label class="tile">
+          <%= cl_image_tag('terracognita/sol_sableux', height: 100) %>
+          <input type="radio" value='sableux' name="terre" />
+          <p>Sableux</p>
+    </label>
+
+    <label class="tile">
+          <%= cl_image_tag('terracognita/sol_limoneux', height: 100) %>
+          <input type="radio" value='limoneux' name="terre" />
+          <p>Limoneux</p>
+    </label>
+
+    <label class="tile">
+          <div class='photo-terre'>
+          <%= cl_image_tag('terracognita/sol_humifere', height: 100) %>
+        </div>
+          <input type="radio" value='humifere' name="terre" />
+          <p>Humifere</p>
+    </label>
+
+    <label class="tile">
+          <%= cl_image_tag('terracognita/sol_calcaire', height: 100) %>
+          <input type="radio" value='calcaire' name="terre" />
+          <p>Calcaire</p>
+    </label>
+
+  </div>
+<% end %>
+
+
+
             <div class="list-inline text-center">
               <li><a class="continue btn btn-primary" href=#orientation>Retour</a></li>
               <li><a class="continue btn btn-primary" href=#gel>Continuer</a></li>
