@@ -22,7 +22,8 @@
           </div>
 
           <div class="dimensions" id="dimensions">
-            <h2>Définir les dimensions de mon potager</h2>
+            <h2>Dimensions</h2>
+            <h3>Définir les dimensions de mon potager</h3>
               <div class="grid">
                 <p class="longueur">Longueur</p>
                 <div id="potager">
@@ -35,14 +36,13 @@
                 <p class="largeur">Largeur</p>
               </div>
             <div>
-              <p>Placer un formulaire ici avec deux champs qui récupèrent les valeurs de longueurs et largeur.</p>
               <div class="form">
                 <p> </p>
                 <%= form_tag("/search", method: "get") do %>
                   <%= label_tag(:q, "Largeur :") %>
-                  <%= text_field_tag(:largeur, ) %>
+                  <%= text_field_tag(:largeur) %>
                   <%= label_tag(:q, "Longueur :") %>
-                  <%= text_field_tag(:longueur, ) %>
+                  <%= text_field_tag(:longueur) %>
                 <% end %>
               </div>
             </div>
@@ -53,17 +53,20 @@
           </div>
 
           <div class="orientation" id="orientation">
-            <h2>Ajuster l'orientation du potager</h2>
-            <div class="compass">
-              <div class="potager-final"></div>
-              <div class="drag-rotate"><p class="text-center">N<br><i class="fas fa-sync"></i><br>S</p></div>
+            <h2>Orientation</h2>
+            <h3>Ajuster l'orientation du potager</h3>
+            <div class="grid">
+              <div class="compass">
+                <div class="potager-final"></div>
+                <div class="drag-rotate"><p class="text-center">N<br><i class="fas fa-sync"></i><br>S</p></div>
+              </div>
+              <div class="bottom-tag">Où est le sud sur votre potager ? <br>(faites tourner la boussolle !)</div>
             </div>
             <div class="formulaire">
-              <p>Placer un formulaire ici avec un champ qui récupère la valeur d'angle.</p>
               <div class="form">
                 <%= form_tag("/search", method: "get") do %>
                   <%= label_tag(:q, "Angle :") %>
-                  <%= text_field_tag(:angle, ) %>
+                  <%= text_field_tag(:angle) %>
                 <% end %>
               </div>
             </div>
@@ -74,8 +77,15 @@
           </div>
 
           <div class="terre"  id="terre">
-            <h2>Définir mon type de terre</h2>
-            <div><a class="btn btn-primary" href=#gel>Continuer</a></div>
+            <h2>Sol</h2>
+            <h3>Définir mon type de terre</h3>
+            <div class="grid">
+              <div class="argileux tile">Argileux</div>
+              <div class="sableux tile">Sableux</div>
+              <div class="limoneux tile">Limoneux</div>
+              <div class="humifere tile">Humifère</div>
+              <div class="calcaire tile">Calcaire</div>
+            </div>
             <div class="list-inline text-center">
               <li><a class="continue btn btn-primary" href=#orientation>Retour</a></li>
               <li><a class="continue btn btn-primary" href=#gel>Continuer</a></li>
@@ -83,8 +93,8 @@
           </div>
 
           <div class="gel" id="gel">
-            <h2>Est-ce que ma terre gèle ?</h2>
-            <div><a class="btn btn-primary" href=#date-de-debut>Continuer</a></div>
+            <h2>Température</h2>
+            <h3>Est-ce que ma terre gèle ?</h3>
             <div class="list-inline text-center">
               <li><a class="continue btn btn-primary" href=#terre>Retour</a></li>
               <li><a class="continue btn btn-primary" href=#date-de-debut>Continuer</a></li>
@@ -92,16 +102,18 @@
           </div>
 
           <div class="date-de-debut" id="date-de-debut">
-            <h2>Quand est-ce que je veux démarrer mon potager ?</h2>
-            <div><a class="btn btn-primary" href="#" >Continuer</a></div>
+            <h2>Calendrier</h2>
+            <h3>Quand est-ce que je veux démarrer mon potager ?</h3>
             <div class="list-inline text-center">
               <li><a class="continue btn btn-primary" href=#gel>Retour</a></li>
-              <li><a class="continue btn btn-primary" href=#>Continuer</a></li>
+              <li><a class="continue btn btn-primary" href="https://terracognita.herokuapp.com/potagers/2/choices/new">Continuer</a></li>
             </div>
 
           </div>
 
       </div>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
   </body>
 </html>

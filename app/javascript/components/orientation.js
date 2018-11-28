@@ -43,7 +43,10 @@ function getDragAngle(event) {
 
 
   console.log(angle);
+  document.getElementById("angle").value = angle;
+
 
   return angle - startAngle;
 }
+
 
