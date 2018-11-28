@@ -17,6 +17,10 @@ class PotagersController < ApplicationController
     # create_parcel_vegetables
   end
 
+  def show
+    @potager = Potager.last.id
+  end
+
   private
 
   def params_for_potager

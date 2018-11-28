@@ -1,15 +1,30 @@
 <div class="container">
 
 <h1>Quels légumes souhaitez-vous planter ?</h1>
-<br><br>
 
+<%= simple_form_for @choice, url: potager_choices_path do |f| %>
+<div class="form-post">
   <div class="row">
     <% @vegetables.each do |veg| %>
-      <div class="col-sm-3 couple-nom-photo">
-        <p><%= cl_image_tag(veg.photo, height: 40) %></p>
-        <p><%= veg.name.capitalize %></p>
+      <div class="col-xs-6 col-sm-3 nopad text-center couple-nom-photo">
+        <label class="image-checkbox">
+          <div>
+          <%= cl_image_tag(veg.photo, height: 100) %>
+          <input type="checkbox" name=<%= veg.name %> value=<%= veg.id %> />
+          <!--<i class="fa fa-check hidden"></i>-->
+          </div>
+          <div class="veg-name">
+          <%= veg.name.capitalize %>
+          </div>
+        </label>
+        <%= f.input :vegetable_id, :as => :hidden, :input_html => { :value => veg.id } %>
       </div>
     <% end %>
   </div>
-
+  <div class='submit-veg'>
+  <%= f.button :submit, 'Finaliser', class: 'btn btn-primary' %>
+  </div>
+<% end %>
 </div>
+</div>
+
