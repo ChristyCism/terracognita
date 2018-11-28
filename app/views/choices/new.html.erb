@@ -10,7 +10,7 @@
         <label class="image-checkbox">
           <div>
           <%= cl_image_tag(veg.photo, height: 100) %>
-          <input type="checkbox" name="image[]" value="" />
+          <input type="checkbox" name=<%= veg.name %> value=<%= veg.id %> />
           <!--<i class="fa fa-check hidden"></i>-->
           </div>
           <div class="veg-name">
@@ -23,7 +23,6 @@
   </div>
   <div class='submit-veg'>
   <%= f.button :submit, 'Finaliser', class: 'btn btn-primary' %>
-
   </div>
 <% end %>
 </div>
