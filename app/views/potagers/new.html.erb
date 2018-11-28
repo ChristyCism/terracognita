@@ -29,7 +29,7 @@
   <body>
     <div class="wrapper">
       <div class="container">
-          <div class="introduction">
+          <div class="introduction" id="introduction">
             <h1>Fabrication du potager</h1>
             <p>Sur cette page nous vous demander quelques renseignements permettant de mieux affiner l'organisation de votre potager que nous allons vous suggérer.</p>
             <p>Les prochaines étapes s'intéressent :</p>
@@ -46,7 +46,8 @@
           </div>
 
           <div class="dimensions" id="dimensions">
-            <h2>Définir les dimensions de mon potager</h2>
+            <h2>Dimensions</h2>
+            <h3>Définir les dimensions de mon potager</h3>
               <div class="grid">
                 <p class="longueur">Longueur</p>
                 <div id="potager">
@@ -59,62 +60,106 @@
                 <p class="largeur">Largeur</p>
               </div>
             <div>
-              <p>Placer un formulaire ici avec deux champs qui récupèrent les valeurs de longueurs et largeur.</p>
               <div class="form">
                 <p> </p>
                 <%= form_tag("/search", method: "get") do %>
                   <%= label_tag(:q, "Largeur :") %>
-                  <%= text_field_tag(:largeur, ) %>
+                  <%= text_field_tag(:largeur) %>
                   <%= label_tag(:q, "Longueur :") %>
-                  <%= text_field_tag(:longueur, ) %>
+                  <%= text_field_tag(:longueur) %>
                 <% end %>
               </div>
             </div>
-            <div>
-              <a class="continue btn btn-primary" href=#orientation>Continuer</a>
+            <div class="list-inline text-center">
+              <li><a class="continue btn btn-primary" href=#introduction>Retour</a></li>
+              <li><a class="continue btn btn-primary" href=#orientation>Continuer</a></li>
             </div>
           </div>
-
-
-
-
-
 
           <div class="orientation" id="orientation">
-            <h2>Ajuster l'orientation du potager</h2>
-
-            <div class="overlay">
-              <div class="tap-target">
-                <i class="far fa-compass"></i>
+            <h2>Orientation</h2>
+            <h3>Ajuster l'orientation du potager</h3>
+            <div class="grid">
+              <div class="compass">
+                <div class="potager-final"></div>
+                <div class="drag-rotate"><p class="text-center">N<br><i class="fas fa-sync"></i><br>S</p></div>
               </div>
-
-              <div class="potager-final"></div>
+              <div class="bottom-tag">Où est le sud sur votre potager ? <br>(faites tourner la boussolle !)</div>
             </div>
-
-
-            <div>
-              <a class="continue btn btn-primary" href=#terre>Continuer</a>
+            <div class="formulaire">
+              <div class="form">
+                <%= form_tag("/search", method: "get") do %>
+                  <%= label_tag(:q, "Angle :") %>
+                  <%= text_field_tag(:angle) %>
+                <% end %>
+              </div>
+            </div>
+            <div class="list-inline text-center">
+              <li><a class="continue btn btn-primary" href=#dimensions>Retour</a></li>
+              <li><a class="continue btn btn-primary" href=#terre>Continuer</a></li>
             </div>
           </div>
 
-
-
-
           <div class="terre"  id="terre">
-            <h2>Définir mon type de terre</h2>
-            <div>
-              <a class="btn btn-primary" href=#gel>Continuer</a>
+            <h2>Sol</h2>
+            <h3>Définir mon type de terre</h3>
+
+<%= simple_form_for @potager do |f| %>
+  <div class="grid">
+    <label class="tile">
+          <%= cl_image_tag('terracognita/sol_argileux', height: 100) %>
+          <input type="radio" value='Argileux' name="terre" />
+          <p>Argileux</p>
+    </label>
+
+    <label class="tile">
+          <%= cl_image_tag('terracognita/sol_sableux', height: 100) %>
+          <input type="radio" value='sableux' name="terre" />
+          <p>Sableux</p>
+    </label>
+
+    <label class="tile">
+          <%= cl_image_tag('terracognita/sol_limoneux', height: 100) %>
+          <input type="radio" value='limoneux' name="terre" />
+          <p>Limoneux</p>
+    </label>
+
+    <label class="tile">
+          <div class='photo-terre'>
+          <%= cl_image_tag('terracognita/sol_humifere', height: 100) %>
+        </div>
+          <input type="radio" value='humifere' name="terre" />
+          <p>Humifere</p>
+    </label>
+
+    <label class="tile">
+          <%= cl_image_tag('terracognita/sol_calcaire', height: 100) %>
+          <input type="radio" value='calcaire' name="terre" />
+          <p>Calcaire</p>
+    </label>
+
+  </div>
+<% end %>
+
+
+
+            <div class="list-inline text-center">
+              <li><a class="continue btn btn-primary" href=#orientation>Retour</a></li>
+              <li><a class="continue btn btn-primary" href=#gel>Continuer</a></li>
             </div>
           </div>
 
           <div class="gel" id="gel">
-            <h2>Est-ce que ma terre gèle ?</h2>
-            <div>
-              <a class="btn btn-primary" href=#date-de-debut>Continuer</a>
+            <h2>Température</h2>
+            <h3>Est-ce que ma terre gèle ?</h3>
+            <div class="list-inline text-center">
+              <li><a class="continue btn btn-primary" href=#terre>Retour</a></li>
+              <li><a class="continue btn btn-primary" href=#date-de-debut>Continuer</a></li>
             </div>
           </div>
 
           <div class="date-de-debut" id="date-de-debut">
+
             <h2>Quand est-ce que je veux démarrer mon potager ?</h2>
             <div class="dateselection">
          <form id="date_de_debut">
@@ -139,10 +184,14 @@
               <div class="bouton-month-selection">
               <a class="btn btn-primary" href="https://terracognita.herokuapp.com/potagers/2/choices/new" >Créer mon potager</a>
               </div>
+
             </div>
+
           </div>
 
       </div>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
   </body>
 </html>

@@ -1,41 +1,190 @@
+/* - - - - - - TERRE SPECIFIC - - - - - - - */
+
+
+// <div class="grid">
+//   <div class="argileux">Argileux</div>
+//   <div class="sableux">Sableux</div>
+//   <div class="limoneux">Limoneux</div>
+//   <div class="humifere">Humifère</div>
+//   <div class="calcaire">Calcaire</div>
+// </div>
+
+.terre .grid {
+  display:grid;
+  grid-template-columns: 102px 102px 102px 102px 102px;
+  grid-template-rows: 1fr;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 100px;
+  color: black;
+  justify-content: space-around;
+}
+
+.tile {
+  border: 1px solid transparent;
+}
+
+
+
+.tile p
+{
+  color: grey;
+  justify-content: center;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.tile:hover {
+  color: blue;
+}
+
+.argileux {
+  width: 100px;
+  height: 100px;
+  background-color: #DE4D0C;
+  margin: 0 auto;
+  text-align: center;
+  padding: 35px 0;
+
+}
+.sableux {
+  width: 100px;
+  height: 100px;
+  background-color: #DE4D0C;
+  margin: 0 auto;
+  text-align: center;
+  padding: 35px 0;
+}
+.limoneux {
+  width: 100px;
+  height: 100px;
+  background-color: #DE4D0C;
+  margin: 0 auto;
+  text-align: center;
+  padding: 35px 0;
+}
+.humifere {
+  width: 100px;
+  height: 100px;
+  background-color: #DE4D0C;
+  margin: 0 auto;
+  text-align: center;
+  padding: 35px 0;
+}
+.calcaire {
+  width: 100px;
+  height: 100px;
+  background-color: #DE4D0C;
+  text-align: center;
+  padding: 35px 0;
+  margin: 0 auto;
+}
+
+
+
 /* - - - - - - ORIENTATION SPECIFIC - - - - - - - */
 
-.overlay{
-  position: relative;
+.orientation {
+  padding: 20px;
+  width: 90%;
+  margin: auto;
+  margin-top: 0px;
+  background-color: white;
+  box-shadow: 1px 1px 1px #666666;
+  height: 100vh;
+}
+
+.orientation .formulaire p {
+  margin-top: 50px;
+}
+
+.orientation .form {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.drag-rotate {
+  position:absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 1px dotted white;
+  color: blue;
+  padding: 4%;
+  transform: rotate(0);
+  transform-origin: center center;
+  user-select: none;
+  touch-action: none;
+    p {
+      font-size: 30px;
+      color: white;
+      position: relative;
+      float: left;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
 }
 
 .potager-final {
+  position:relative;
   margin: 0 auto;
-  width: 300px;
-  height: 100px;
+  width: 500px;
+  height: 300px;
   background-color: #A0733E;
   border-radius: 8px;
 }
 
-.tap-target {
-  width: 200px;
-  height: 200px;
-  margin: 10% auto;
-  border-radius: 100%;
-  font-size: 1.125em;
+.compass {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.orientation .grid {
+  display:grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 4fr 1fr;
+  width: 90%;
+  color: black;
+  margin: auto;
+}
+
+.compass {
+  grid-row: 1 / span 1;
+  grid-column: 1 / 1;
+}
+
+.bottom-tag {
+  padding-top: 20px;
   text-align: center;
-  border: 1px solid green;
-  cursor: pointer;
-  touch-action: none;
-  transition: all 0.3s;
+  grid-row: 2 / span 1;
+  grid-column: 1 / 1;
 }
 
-.tap-target i {
-  font-size: 200px;
-}
 
-.rotate {
-  -webkit-transform: rotate(+45deg);
-  transform: rotate(+45deg);
-}
+
+// #potager {
+//   grid-row: 1 / span 1;
+//   grid-column: 2 / span 1;
+// }
 
 
 /* - - - - - - DIMENSIONS SPECIFIC - - - - - - - */
+
+
+.dimensions {
+  padding: 20px;
+  width: 90%;
+  margin: 20px auto;
+  background-color: white;
+  box-shadow: 1px 1px 1px #666666;
+  height: 100vh;
+}
 
 #parent {
   display: inline-block;
@@ -83,7 +232,7 @@
   padding: auto 0;
 }
 
-.grid {
+.dimensions .grid {
   display: grid;
   grid-template-columns: 1fr 7fr;
   grid-template-rows: 300px 50px;
@@ -134,23 +283,6 @@
   height: 100vh;
 }
 
-.dimensions {
-  padding: 20px;
-  width: 90%;
-  margin: 20px auto;
-  background-color: white;
-  box-shadow: 1px 1px 1px #666666;
-  height: 100vh;
-}
-
-.orientation {
-  padding: 20px;
-  width: 90%;
-  margin: 20px auto;
-  background-color: white;
-  box-shadow: 1px 1px 1px #666666;
-  height: 100vh;
-}
 
 .terre {
   padding: 20px;
@@ -180,6 +312,12 @@
 }
 
 
+/* SELECT TERRE */
+
+.tile input[type="radio"] {
+  display: none;
+
+}
 
 // ----------------------------------------------------Date Selection ----------------------------------
 
@@ -193,4 +331,5 @@
 .bouton-month-selection {
   margin-top: 100px;
   text-align: center;
+
 }
