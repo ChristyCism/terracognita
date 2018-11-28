@@ -21,6 +21,6 @@ class ChoicesController < ApplicationController
   private
 
   def params_of_choice
-    params.require(:choice).permited(:vegetable_id, :potager_id)
+    params.require(:choice).permit(:vegetable_id, :potager_id)
   end
 end
