@@ -313,10 +313,15 @@
 
 
 /* SELECT TERRE */
-
-.tile input[type="radio"] {
+.grid input[type="radio"] {
   display: none;
 
+}
+
+.grid input[type="radio"]:checked + label {
+  border-color: $blue;
+  -webkit-animation: shadow-pop-bl 0.3s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+  animation: shadow-pop-bl 0.3s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
 }
 
 // ----------------------------------------------------Date Selection ----------------------------------
