@@ -69,8 +69,12 @@
     margin-top: 0px;
   }
   .btn {
-    width: 100%;
-    padding: 10px;
+    padding: 10px 20px;
     font-weight: bold;
+  }
+  .submit-veg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
