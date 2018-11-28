@@ -4,7 +4,6 @@ class ChoicesController < ApplicationController
   def new
     @choice = Choice.new
     @vegetables = Vegetable.where("'Mai'=ANY(month_planted)")
-    p @vegetables
 
   end
 
@@ -14,13 +13,13 @@ class ChoicesController < ApplicationController
     if @new_choice.save
       redirect_to potager_path(:potager_id)
     else
-      p "error"
+      redirect_to potager_path(:potager_id)
     end
   end
 
   private
 
   def params_of_choice
-    params.require(:choice).permited(:vegetable_id, :potager_id)
+    params.require(:choice).permit(:vegetable_id, :potager_id)
   end
 end
