@@ -29,8 +29,7 @@
   <body>
     <div class="wrapper">
       <div class="container">
-<!--
-          <div class="introduction" id="introduction">
+          <div class="introduction">
             <h1>Fabrication du potager</h1>
             <p>Sur cette page nous vous demander quelques renseignements permettant de mieux affiner l'organisation de votre potager que nous allons vous suggérer.</p>
             <p>Les prochaines étapes s'intéressent :</p>
@@ -45,7 +44,7 @@
               <a class="btn btn-primary" href=#dimensions>Continuer</a>
             </div>
           </div>
--->
+
           <div class="dimensions" id="dimensions">
             <h3>Je définis les dimensions de mon potager</h3>
               <div class="grid">
@@ -98,69 +97,21 @@
           </div>
 
           <div class="terre"  id="terre">
-            <h3>Je définis mon type de terre</h3>
-
-<%= simple_form_for @potager do |f| %>
-  <div class="grid">
-
-
-    <input id="id-argileux" type="radio" value='argileux' name="terre" />
-    <label for="id-argileux" class="tile">
-          <%= cl_image_tag('terracognita/sol_argileux', height: 100) %>
-          <p>Argileux</p>
-    </label>
-
-
-    <input id="id-sableux" type="radio" value='sableux' name="terre" />
-    <label for="id-sableux" class="tile">
-          <%= cl_image_tag('terracognita/sol_sableux', height: 100) %>
-          <p>Sableux</p>
-    </label>
-
-
-    <input id="id-limoneux" type="radio" value='limoneux' name="terre" />
-    <label for="id-limoneux" class="tile">
-          <%= cl_image_tag('terracognita/sol_limoneux', height: 100) %>
-          <p>Limoneux</p>
-    </label>
-
-
-    <input id="id-humifere" type="radio" value='humifere' name="terre" />
-    <label for="id-humifere" class="tile">
-          <%= cl_image_tag('terracognita/sol_humifere', height: 100) %>
-          <p>Humifere</p>
-    </label>
-
-
-    <input id="id-calcaire" type="radio" value='calcaire' name="terre" />
-    <label for="id-calcaire" class="tile">
-          <%= cl_image_tag('terracognita/sol_calcaire', height: 100) %>
-          <p>Calcaire</p>
-    </label>
-  </div>
-<% end %>
-
-
-
-            <div class="list-inline text-center">
-              <li><a class="continue btn btn-primary" href=#orientation>Retour</a></li>
-              <li><a class="continue btn btn-primary" href=#gel>Continuer</a></li>
+            <h2>Définir mon type de terre</h2>
+            <div>
+              <a class="btn btn-primary" href=#gel>Continuer</a>
             </div>
           </div>
 
           <div class="gel" id="gel">
-            <h3>Est-ce que ma terre gèle ?</h3>
-            <p>Oui</p>
-            <p>Non</p>
-            <div class="list-inline text-center">
-              <li><a class="continue btn btn-primary" href=#terre>Retour</a></li>
-              <li><a class="continue btn btn-primary" href=#date-de-debut>Continuer</a></li>
+            <h2>Est-ce que ma terre gèle ?</h2>
+            <div>
+              <a class="btn btn-primary" href=#date-de-debut>Continuer</a>
             </div>
           </div>
 
           <div class="date-de-debut" id="date-de-debut">
-
-            <h3>Quand est-ce que je veux démarrer mon potager ?</h3>
+            <h2>Quand est-ce que je veux démarrer mon potager ?</h2>
             <div class="dateselection">
          <form id="date_de_debut">
           <label for="minbeds">Mois de lancement</label>
@@ -182,16 +133,12 @@
 
             </div>
               <div class="bouton-month-selection">
-              <a class="btn btn-primary" href="https://terracognita.herokuapp.com/potagers/2/choices/new" >Continuer</a>
+              <a class="btn btn-primary" href="#" >Continuer</a>
               </div>
-
             </div>
-
           </div>
 
       </div>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
   </body>
 </html>
