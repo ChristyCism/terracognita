@@ -63,10 +63,8 @@
               <div class="form">
                 <p> </p>
                 <%= form_tag("/search", method: "get") do %>
-                  <%= label_tag(:q, "Largeur :") %>
-                  <%= text_field_tag(:largeur) %>
-                  <%= label_tag(:q, "Longueur :") %>
-                  <%= text_field_tag(:longueur) %>
+                  <%= hidden_field_tag(:largeur) %>
+                  <%= hidden_field_tag(:longueur) %>
                 <% end %>
               </div>
             </div>
