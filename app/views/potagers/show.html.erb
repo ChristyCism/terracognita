@@ -1,4 +1,20 @@
-<div class="container">
-<h1>Votre potager</h1>
-<%= cl_image_tag("terracognita/rendu-final", height: 500) %>
+<div class="container final-connect">
+  <h1>Votre potager</h1>
+  <div class="row">
+<div class="col-sm-6 col-xs-12">
+<%= cl_image_tag("terracognita/rendu-final", width: 400) %>
+</div>
+<div class="col-sm-6 col-xs-12">
+  <h2>Si je crée un compte :</h2>
+  <ul class="list-unstyled final-list">
+    <li><i class="fas fa-leaf"></i> J'enregistre ma parcelle, et je peux la modifier</li>
+    <li><i class="fas fa-leaf"></i> J'optimise mon rendement grâce à des informations clés</li>
+    <li><i class="fas fa-leaf"></i> Je retrouve ma parcelle d'année en année</li>
+  </ul>
+  <div class="finalbuttons">
+  <%= link_to "Générer un PDF", root_path, class:"btn btn-home btn-lg btn-final-transparent" %>
+  <%= link_to "Créer un compte", new_user_registration_path, class:"btn btn-home btn-lg btn-final" %>
+  </div>
+</div>
+</div>
 </div>
