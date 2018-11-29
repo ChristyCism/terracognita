@@ -45,7 +45,7 @@
           </div>
 
           <div class="dimensions" id="dimensions">
-            <h2>Définir les dimensions de mon potager</h2>
+            <h3>Je définis les dimensions de mon potager</h3>
               <div class="grid">
                 <p class="longueur">Longueur</p>
                 <div id="potager">
@@ -58,22 +58,19 @@
                 <p class="largeur">Largeur</p>
               </div>
             <div>
-              <p>Placer un formulaire ici avec deux champs qui récupèrent les valeurs de longueurs et largeur.</p>
               <div class="form">
                 <p> </p>
                 <%= form_tag("/search", method: "get") do %>
-                  <%= label_tag(:q, "Largeur :") %>
-                  <%= text_field_tag(:largeur, ) %>
-                  <%= label_tag(:q, "Longueur :") %>
-                  <%= text_field_tag(:longueur, ) %>
+                  <%= hidden_field_tag(:largeur) %>
+                  <%= hidden_field_tag(:longueur) %>
                 <% end %>
               </div>
             </div>
-            <div>
-              <a class="continue btn btn-primary" href=#orientation>Continuer</a>
+            <div class="list-inline text-center">
+              <li><a class="continue btn btn-primary" href=#introduction>Retour</a></li>
+              <li><a class="continue btn btn-primary" href=#orientation>Continuer</a></li>
             </div>
           </div>
-
 
           <div class="orientation" id="orientation">
             <h3>J'ajuste l'orientation de mon potager</h3>
@@ -97,7 +94,6 @@
               <li><a class="continue btn btn-primary" href=#terre>Continuer</a></li>
             </div>
           </div>
-
 
           <div class="terre"  id="terre">
             <h2>Définir mon type de terre</h2>
