@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>jQuery UI Slider - Slider bound to select</title>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script>
@@ -76,28 +75,28 @@
           </div>
 
 
-
-
-
-
           <div class="orientation" id="orientation">
-            <h2>Ajuster l'orientation du potager</h2>
-
-            <div class="overlay">
-              <div class="tap-target">
-                <i class="far fa-compass"></i>
+            <h3>J'ajuste l'orientation de mon potager</h3>
+            <div class="grid">
+              <div class="compass">
+                <div class="potager-final"></div>
+                <div class="drag-rotate"><p class="text-center">N<br><i class="fas fa-sync"></i><br>S</p></div>
               </div>
-
-              <div class="potager-final"></div>
+              <div class="bottom-tag">Où est le sud sur votre potager ? <br>(faites tourner la boussolle !)</div>
             </div>
-
-
-            <div>
-              <a class="continue btn btn-primary" href=#terre>Continuer</a>
+            <div class="formulaire">
+              <div class="form">
+                <%= form_tag("/search", method: "get") do %>
+                  <%= label_tag(:q, "Angle :") %>
+                  <%= text_field_tag(:angle) %>
+                <% end %>
+              </div>
+            </div>
+            <div class="list-inline text-center">
+              <li><a class="continue btn btn-primary" href=#dimensions>Retour</a></li>
+              <li><a class="continue btn btn-primary" href=#terre>Continuer</a></li>
             </div>
           </div>
-
-
 
 
           <div class="terre"  id="terre">
