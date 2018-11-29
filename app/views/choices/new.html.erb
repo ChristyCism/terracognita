@@ -5,7 +5,7 @@
     <%= simple_form_for @choice, url: potager_choices_path do |f| %>
       <div class="row">
         <% @vegetables.each do |veg| %>
-          <div class="col-xs-6 col-sm-3 nopad text-center couple-nom-photo">
+          <div class="col-xs-4 col-sm-2 nopad text-center couple-nom-photo">
             <label class="image-checkbox">
               <div>
                 <%= cl_image_tag(veg.photo, height: 100) %>

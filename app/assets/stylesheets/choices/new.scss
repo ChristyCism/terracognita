@@ -1,10 +1,20 @@
+.vegetables-choices {
+  padding: 20px;
+  width: 90%;
+  margin: auto;
+  margin-top: 0px;
+  background-color: white;
+  box-shadow: 1px 1px 1px #666666;
+  min-height: calc(100vh - 70px);
+}
+
 .couple-nom-photo {
   display: block !important;
   text-align: center;
   align-items: center;
-  padding-bottom: 50px;
-  width: 250px;
-  height: 200px;
+  padding-bottom: 35px;
+  width: 230px;
+  height: 180px;
   .veg-name {
     padding-top: 10px;
   }
@@ -123,7 +133,7 @@
 // ----------------------------- Progress bar ------
 .choices-new {
   .vegetables-choices .pb-bg-1, .vegetables-choices .pb-bg-2, .vegetables-choices .pb-bg-3, .vegetables-choices .pb-bg-4, .vegetables-choices .pb-bg-5 {
-    background-color: #767677;
+    background-color: $blue;
 
   }
 }
