@@ -1,0 +1,35 @@
+.progressbar {
+  margin: 0 auto;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+}
+
+.pb-background {
+    height: 10px;
+    background-color: #dbdbdb;
+    width: 15%;
+    position: relative;
+  }
+
+.pb-bg-1 {
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+  }
+.pb-bg-6 {
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+  }
+
+.pb-image {
+  z-index: 2;
+  position: absolute;
+  right: -17px;
+  bottom: -10px;
+  filter: grayscale(100%);
+}
+
+
+// <%= render 'shared/progressbar' %>

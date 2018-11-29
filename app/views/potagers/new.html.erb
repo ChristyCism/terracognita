@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>jQuery UI Slider - Slider bound to select</title>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script>
@@ -29,8 +28,7 @@
   <body>
     <div class="wrapper">
       <div class="container">
-<!--
-          <div class="introduction" id="introduction">
+          <div class="introduction">
             <h1>Fabrication du potager</h1>
             <p>Sur cette page nous vous demander quelques renseignements permettant de mieux affiner l'organisation de votre potager que nous allons vous suggérer.</p>
             <p>Les prochaines étapes s'intéressent :</p>
@@ -45,7 +43,7 @@
               <a class="btn btn-primary" href=#dimensions>Continuer</a>
             </div>
           </div>
--->
+
           <div class="dimensions" id="dimensions">
             <h3>Je définis les dimensions de mon potager</h3>
               <div class="grid">
@@ -62,10 +60,10 @@
             <div>
               <div class="form">
                 <p> </p>
-                <%= form_tag("/search", method: "get") do %>
                   <%= label_tag(:q, "Largeur :") %>
-                  <%= text_field_tag(:largeur) %>
+                  <%= text_field_tag(:largeur, ) %>
                   <%= label_tag(:q, "Longueur :") %>
+
                   <%= text_field_tag(:longueur) %>
                 <% end %>
               </div>
@@ -74,7 +72,35 @@
               <li><a class="continue btn btn-primary" href=#introduction>Retour</a></li>
               <li><a class="continue btn btn-primary" href=#orientation>Continuer</a></li>
             </div>
-          </div>
+                      </div>
+
+          <div class="orientation" id="orientation">
+            <h3>J'ajuste l'orientation de mon potager</h3>
+            <div class="grid">
+              <div class="compass">
+                <div class="potager-final"></div>
+                <div class="drag-rotate"><p class="text-center">N<br><i class="fas fa-sync"></i><br>S</p></div>
+              </div>
+              <div class="bottom-tag">Où est le sud sur votre potager ? <br>(faites tourner la boussolle !)</div>
+            </div>
+            <div class="formulaire">
+              <div class="form">
+                <%= form_tag("/search", method: "get") do %>
+                  <%= label_tag(:q, "Angle :") %>
+                  <%= text_field_tag(:angle) %>
+                  <%= text_field_tag(:longueur, ) %>
+
+                  <%= hidden_field_tag(:largeur) %>
+                  <%= hidden_field_tag(:longueur) %>
+
+                <% end %>
+              </div>
+            </div>
+            <div class="list-inline text-center">
+              <li><a class="continue btn btn-primary" href=#introduction>Retour</a></li>
+              <li><a class="continue btn btn-primary" href=#orientation>Continuer</a></li>
+            </div>
+                      </div>
 
           <div class="orientation" id="orientation">
             <h3>J'ajuste l'orientation de mon potager</h3>
@@ -147,10 +173,14 @@
             <div class="list-inline text-center">
               <li><a class="continue btn btn-primary" href=#orientation>Retour</a></li>
               <li><a class="continue btn btn-primary" href=#gel>Continuer</a></li>
-            </div>
-          </div>
 
-<!-- Gel de la terre -->
+              <h2>Définir mon type de terre</h2>
+            <div>
+              <a class="btn btn-primary" href=#gel>Continuer</a>
+
+            </div>
+                      </div>
+
 
         <div class="gel" id="gel">
             <h3>Est-ce que ma terre gèle ?</h3>
@@ -165,14 +195,17 @@
             <div class="list-inline text-center">
               <li><a class="continue btn btn-primary" href=#terre>Retour</a></li>
               <li><a class="continue btn btn-primary" href=#date-de-debut>Continuer</a></li>
+          <div class="gel" id="gel">
+            <h2>Est-ce que ma terre gèle ?</h2>
+            <div>
+              <a class="btn btn-primary" href=#date-de-debut>Continuer</a>
             </div>
           </div>
 
 <!-- Date de début -->
 
           <div class="date-de-debut" id="date-de-debut">
-
-            <h3>Quand est-ce que je veux démarrer mon potager ?</h3>
+            <h2>Quand est-ce que je veux démarrer mon potager ?</h2>
             <div class="dateselection">
          <form id="date_de_debut">
           <label for="minbeds">Mois de lancement</label>
@@ -194,16 +227,12 @@
 
             </div>
               <div class="bouton-month-selection">
-              <a class="btn btn-primary" href="https://terracognita.herokuapp.com/potagers/2/choices/new" >Continuer</a>
+              <a class="btn btn-primary" href="#" >Continuer</a>
               </div>
-
             </div>
-
           </div>
 
       </div>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
   </body>
 </html>
