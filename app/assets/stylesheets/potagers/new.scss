@@ -280,7 +280,7 @@
   margin: 20px auto;
   background-color: white;
   box-shadow: 1px 1px 1px #666666;
-  height: 100vh;
+  min-height: calc(100vh - 70px);
 }
 
 
@@ -290,7 +290,7 @@
   margin: 20px auto;
   background-color: white;
   box-shadow: 1px 1px 1px #666666;
-  height: 100vh;
+  min-height: calc(100vh - 70px);
 }
 
 .gel {
@@ -299,7 +299,7 @@
   margin: 20px auto;
   background-color: white;
   box-shadow: 1px 1px 1px #666666;
-  height: 100vh;
+  min-height: calc(100vh - 70px);
 }
 
 .date-de-debut {
@@ -308,7 +308,7 @@
   margin: 20px auto;
   background-color: white;
   box-shadow: 1px 1px 1px #666666;
-  height: 100vh;
+  min-height: calc(100vh - 70px);
 }
 
 
@@ -342,8 +342,14 @@
 
 // ----------------------------- Progress bar ------
 .potagers-new {
+  .dimensions .pb-img0 {
+    filter: grayscale(0%);
+  }
+}
+
+.potagers-new {
   .orientation .pb-bg-1 {
-    background-color: #767677;
+    background-color: $blue;
 
   }
 }
@@ -355,7 +361,7 @@
 // --
 .potagers-new {
   .terre .pb-bg-1, .terre .pb-bg-2 {
-    background-color: #767677;
+    background-color: $blue;
 
   }
 }
@@ -367,7 +373,7 @@
 // --
 .potagers-new {
   .gel .pb-bg-1, .gel .pb-bg-2, .gel .pb-bg-3 {
-    background-color: #767677;
+    background-color: $blue;
 
   }
 }
@@ -379,7 +385,7 @@
 // --
 .potagers-new {
   .date-de-debut .pb-bg-1, .date-de-debut .pb-bg-2, .date-de-debut .pb-bg-3, .date-de-debut .pb-bg-4 {
-    background-color: #767677;
+    background-color: $blue;
 
   }
 }
