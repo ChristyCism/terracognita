@@ -60,9 +60,11 @@
             <div>
               <div class="form">
                 <p> </p>
-                <%= form_tag("/search", method: "get") do %>
-                  <%= hidden_field_tag(:largeur) %>
-                  <%= hidden_field_tag(:longueur) %>
+                  <%= label_tag(:q, "Largeur :") %>
+                  <%= text_field_tag(:largeur, ) %>
+                  <%= label_tag(:q, "Longueur :") %>
+
+                  <%= text_field_tag(:longueur) %>
                 <% end %>
               </div>
             </div>
@@ -70,7 +72,35 @@
               <li><a class="continue btn btn-primary" href=#introduction>Retour</a></li>
               <li><a class="continue btn btn-primary" href=#orientation>Continuer</a></li>
             </div>
-          </div>
+                      </div>
+
+          <div class="orientation" id="orientation">
+            <h3>J'ajuste l'orientation de mon potager</h3>
+            <div class="grid">
+              <div class="compass">
+                <div class="potager-final"></div>
+                <div class="drag-rotate"><p class="text-center">N<br><i class="fas fa-sync"></i><br>S</p></div>
+              </div>
+              <div class="bottom-tag">Où est le sud sur votre potager ? <br>(faites tourner la boussolle !)</div>
+            </div>
+            <div class="formulaire">
+              <div class="form">
+                <%= form_tag("/search", method: "get") do %>
+                  <%= label_tag(:q, "Angle :") %>
+                  <%= text_field_tag(:angle) %>
+                  <%= text_field_tag(:longueur, ) %>
+
+                  <%= hidden_field_tag(:largeur) %>
+                  <%= hidden_field_tag(:longueur) %>
+
+                <% end %>
+              </div>
+            </div>
+            <div class="list-inline text-center">
+              <li><a class="continue btn btn-primary" href=#introduction>Retour</a></li>
+              <li><a class="continue btn btn-primary" href=#orientation>Continuer</a></li>
+            </div>
+                      </div>
 
           <div class="orientation" id="orientation">
             <h3>J'ajuste l'orientation de mon potager</h3>
@@ -100,7 +130,7 @@
             <div>
               <a class="btn btn-primary" href=#gel>Continuer</a>
             </div>
-          </div>
+                      </div>
 
           <div class="gel" id="gel">
             <h2>Est-ce que ma terre gèle ?</h2>
