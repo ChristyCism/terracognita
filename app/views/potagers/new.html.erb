@@ -99,50 +99,50 @@
             </div>
           </div>
 
+<!-- Type de terre -->
+
           <div class="terre"  id="terre">
             <h3>Je définis mon type de terre</h3>
 
-<%= simple_form_for @potager do |f| %>
-  <div class="grid">
+              <%= simple_form_for @potager do |f| %>
+                <div class="grid">
 
 
-    <input id="id-argileux" type="radio" value='argileux' name="terre" />
-    <label for="id-argileux" class="tile">
-          <%= cl_image_tag('terracognita/sol_argileux', height: 100) %>
-          <p>Argileux</p>
-    </label>
+                  <input id="id-argileux" type="radio" value='argileux' name="terre" />
+                  <label for="id-argileux" class="tile">
+                        <%= cl_image_tag('terracognita/sol_argileux', height: 100) %>
+                        <p>Argileux</p>
+                  </label>
 
 
-    <input id="id-sableux" type="radio" value='sableux' name="terre" />
-    <label for="id-sableux" class="tile">
-          <%= cl_image_tag('terracognita/sol_sableux', height: 100) %>
-          <p>Sableux</p>
-    </label>
+                  <input id="id-sableux" type="radio" value='sableux' name="terre" />
+                  <label for="id-sableux" class="tile">
+                        <%= cl_image_tag('terracognita/sol_sableux', height: 100) %>
+                        <p>Sableux</p>
+                  </label>
 
 
-    <input id="id-limoneux" type="radio" value='limoneux' name="terre" />
-    <label for="id-limoneux" class="tile">
-          <%= cl_image_tag('terracognita/sol_limoneux', height: 100) %>
-          <p>Limoneux</p>
-    </label>
+                  <input id="id-limoneux" type="radio" value='limoneux' name="terre" />
+                  <label for="id-limoneux" class="tile">
+                        <%= cl_image_tag('terracognita/sol_limoneux', height: 100) %>
+                        <p>Limoneux</p>
+                  </label>
 
 
-    <input id="id-humifere" type="radio" value='humifere' name="terre" />
-    <label for="id-humifere" class="tile">
-          <%= cl_image_tag('terracognita/sol_humifere', height: 100) %>
-          <p>Humifere</p>
-    </label>
+                  <input id="id-humifere" type="radio" value='humifere' name="terre" />
+                  <label for="id-humifere" class="tile">
+                        <%= cl_image_tag('terracognita/sol_humifere', height: 100) %>
+                        <p>Humifere</p>
+                  </label>
 
 
-    <input id="id-calcaire" type="radio" value='calcaire' name="terre" />
-    <label for="id-calcaire" class="tile">
-          <%= cl_image_tag('terracognita/sol_calcaire', height: 100) %>
-          <p>Calcaire</p>
-    </label>
-  </div>
-<% end %>
-
-
+                  <input id="id-calcaire" type="radio" value='calcaire' name="terre" />
+                  <label for="id-calcaire" class="tile">
+                        <%= cl_image_tag('terracognita/sol_calcaire', height: 100) %>
+                        <p>Calcaire</p>
+                  </label>
+                </div>
+              <% end %>
 
             <div class="list-inline text-center">
               <li><a class="continue btn btn-primary" href=#orientation>Retour</a></li>
@@ -150,15 +150,25 @@
             </div>
           </div>
 
-          <div class="gel" id="gel">
+<!-- Gel de la terre -->
+
+        <div class="gel" id="gel">
             <h3>Est-ce que ma terre gèle ?</h3>
-            <p>Oui</p>
-            <p>Non</p>
+
+              <div class="select-gel">
+                <input class="gel-2" type="radio" name="gel" id="no">
+                <label for="no"><i class="far fa-sun"></i>Non</label>
+                <input class="gel-2" type="radio" name="gel" id="yes">
+                <label for="yes">Oui<i class="far fa-snowflake"></i></label>
+              </div>
+
             <div class="list-inline text-center">
               <li><a class="continue btn btn-primary" href=#terre>Retour</a></li>
               <li><a class="continue btn btn-primary" href=#date-de-debut>Continuer</a></li>
             </div>
           </div>
+
+<!-- Date de début -->
 
           <div class="date-de-debut" id="date-de-debut">
 

@@ -1,0 +1,33 @@
+.select-gel {
+  background: linear-gradient(0.25turn, #e01171, #0f0766);
+  display: flex;
+  height: 80px;
+  width: 400px;
+  border-radius: 50px;
+  overflow: hidden;
+  align: center;
+  margin: 50px auto;
+}
+
+.gel-2 {
+  display: none;
+}
+
+.gel-2 + label {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.gel-2:checked + label {
+  background: rgba(0,0,0,0);
+  font-size: 30px;
+}
+
+.select-gel label {
+  color: white;
+}
