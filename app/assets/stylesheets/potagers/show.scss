@@ -1,0 +1,22 @@
+.finalbuttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.final-list {
+  width: 90%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 1.2em;
+  line-height: 26pt;
+  text-align: justify;
+  li {
+    margin-bottom: 10px;
+  }
+  i {
+    color: $green;
+  }
+  }
+.final-connect h2 {
+  text-align: center;
+}
