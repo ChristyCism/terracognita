@@ -18,13 +18,25 @@ class PotagersController < ApplicationController
   end
 
   def show
-    @potager = Potager.last.id
+    @potager = Potager.last
+  end
+
+  def update
+    @potager = Potager.find(params[:id])
+    @vegetables = Vegetable.where("'Mai'=ANY(month_planted)")
+
+    if @potager.update(params_for_potager)
+      #on appelle les méthodes create_parcels et create_parcels_vegetables
+      redirect_to potager_path(@potager)
+    else
+      render 'choices/new'
+    end
   end
 
   private
 
   def params_for_potager
-    params.require(:potager).permit(:length, :width, :freezing, :orientation, :start_month)
+    params.require(:potager).permit(:length, :width, :freezing, :orientation, :start_month, choices_attributes: [:vegetable_id])
   end
 
   # def create_parcel
