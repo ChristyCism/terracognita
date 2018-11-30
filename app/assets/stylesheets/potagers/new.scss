@@ -1,14 +1,5 @@
 /* - - - - - - TERRE SPECIFIC - - - - - - - */
 
-
-// <div class="grid">
-//   <div class="argileux">Argileux</div>
-//   <div class="sableux">Sableux</div>
-//   <div class="limoneux">Limoneux</div>
-//   <div class="humifere">Humifère</div>
-//   <div class="calcaire">Calcaire</div>
-// </div>
-
 .terre .grid {
   display:grid;
   grid-template-columns: 102px 102px 102px 102px 102px;
@@ -95,11 +86,9 @@
 }
 
 .orientation .formulaire p {
-  margin-top: 50px;
 }
 
 .orientation .form {
-  margin: 20px 0;
   display: flex;
   justify-content: center;
 }
@@ -212,7 +201,6 @@
 }
 
 .form {
-  margin: 50px 0;
   display: flex;
   justify-content: center;
 }
