@@ -1,167 +1,14 @@
-/* - - - - - - TERRE SPECIFIC - - - - - - - */
 
-.terre .grid {
-  display:grid;
-  grid-template-columns: 102px 102px 102px 102px 102px;
-  grid-template-rows: 1fr;
-  width: 90%;
-  margin: 0 auto;
-  margin-top: 100px;
-  color: black;
-  justify-content: space-around;
-}
-
-.tile {
-  border: 1px solid transparent;
-}
-
-
-
-.tile p
-{
-  color: grey;
-  justify-content: center;
-  text-align: center;
-  padding-top: 10px;
-}
-
-.tile:hover {
-  color: blue;
-}
-
-.argileux {
-  width: 100px;
-  height: 100px;
-  background-color: #DE4D0C;
-  margin: 0 auto;
-  text-align: center;
-  padding: 35px 0;
-
-}
-.sableux {
-  width: 100px;
-  height: 100px;
-  background-color: #DE4D0C;
-  margin: 0 auto;
-  text-align: center;
-  padding: 35px 0;
-}
-.limoneux {
-  width: 100px;
-  height: 100px;
-  background-color: #DE4D0C;
-  margin: 0 auto;
-  text-align: center;
-  padding: 35px 0;
-}
-.humifere {
-  width: 100px;
-  height: 100px;
-  background-color: #DE4D0C;
-  margin: 0 auto;
-  text-align: center;
-  padding: 35px 0;
-}
-.calcaire {
-  width: 100px;
-  height: 100px;
-  background-color: #DE4D0C;
-  text-align: center;
-  padding: 35px 0;
-  margin: 0 auto;
-}
-
-
-
-/* - - - - - - ORIENTATION SPECIFIC - - - - - - - */
-
-.orientation {
+.introduction {
   padding: 20px;
   width: 90%;
-  margin: auto;
-  margin-top: 0px;
+  margin: 20px auto;
   background-color: white;
   box-shadow: 1px 1px 1px #666666;
-  height: 100vh;
-}
-
-.orientation .formulaire p {
-}
-
-.orientation .form {
-  display: flex;
-  justify-content: center;
-}
-
-.drag-rotate {
-  position:absolute;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  border: 1px dotted white;
-  color: blue;
-  padding: 4%;
-  transform: rotate(0);
-  transform-origin: center center;
-  user-select: none;
-  touch-action: none;
-    p {
-      font-size: 30px;
-      color: white;
-      position: relative;
-      float: left;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-}
-
-.potager-final {
-  position:relative;
-  margin: 0 auto;
-  width: 500px;
-  height: 300px;
-  background-color: #A0733E;
-  border-radius: 8px;
-}
-
-.compass {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 600px;
-  margin: 0 auto;
-  margin-top: 50px;
-}
-
-.orientation .grid {
-  display:grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 4fr 1fr;
-  width: 90%;
-  color: black;
-  margin: auto;
-}
-
-.compass {
-  grid-row: 1 / span 1;
-  grid-column: 1 / 1;
-}
-
-.bottom-tag {
-  text-align: center;
-  grid-row: 2 / span 1;
-  grid-column: 1 / 1;
-}
-
-.icons {
-  display:flex;
-  justify-content:center;
-  align-items: center;
+  min-height: calc(100vh - 70px);
 }
 
 /* - - - - - - DIMENSIONS SPECIFIC - - - - - - - */
-
 
 .dimensions {
   padding: 20px;
@@ -247,27 +94,93 @@
   grid-row: 1 / span 1;
   grid-column: 1 / span 1;
   border-right: 1px solid black;
-
 }
 
+/* - - - - - - ORIENTATION SPECIFIC - - - - - - - */
 
-
-
-
-
-/* - - - - - - REST OF NEW.HTML - - - - - - - */
-
-
-
-.introduction {
+.orientation {
   padding: 20px;
   width: 90%;
-  margin: 20px auto;
+  margin: auto;
+  margin-top: 0px;
   background-color: white;
   box-shadow: 1px 1px 1px #666666;
-  min-height: calc(100vh - 70px);
+  height: 100vh;
 }
 
+.orientation .form {
+  display: flex;
+  justify-content: center;
+}
+
+.drag-rotate {
+  position:absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 1px dotted white;
+  color: blue;
+  padding: 4%;
+  transform: rotate(0);
+  transform-origin: center center;
+  user-select: none;
+  touch-action: none;
+    p {
+      font-size: 30px;
+      color: white;
+      position: relative;
+      float: left;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+}
+
+.potager-final {
+  position:relative;
+  margin: 0 auto;
+  width: 500px;
+  height: 300px;
+  background-color: #A0733E;
+  border-radius: 8px;
+}
+
+.compass {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.orientation .grid {
+  display:grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 4fr 1fr;
+  width: 90%;
+  color: black;
+  margin: auto;
+}
+
+.compass {
+  grid-row: 1 / span 1;
+  grid-column: 1 / 1;
+}
+
+.bottom-tag {
+  text-align: center;
+  grid-row: 2 / span 1;
+  grid-column: 1 / 1;
+}
+
+.icons {
+  display:flex;
+  justify-content:center;
+  align-items: center;
+}
+
+/* - - - - - - TERRE SPECIFIC - - - - - - - */
 
 .terre {
   padding: 20px;
@@ -278,26 +191,6 @@
   min-height: calc(100vh - 70px);
 }
 
-.gel {
-  padding: 20px;
-  width: 90%;
-  margin: 20px auto;
-  background-color: white;
-  box-shadow: 1px 1px 1px #666666;
-  min-height: calc(100vh - 70px);
-}
-
-.date-de-debut {
-  padding: 20px;
-  width: 90%;
-  margin: 20px auto;
-  background-color: white;
-  box-shadow: 1px 1px 1px #666666;
-  min-height: calc(100vh - 70px);
-}
-
-
-/* SELECT TERRE */
 .grid input[type="radio"] {
   display: none;
 
@@ -309,23 +202,115 @@
   animation: shadow-pop-bl 0.3s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
 }
 
-// ----------------------------------------------------Date Selection ----------------------------------
+.terre .grid {
+  display:grid;
+  grid-template-columns: 102px 102px 102px 102px 102px;
+  grid-template-rows: 1fr;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 100px;
+  color: black;
+  justify-content: space-around;
+}
 
+.tile {
+  border: 1px solid transparent;
+}
+
+
+.tile p
+{
+  color: grey;
+  justify-content: center;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.tile:hover {
+  color: blue;
+}
+
+.argileux {
+  width: 100px;
+  height: 100px;
+  background-color: #DE4D0C;
+  margin: 0 auto;
+  text-align: center;
+  padding: 35px 0;
+
+}
+.sableux {
+  width: 100px;
+  height: 100px;
+  background-color: #DE4D0C;
+  margin: 0 auto;
+  text-align: center;
+  padding: 35px 0;
+}
+.limoneux {
+  width: 100px;
+  height: 100px;
+  background-color: #DE4D0C;
+  margin: 0 auto;
+  text-align: center;
+  padding: 35px 0;
+}
+.humifere {
+  width: 100px;
+  height: 100px;
+  background-color: #DE4D0C;
+  margin: 0 auto;
+  text-align: center;
+  padding: 35px 0;
+}
+.calcaire {
+  width: 100px;
+  height: 100px;
+  background-color: #DE4D0C;
+  text-align: center;
+  padding: 35px 0;
+  margin: 0 auto;
+}
+
+
+// - - - - - - GEL - - - - - - - - - - -
+
+
+.gel {
+  padding: 20px;
+  width: 90%;
+  margin: 20px auto;
+  background-color: white;
+  box-shadow: 1px 1px 1px #666666;
+  min-height: calc(100vh - 70px);
+}
+
+
+// - - - - - - DATE DE DEBUT - - - - - - -
+
+.date-de-debut {
+  padding: 20px;
+  width: 90%;
+  margin: 20px auto;
+  background-color: white;
+  box-shadow: 1px 1px 1px #666666;
+  min-height: calc(100vh - 70px);
+}
 
 .dateselection {
-  margin-top: 200px;
+  text-align: center;
   margin-left: 80px;
   width: 80%;
+  margin: 200px auto;
 }
 
-.bouton-month-selection {
-  margin-top: 100px;
-  text-align: center;
-
+#slider {
+  margin-top: 50px;
 }
 
 
-// ----------------------------- Progress bar ------
+// - - - - - - - Progress bar - - - - - -
+
 .potagers-new {
   .introduction .pb-img0 {
     filter: grayscale(100%);

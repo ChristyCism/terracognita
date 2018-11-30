@@ -43,11 +43,6 @@ function getDragAngle(event) {
 
   document.getElementById("angle").value = angle;
 
-  console.log(angle + Math.PI);
-
- // quart de PI = 0.78539816339
-
-
   let anglePlusPi = angle + Math.PI;
 
   if (anglePlusPi >= (0.75 * Math.PI) && anglePlusPi < (1.25 * Math.PI)) {
