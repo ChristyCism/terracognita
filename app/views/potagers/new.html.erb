@@ -8,21 +8,22 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
-    $( function() {
-      var select = $( "#minbeds" );
-      var slider = $( "<div id='slider'></div>" ).insertAfter( select ).slider({
-        min: 1,
-        max: 12,
-        range: "min",
-        value: select[ 0 ].selectedIndex + 1,
-        slide: function( event, ui ) {
-          select[ 0 ].selectedIndex = ui.value - 1;
-        }
+      $( function() {
+        var select = $( "#minbeds" );
+        var slider = $( "<div id='slider'></div>" ).insertAfter( select ).slider({
+          min: 1,
+          max: 12,
+          range: "min",
+          value: select[ 0 ].selectedIndex + 1,
+          slide: function( event, ui ) {
+            select[ 0 ].selectedIndex = ui.value - 1;
+          }
       });
+
       $( "#minbeds" ).on( "change", function() {
-        slider.slider( "value", this.selectedIndex + 1 );
+        slider.slider( "value", select.selectedIndex + 1 );
+        });
       });
-    } );
     </script>
   </head>
   <body>
@@ -90,11 +91,11 @@
             </div>
             <div class="icons">
               <div class="bottom-tag">Depuis ce point de vue </div>
-              <div class="icon-pin">
-              <%= cl_image_tag("terracognita/icon_you_are_here",
-              width: 100) %>
+              <div class="farmer">
+              <%= cl_image_tag("terracognita/farmer",
+              width: 80) %>
               </div>
-              <div class="bottom-tag"> indiquez-nous le sud !</div>
+              <div class="bottom-tag"> j'indique où est le sud !</div>
             </div>
           </div>
 
@@ -197,8 +198,13 @@
               </select>
             </form>
           </div>
-          <div class="bouton-month-selection">
-            <a class="btn btn-primary" href="#" >Continuer</a>
+          <div class="form">
+            <%= form_tag("/search", method: "get") do %>
+              <%= hidden_field_tag(:option) %>
+            <% end %>
+          </div>
+          <div>
+            <a class="btn btn-primary continue" href="#" >Continuer</a>
           </div>
           <%= render 'shared/progressbar' %>
         </div>
