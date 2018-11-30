@@ -94,8 +94,7 @@
           <div class="formulaire">
             <div class="form">
               <%= form_tag("/search", method: "get") do %>
-                <%= label_tag(:q, "Angle :") %>
-                <%= text_field_tag(:angle) %>
+                <%= hidden_field_tag(:angle) %>
               <% end %>
             </div>
           </div>
