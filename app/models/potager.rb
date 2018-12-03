@@ -1,17 +1,15 @@
 class Potager < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, optional: true
   has_many :parcels
   has_many :choices
   has_many :vegetables, through: :choices
-  validates :length, presence: true
-  validates :width, presence: true
+  validates :length, presence: true, :if => :active_or_dimension?
+  validates :width, presence: true, :if => :active_or_dimension?
+  validates :orientation, presence: true, :if => :active_or_orientation?
   # validates :freezing, presence: true
-  validates :orientation, presence: true
-  validates :start_month, presence: true
+  validates :start_month, presence: true, :if => :active_or_start_month?
 
   accepts_nested_attributes_for :choices
-
-  after_create :create_parcels
 
   def create_parcels
     number = ['a', 'c'].include?(orientation) ? length : width
@@ -22,6 +20,22 @@ class Potager < ApplicationRecord
       )
     end
     return number
+  end
+
+  def active?
+  status == 'active'
+  end
+
+  def active_or_dimension?
+    status.include?('def_dimension') || active?
+  end
+
+  def active_or_orientation?
+    status.include?('def_orientation') || active?
+  end
+
+  def active_or_start_month?
+    status.include?('def_start_month') || active?
   end
 
 

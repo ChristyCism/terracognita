@@ -1,0 +1,33 @@
+<div class="orientation" id="orientation">
+          <h3>J'ajuste l'orientation de mon potager</h3>
+
+          <div class="grid">
+            <div class="compass">
+              <div class="potager-final"></div>
+              <div class="drag-rotate"><p class="text-center">N<br><i class="fas fa-sync"></i><br>S</p></div>
+            </div>
+            <div class="icons">
+              <div class="bottom-tag">Depuis ce point de vue </div>
+              <div class="farmer">
+              <%= cl_image_tag("terracognita/farmer",
+              width: 80) %>
+              </div>
+              <div class="bottom-tag"> j'indique où est le sud !</div>
+            </div>
+          </div>
+
+          <div class="formulaire">
+            <div class="form">
+              <%= form_for @potager, url: wizard_path, method: :put do |f| %>
+              <%= f.hidden_field :orientation %><br />
+              <%= f.submit "Continuer" %>
+              <% end %>
+            </div>
+          </div>
+
+          <div class="list-inline text-center">
+            <li><a class="continue btn btn-primary" href=#dimensions>Retour</a></li>
+            <li><a class="continue btn btn-primary" href=#terre>Continuer</a></li>
+          </div>
+          <%= render 'shared/progressbar' %>
+        </div>
