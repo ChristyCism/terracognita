@@ -24,7 +24,7 @@
     <%= form_for @potager, url: wizard_path, method: :put do |f| %>
     <%= f.hidden_field :width, id: "width" %><br />
     <%= f.hidden_field :length, id: "length" %><br />
-    <%= f.submit "Continuer" %>
+    <%= f.submit "Continuer", class: "continue btn btn-primary" %>
     <% end %>
   </div>
 
