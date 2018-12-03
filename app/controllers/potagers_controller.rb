@@ -22,8 +22,8 @@ class PotagersController < ApplicationController
   end
 
   def update
+    puts "Je suis dans update potager"
     @potager = Potager.find(params[:id])
-    @vegetables = Vegetable.where("'Mai'=ANY(month_planted)")
 
     if @potager.update(params_for_potager)
       #on appelle les méthodes create_parcels et create_parcels_vegetables
