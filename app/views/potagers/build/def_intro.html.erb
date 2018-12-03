@@ -1,19 +1,23 @@
-<div class="introduction">
-            <h1>Fabrication du potager</h1>
-            <p>Sur cette page nous vous demander quelques renseignements permettant de mieux affiner l'organisation de votre potager que nous allons vous suggérer.</p>
-            <p>Les prochaines étapes s'intéressent :</p>
-            <ol>
-              <li>aux dimensions de votre potager</li>
-              <li>à son orientation</li>
-              <li>à votre terre</li>
-              <li>à la température la plus basse de cette dernière</li>
-              <li>à la date à laquelle vous souhaitez démarrer !</li>
-            </ol>
-            <div>
-              <%= form_for @potager, url: wizard_path, method: :put do |f| %>
+<div class="wrapper">
+  <div class="container">
+    <div class="introduction">
+                <h1>Fabrication du potager</h1>
+                <p>Sur cette page nous vous demander quelques renseignements permettant de mieux affiner l'organisation de votre potager que nous allons vous suggérer.</p>
+                <p>Les prochaines étapes s'intéressent :</p>
+                <ol>
+                  <li>aux dimensions de votre potager</li>
+                  <li>à son orientation</li>
+                  <li>à votre terre</li>
+                  <li>à la température la plus basse de cette dernière</li>
+                  <li>à la date à laquelle vous souhaitez démarrer !</li>
+                </ol>
+                <div>
+                  <%= form_for @potager, url: wizard_path, method: :put do |f| %>
 
-              <%= f.submit "Je commence" %>
-              <% end %>
-            </div>
-            <%= render 'shared/progressbar' %>
+                  <%= f.submit "Je commence" %>
+                  <% end %>
+                </div>
+                <%= render 'shared/progressbar' %>
+    </div>
+  </div>
 </div>

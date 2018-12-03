@@ -1,4 +1,8 @@
-<div class="dimensions" id="dimensions">
+
+
+<div class="wrapper">
+  <div class="container">
+    <div class="dimensions" id="dimensions">
   <h3>Je définis les dimensions de mon potager</h3>
   <div class="grid">
     <p class="longueur">Longueur</p>
@@ -16,9 +20,9 @@
 
 
     <%= form_for @potager, url: wizard_path, method: :put do |f| %>
-    <%= f.hidden_field :width %><br />
-    <%= f.hidden_field :length %><br />
-    <%= f.submit "Continuer" %>
+      <%= f.hidden_field :width %><br />
+      <%= f.hidden_field :length %><br />
+      <%= f.submit "Continuer" %>
     <% end %>
   </div>
 
@@ -27,4 +31,6 @@
     <li><a class="continue btn btn-primary" href=#orientation>Continuer</a></li>
   </div> -->
   <%= render 'shared/progressbar' %>
+</div>
+</div>
 </div>
