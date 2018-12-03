@@ -1,0 +1,6 @@
+# config/meta.yml
+
+meta_product_name: "TerraCognita"
+meta_title: "TerraCognita - Concevoir un potager durable et productif simplement"
+meta_description: "TerraCognita est un outil qui vous permet d'organiser votre potager pour qu'il soit résilient et productif de lui-même."
+meta_image: "garden.jpg"                       # should exist in `app/assets/images/`
