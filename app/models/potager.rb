@@ -5,7 +5,7 @@ class Potager < ApplicationRecord
   has_many :vegetables, through: :choices
   validates :length, presence: true
   validates :width, presence: true
-  # validates :freezing, presence: true
+  validates :freezing, inclusion: { in: [true, false] }
   validates :orientation, presence: true
   validates :start_month, presence: true
 
@@ -14,15 +14,14 @@ class Potager < ApplicationRecord
   after_create :create_parcels
 
   def create_parcels
-    number = ['a', 'c'].include?(orientation) ? length : width
-    number.times do |i|
+    number_of_parcels = ['a', 'c'].include?(orientation) ? length : width
+    parcel_size = ['a', 'c'].include?(orientation) ? width : length
+    number_of_parcels.times do |i|
       Parcel.create(
         order_from_south: i + 1,
-        potager: self
+        potager: self,
+        size: parcel_size
       )
     end
-    return number
   end
-
-
 end
