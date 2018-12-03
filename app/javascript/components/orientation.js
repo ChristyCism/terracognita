@@ -41,7 +41,7 @@ function getDragAngle(event) {
   var angle = Math.atan2(center.y - event.clientY,
                          center.x - event.clientX);
 
-  document.getElementById("angle").value = angle;
+  document.getElementById("rotation").value = angle;
 
   let anglePlusPi = angle + Math.PI;
 

@@ -51,13 +51,7 @@ interact('.item-draggable')
     target.textContent = Math.round(event.rect.width / 30) + "m" + ' x ' + Math.round(event.rect.height / 30) + "m" ;
 
 
-    document.getElementById("largeur").value = castPixelsToMeters(target.style.width);
-    document.getElementById("longueur").value = castPixelsToMeters(target.style.height);
+    document.getElementById("width").value = castPixelsToMeters(target.style.width);
+    document.getElementById("length").value = castPixelsToMeters(target.style.height);
 
   });
-
-
-
-
-
-
