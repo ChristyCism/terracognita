@@ -1,11 +1,12 @@
 <div class="wrapper">
   <div class="container">
+
       <div class="gel" id="gel">
          <h3>Est-ce que ma terre gèle ?</h3>
          <div class="select-gel">
-             <input class="gel-2" type="radio" name="gel" id="no">
+             <input class="gel-2" type="radio" name="potager[freezing]" id="no">
              <label for="no"><i class="far fa-sun"></i>Non</label>
-             <input class="gel-2" type="radio" name="gel" id="yes">
+             <input class="gel-2" type="radio" name="potager[freezing]" id="yes">
              <label for="yes">Oui<i class="far fa-snowflake"></i></label>
          </div>
 
@@ -14,5 +15,6 @@
          <% end %>
          <%= render 'shared/progressbar' %>
        </div>
-     </div>
-     </div>
+  </div>
+</div>
+

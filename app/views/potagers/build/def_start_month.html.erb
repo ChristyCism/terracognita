@@ -23,9 +23,6 @@
       $( "#minbeds" ).on( "change", function() {
         slider.slider( "value", this.selectedIndex + 1 );
         });
-        var e = document.getElementById("minbeds");
-        var month = e.options[e.selectedIndex].text;
-        document.getElementById("start_month").value = month
       });
 
     </script>
@@ -35,34 +32,27 @@
       <div class="container">
         <div class="date-de-debut" id="date-de-debut">
          <h2>Quand est-ce que je veux démarrer mon potager ?</h2>
-         <div class="dateselection">
-           <form id="date_de_debut">
-             <label for="minbeds">Mois de lancement</label>
-             <select name="minbeds" id="minbeds">
-               <option value="1">Janvier</option>
-               <option value="2">Février</option>
-               <option value="3">Mars</option>
-               <option value="4">Avril</option>
-               <option value="5">Mai</option>
-               <option value="6">Juin</option>
-               <option value="7">Juillet</option>
-               <option value="8">Août</option>
-               <option value="9">Septembre</option>
-               <option value="10">Octobre</option>
-               <option value="11">Novembre</option>
-               <option value="12">Décembre</option>
-             </select>
-           </form>
-         </div>
+         
          <div class="form">
            <%= form_for @potager, url: wizard_path, method: :put do |f| %>
-           <%= f.hidden_field :start_month %><br />
-           <%= f.submit "Continuer" %>
+            <%= f.hidden_field :start_month %><br />
+            <label for="minbeds">Mois de lancement</label>
+            <select name="potager[start_month]" id="minbeds">
+              <option>Janvier</option>
+              <option>Février</option>
+              <option>Mars</option>
+              <option>Avril</option>
+              <option>Mai</option>
+              <option>Juin</option>
+              <option>Juillet</option>
+              <option>Août</option>
+              <option>Septembre</option>
+              <option>Octobre</option>
+              <option>Novembre</option>
+              <option>Décembre</option>
+            </select>
+            <%= f.submit "Continuer", class: 'btn btn-primary continue' %>
            <% end %>
-         </div>
-         <div>
-           <!--- ATTENTION FAUX LIEN ----->
-           <a href="/potagers/2/choices/new", class="btn btn-primary continue">Continuer</a>
          </div>
          <%= render 'shared/progressbar' %>
        </div>

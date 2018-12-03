@@ -32,7 +32,7 @@ def params_set
 end
 
 def finish_wizard_path
-  choices_new_path
+  new_potager_choice_path
 end
 
 end
