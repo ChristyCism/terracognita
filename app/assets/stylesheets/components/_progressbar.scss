@@ -1,4 +1,5 @@
 .progressbar {
+  margin-top: 30px !important;
   margin: 0 auto;
   height: 60px;
   display: flex;
@@ -14,21 +15,26 @@
     position: relative;
   }
 
-.pb-bg-1 {
-    border-top-left-radius: 25px;
-    border-bottom-left-radius: 25px;
-  }
-.pb-bg-6 {
-    border-top-right-radius: 25px;
-    border-bottom-right-radius: 25px;
+
+
+.pb-bg-4 .pb-image, .pb-bg-5 .pb-image, {
+    bottom: -20px;
   }
 
 .pb-image {
   z-index: 2;
   position: absolute;
-  right: -17px;
-  bottom: -10px;
+  right: -22px;
+  bottom: -15px;
   filter: grayscale(100%);
+}
+
+.pb-img0 {
+  z-index: 2;
+  position: absolute;
+  left: -30px;
+  bottom: -18px ;
+
 }
 
 

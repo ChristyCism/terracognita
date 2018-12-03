@@ -1,3 +1,12 @@
+.final-connect {
+  padding: 20px;
+  width: 90%;
+  margin: auto;
+  margin-top: 0px;
+  background-color: white;
+  box-shadow: 1px 1px 1px #666666;
+  min-height: calc(100vh - 70px);
+}
 .finalbuttons {
   display: flex;
   align-items: center;
@@ -19,4 +28,17 @@
   }
 .final-connect h2 {
   text-align: center;
+}
+
+// ----------------------------- Progress bar ------
+.potagers-show {
+  .final-connect .pb-bg-1, .final-connect .pb-bg-2, .final-connect .pb-bg-3, .final-connect .pb-bg-4, .final-connect .pb-bg-5, .final-connect .pb-bg-6 {
+    background-color: $blue;
+
+  }
+}
+.potagers-show {
+  .final-connect .pb-bg-1 .pb-image, .final-connect .pb-bg-2 .pb-image, .final-connect .pb-bg-3 .pb-image, .final-connect .pb-bg-4 .pb-image, .final-connect .pb-bg-5 .pb-image, .final-connect .pb-bg-6 .pb-image {
+    filter: grayscale(0%);
+  }
 }

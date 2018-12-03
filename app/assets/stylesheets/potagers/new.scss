@@ -1,86 +1,100 @@
-/* - - - - - - TERRE SPECIFIC - - - - - - - */
 
-
-// <div class="grid">
-//   <div class="argileux">Argileux</div>
-//   <div class="sableux">Sableux</div>
-//   <div class="limoneux">Limoneux</div>
-//   <div class="humifere">Humifère</div>
-//   <div class="calcaire">Calcaire</div>
-// </div>
-
-.terre .grid {
-  display:grid;
-  grid-template-columns: 102px 102px 102px 102px 102px;
-  grid-template-rows: 1fr;
+.introduction {
+  padding: 20px;
   width: 90%;
-  margin: 0 auto;
-  margin-top: 100px;
-  color: black;
-  justify-content: space-around;
+  margin: 20px auto;
+  background-color: white;
+  box-shadow: 1px 1px 1px #666666;
+  min-height: calc(100vh - 70px);
 }
 
-.tile {
-  border: 1px solid transparent;
+/* - - - - - - DIMENSIONS SPECIFIC - - - - - - - */
+
+.dimensions {
+  padding: 20px;
+  width: 90%;
+  margin: 20px auto;
+  background-color: white;
+  box-shadow: 1px 1px 1px #666666;
+  height: 100vh;
 }
 
+#parent {
+  display: inline-block;
+  width: 100%;
+  height: 50vh;
 
+  .item-draggable{
+    background-color: #A0733E;
+    color: white;
+    font-size: 20px;
+    font-family: sans-serif;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 0;
+    touch-action: none;
+    position: relative;
+    top: 190px;
+    left:10px;
+    width: 100px;
+    height: 100px;
 
-.tile p
-{
-  color: grey;
+    /* This makes things *much* easier */
+    box-sizing: border-box;
+  }
+}
+
+.form {
+  display: flex;
   justify-content: center;
-  text-align: center;
-  padding-top: 10px;
 }
 
-.tile:hover {
-  color: blue;
+.continue {
+  width: 150px;
+  margin: 50px auto;
+  display:flex;
+  justify-content:center;
+  background-color: #59A37A;
+  border: 0px;
 }
 
-.argileux {
-  width: 100px;
-  height: 100px;
-  background-color: #DE4D0C;
-  margin: 0 auto;
+.default-sizes {
+  font-size: 20px;
   text-align: center;
-  padding: 35px 0;
-
-}
-.sableux {
-  width: 100px;
-  height: 100px;
-  background-color: #DE4D0C;
-  margin: 0 auto;
-  text-align: center;
-  padding: 35px 0;
-}
-.limoneux {
-  width: 100px;
-  height: 100px;
-  background-color: #DE4D0C;
-  margin: 0 auto;
-  text-align: center;
-  padding: 35px 0;
-}
-.humifere {
-  width: 100px;
-  height: 100px;
-  background-color: #DE4D0C;
-  margin: 0 auto;
-  text-align: center;
-  padding: 35px 0;
-}
-.calcaire {
-  width: 100px;
-  height: 100px;
-  background-color: #DE4D0C;
-  text-align: center;
-  padding: 35px 0;
-  margin: 0 auto;
+  padding: auto 0;
 }
 
+.dimensions .grid {
+  display: grid;
+  grid-template-columns: 1fr 7fr;
+  grid-template-rows: 300px 50px;
+  width: 90%;
+  height: auto;
+}
 
+#potager {
+  grid-row: 1 / span 1;
+  grid-column: 2 / span 1;
+}
+
+.largeur {
+  font-weight: bold;
+  grid-row: 2 / span 1;
+  grid-column: 2 / span 1;
+  margin-left: 10px;
+  text-align: center;
+  border-top: 1px solid black;
+}
+
+.longueur {
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-row: 1 / span 1;
+  grid-column: 1 / span 1;
+  border-right: 1px solid black;
+}
 
 /* - - - - - - ORIENTATION SPECIFIC - - - - - - - */
 
@@ -91,15 +105,10 @@
   margin-top: 0px;
   background-color: white;
   box-shadow: 1px 1px 1px #666666;
-  height: 100vh;
-}
-
-.orientation .formulaire p {
-  margin-top: 50px;
+  min-height: 100vh;
 }
 
 .orientation .form {
-  margin: 20px 0;
   display: flex;
   justify-content: center;
 }
@@ -160,129 +169,18 @@
 }
 
 .bottom-tag {
-  padding-top: 20px;
   text-align: center;
   grid-row: 2 / span 1;
   grid-column: 1 / 1;
 }
 
-
-
-// #potager {
-//   grid-row: 1 / span 1;
-//   grid-column: 2 / span 1;
-// }
-
-
-/* - - - - - - DIMENSIONS SPECIFIC - - - - - - - */
-
-
-.dimensions {
-  padding: 20px;
-  width: 90%;
-  margin: 20px auto;
-  background-color: white;
-  box-shadow: 1px 1px 1px #666666;
-  height: 100vh;
-}
-
-#parent {
-  display: inline-block;
-  width: 100%;
-  height: 50vh;
-
-  .item-draggable{
-    background-color: #A0733E;
-    color: white;
-    font-size: 20px;
-    font-family: sans-serif;
-    border-radius: 8px;
-    padding: 10px;
-    margin: 0;
-    touch-action: none;
-    position: relative;
-    top: 190px;
-    left:10px;
-    width: 100px;
-    height: 100px;
-
-    /* This makes things *much* easier */
-    box-sizing: border-box;
-  }
-}
-
-.form {
-  margin: 50px 0;
-  display: flex;
-  justify-content: center;
-}
-
-.continue {
-  width: 150px;
-  margin: 50px auto;
+.icons {
   display:flex;
   justify-content:center;
-  background-color: #59A37A;
-  border: 0px;
-}
-
-.default-sizes {
-  font-size: 20px;
-  text-align: center;
-  padding: auto 0;
-}
-
-.dimensions .grid {
-  display: grid;
-  grid-template-columns: 1fr 7fr;
-  grid-template-rows: 300px 50px;
-  width: 90%;
-  height: auto;
-}
-
-#potager {
-  grid-row: 1 / span 1;
-  grid-column: 2 / span 1;
-}
-
-.largeur {
-  font-weight: bold;
-  grid-row: 2 / span 1;
-  grid-column: 2 / span 1;
-  margin-left: 10px;
-  text-align: center;
-  border-top: 1px solid black;
-}
-
-.longueur {
-  font-weight: bold;
-  display: flex;
   align-items: center;
-  justify-content: center;
-  grid-row: 1 / span 1;
-  grid-column: 1 / span 1;
-  border-right: 1px solid black;
-
 }
 
-
-
-
-
-
-/* - - - - - - REST OF NEW.HTML - - - - - - - */
-
-
-
-.introduction {
-  padding: 20px;
-  width: 90%;
-  margin: 20px auto;
-  background-color: white;
-  box-shadow: 1px 1px 1px #666666;
-  height: 100vh;
-}
-
+/* - - - - - - TERRE SPECIFIC - - - - - - - */
 
 .terre {
   padding: 20px;
@@ -290,29 +188,9 @@
   margin: 20px auto;
   background-color: white;
   box-shadow: 1px 1px 1px #666666;
-  height: 100vh;
+  min-height: 100vh;
 }
 
-.gel {
-  padding: 20px;
-  width: 90%;
-  margin: 20px auto;
-  background-color: white;
-  box-shadow: 1px 1px 1px #666666;
-  height: 100vh;
-}
-
-.date-de-debut {
-  padding: 20px;
-  width: 90%;
-  margin: 20px auto;
-  background-color: white;
-  box-shadow: 1px 1px 1px #666666;
-  height: 100vh;
-}
-
-
-/* SELECT TERRE */
 .grid input[type="radio"] {
   display: none;
 
@@ -324,26 +202,124 @@
   animation: shadow-pop-bl 0.3s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
 }
 
-// ----------------------------------------------------Date Selection ----------------------------------
+.terre .grid {
+  display:grid;
+  grid-template-columns: 102px 102px 102px 102px 102px;
+  grid-template-rows: 1fr;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 100px;
+  color: black;
+  justify-content: space-around;
+}
 
+.tile {
+  border: 1px solid transparent;
+}
+
+
+.tile p
+{
+  color: grey;
+  justify-content: center;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.tile:hover {
+  color: blue;
+}
+
+.argileux {
+  width: 100px;
+  height: 100px;
+  background-color: #DE4D0C;
+  margin: 0 auto;
+  text-align: center;
+  padding: 35px 0;
+
+}
+.sableux {
+  width: 100px;
+  height: 100px;
+  background-color: #DE4D0C;
+  margin: 0 auto;
+  text-align: center;
+  padding: 35px 0;
+}
+.limoneux {
+  width: 100px;
+  height: 100px;
+  background-color: #DE4D0C;
+  margin: 0 auto;
+  text-align: center;
+  padding: 35px 0;
+}
+.humifere {
+  width: 100px;
+  height: 100px;
+  background-color: #DE4D0C;
+  margin: 0 auto;
+  text-align: center;
+  padding: 35px 0;
+}
+.calcaire {
+  width: 100px;
+  height: 100px;
+  background-color: #DE4D0C;
+  text-align: center;
+  padding: 35px 0;
+  margin: 0 auto;
+}
+
+
+// - - - - - - GEL - - - - - - - - - - -
+
+
+.gel {
+  padding: 20px;
+  width: 90%;
+  margin: 20px auto;
+  background-color: white;
+  box-shadow: 1px 1px 1px #666666;
+  min-height: 100vh;
+}
+
+
+// - - - - - - DATE DE DEBUT - - - - - - -
+
+.date-de-debut {
+  padding: 20px;
+  width: 90%;
+  margin: 20px auto;
+  background-color: white;
+  box-shadow: 1px 1px 1px #666666;
+  min-height: 100vh;
+}
 
 .dateselection {
-  margin-top: 200px;
+  text-align: center;
   margin-left: 80px;
   width: 80%;
+  margin: 200px auto;
 }
 
-.bouton-month-selection {
-  margin-top: 100px;
-  text-align: center;
-
+#slider {
+  margin-top: 50px;
 }
 
 
-// ----------------------------- Progress bar ------
+// - - - - - - - Progress bar - - - - - -
+
+.potagers-new {
+  .introduction .pb-img0 {
+    filter: grayscale(100%);
+  }
+}
+
 .potagers-new {
   .orientation .pb-bg-1 {
-    background-color: #767677;
+    background-color: $blue;
 
   }
 }
@@ -355,7 +331,7 @@
 // --
 .potagers-new {
   .terre .pb-bg-1, .terre .pb-bg-2 {
-    background-color: #767677;
+    background-color: $blue;
 
   }
 }
@@ -367,7 +343,7 @@
 // --
 .potagers-new {
   .gel .pb-bg-1, .gel .pb-bg-2, .gel .pb-bg-3 {
-    background-color: #767677;
+    background-color: $blue;
 
   }
 }
@@ -379,7 +355,7 @@
 // --
 .potagers-new {
   .date-de-debut .pb-bg-1, .date-de-debut .pb-bg-2, .date-de-debut .pb-bg-3, .date-de-debut .pb-bg-4 {
-    background-color: #767677;
+    background-color: $blue;
 
   }
 }

@@ -1,0 +1,59 @@
+.signinform {
+  padding: 20px;
+  position: relative;
+  width: 70vh;
+  margin: auto;
+  padding: 0px;
+  margin-top: 60px;
+  background-color: white;
+  box-shadow: 1px 1px 1px #666666;
+  min-height: 80vh;
+  .form-group {
+    margin: auto;
+    margin-top: 30px;
+    width: 60%;
+    display: flex;
+    align-items: center;
+  }
+  .form-control-label {
+    width: 220px;
+  }
+  .form-check label{
+    font-weight: normal;
+    font-size: 0.8em;
+    padding-left: 10px;
+  }
+  .form-check {
+    margin-top: 0px;
+  }
+  .form-actions {
+    text-align: center;
+    display: block;
+  }
+}
+
+.signup-banner {
+  height: 150px !important;
+  margin-bottom: 80px;
+
+}
+.signup-links {
+  width: 400px;
+  margin: auto;
+  padding-left: 180px;
+  margin-bottom: 30px;
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+.signup-links .password a {
+  font-size: 0.8em;
+}
+
+.subscription {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+}
+

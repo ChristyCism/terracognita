@@ -1,10 +1,20 @@
+.vegetables-choices {
+  padding: 20px;
+  width: 90%;
+  margin: auto;
+  margin-top: 0px;
+  background-color: white;
+  box-shadow: 1px 1px 1px #666666;
+  min-height: calc(100vh - 70px);
+}
+
 .couple-nom-photo {
   display: block !important;
   text-align: center;
   align-items: center;
-  padding-bottom: 50px;
-  width: 250px;
-  height: 200px;
+  padding-bottom: 35px;
+  width: 230px;
+  height: 180px;
   .veg-name {
     padding-top: 10px;
   }
@@ -117,5 +127,18 @@
     box-shadow: -1px 1px $blue, -2px 2px $blue, -3px 3px $blue, -4px 4px $blue, -5px 5px $blue, -6px 6px $blue, -7px 7px $blue, -8px 8px $blue;
     -webkit-transform: translateX(8px) translateY(-8px);
             transform: translateX(8px) translateY(-8px);
+  }
+}
+
+// ----------------------------- Progress bar ------
+.choices-new {
+  .vegetables-choices .pb-bg-1, .vegetables-choices .pb-bg-2, .vegetables-choices .pb-bg-3, .vegetables-choices .pb-bg-4, .vegetables-choices .pb-bg-5 {
+    background-color: $blue;
+
+  }
+}
+.choices-new {
+  .vegetables-choices .pb-bg-1 .pb-image, .vegetables-choices .pb-bg-2 .pb-image, .vegetables-choices .pb-bg-3 .pb-image, .vegetables-choices .pb-bg-4 .pb-image, .vegetables-choices .pb-bg-5 .pb-image {
+    filter: grayscale(0%);
   }
 }

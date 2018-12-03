@@ -1,12 +1,23 @@
 .select-gel {
-  background: linear-gradient(0.25turn, #e01171, #0f0766);
+  border: 1px solid lightgray;
   display: flex;
   height: 80px;
   width: 400px;
   border-radius: 50px;
   overflow: hidden;
   align: center;
-  margin: 50px auto;
+  margin: 150px auto;
+  font-size: 30px;
+}
+
+.fa-snowflake {
+  color: #99eaff;
+  font-size: 30px;
+}
+
+.fa-sun {
+  color: #EEA946;
+  font-size: 30px;
 }
 
 .gel-2 {
@@ -24,10 +35,15 @@
 }
 
 .gel-2:checked + label {
-  background: rgba(0,0,0,0);
-  font-size: 30px;
+  font-size: 45px;
+  color: $blue;
 }
 
 .select-gel label {
-  color: white;
+  color: lightgray;
+  background-color: white;
+}
+
+#gel > div.select-gel > label:nth-child(2) {
+  border-right: 1px solid lightgray;
 }
