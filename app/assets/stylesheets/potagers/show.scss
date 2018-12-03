@@ -1,3 +1,5 @@
+// ----------------------------- Toute la page ------
+
 .final-connect {
   padding: 20px;
   width: 90%;
@@ -7,12 +9,21 @@
   box-shadow: 1px 1px 1px #666666;
   min-height: calc(100vh - 70px);
 }
-.finalbuttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+
+// ----------------------------- Partie haute : modélisation ------
+
+.modelisation h1 {
+  text-align: center;
 }
-.final-list {
+
+// ----------------------------- Partie basse : création d'un compte ------
+
+.compte {
+  text-align: center;
+}
+
+.compte-list {
   width: 90%;
   margin-top: 30px;
   margin-bottom: 30px;
@@ -26,11 +37,10 @@
     color: $green;
   }
   }
-.final-connect h2 {
-  text-align: center;
-}
+
 
 // ----------------------------- Progress bar ------
+
 .potagers-show {
   .final-connect .pb-bg-1, .final-connect .pb-bg-2, .final-connect .pb-bg-3, .final-connect .pb-bg-4, .final-connect .pb-bg-5, .final-connect .pb-bg-6 {
     background-color: $blue;

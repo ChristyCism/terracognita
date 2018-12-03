@@ -23,9 +23,6 @@
       $( "#minbeds" ).on( "change", function() {
         slider.slider( "value", this.selectedIndex + 1 );
         });
-        var e = document.getElementById("minbeds");
-        var month = e.options[e.selectedIndex].text;
-        document.getElementById("start_month").value = month
       });
 
     </script>
@@ -35,11 +32,7 @@
       <div class="container">
         <div class="date-de-debut" id="date-de-debut">
          <h2>Quand est-ce que je veux démarrer mon potager ?</h2>
-         <div class="dateselection">
-           <form id="date_de_debut">
-
-           </form>
-         </div>
+         
          <div class="form">
            <%= form_for @potager, url: wizard_path, method: :put do |f| %>
             <%= f.hidden_field :start_month %><br />

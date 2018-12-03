@@ -5,8 +5,8 @@ class Potager < ApplicationRecord
   has_many :vegetables, through: :choices
 
   validates :length, presence: true, :if => :active_or_dimension?
-  validates :width, presence: true, , :if => :active_or_dimension?
-  validates :freezing, inclusion: { in: [true, false] }
+  validates :width, presence: true, :if => :active_or_dimension?
+  # validates :freezing, inclusion: { in: [true, false] }
   validates :orientation, presence: true, :if => :active_or_orientation?
   validates :start_month, presence: true, :if => :active_or_start_month?
 

@@ -43,6 +43,7 @@ function getDragAngle(event) {
 
   document.getElementById("potager_orientation").value = angle;
 
+
   let anglePlusPi = angle + Math.PI;
 
   if (anglePlusPi >= (0.75 * Math.PI) && anglePlusPi < (1.25 * Math.PI)) {
