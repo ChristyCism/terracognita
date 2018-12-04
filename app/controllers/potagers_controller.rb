@@ -16,7 +16,6 @@ class PotagersController < ApplicationController
       p "error"
     end
     create_parcels
-    create_vegetables_parcels
   end
 
   def show
@@ -24,8 +23,10 @@ class PotagersController < ApplicationController
   end
 
   def update
+
     puts "Je suis dans update potager"
     @potager = Potager.find(params[:id])
+    @potager.create_vegetables_parcels
 
     if @potager.update(params_for_potager)
       #on appelle les méthodes create_parcels et create_parcels_vegetables
