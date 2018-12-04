@@ -23,13 +23,10 @@ class PotagersController < ApplicationController
   end
 
   def update
-
-    puts "Je suis dans update potager"
     @potager = Potager.find(params[:id])
     @potager.create_vegetables_parcels
 
     if @potager.update(params_for_potager)
-      #on appelle les méthodes create_parcels et create_parcels_vegetables
       redirect_to potager_path(@potager)
     else
       render 'choices/new'
