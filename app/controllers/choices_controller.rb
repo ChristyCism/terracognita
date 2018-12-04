@@ -6,5 +6,4 @@ class ChoicesController < ApplicationController
     @month = @potager.start_month
     @vegetables = Vegetable.where("?=ANY(month_planted)", @month)
   end
-
 end
