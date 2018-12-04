@@ -39,10 +39,6 @@ class Potager < ApplicationRecord
     # en leur attribuant un vegetable_id (grace a l'index de la combinaison)
 
     # on save nos vegetables_parcels
-
-    number_of_parcels.each do |order_from_south|
-      parcel.parcel_id.order_from_south << ordered_solutions[order_from_south]
-    end
   end
 
   # LIST OF COMBINATIONS
