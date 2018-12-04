@@ -11,7 +11,9 @@
          </div>
 
          <%= form_for @potager, url: wizard_path, method: :put do |f| %>
-         <%= f.submit "Continuer", class: "continue btn btn-primary" %>
+         <button type="submit" class="nav-arrow">
+            <i class="fas fa-angle-right"></i>
+        </button>
          <% end %>
          <%= render 'shared/progressbar' %>
        </div>
