@@ -24,14 +24,14 @@
             <div class="form">
               <%= form_for @potager, url: wizard_path, method: :put do |f| %>
               <%= f.hidden_field :orientation %><br />
-              <%= f.submit "Continuer" %>
+
+              <%= f.submit "Continuer", class: "continue btn btn-primary" %>
               <% end %>
             </div>
           </div>
 
           <div class="list-inline text-center">
             <li><a class="continue btn btn-primary" href=#dimensions>Retour</a></li>
-            <li><a class="continue btn btn-primary" href=#terre>Continuer</a></li>
           </div>
           <%= render 'shared/progressbar' %>
         </div>
