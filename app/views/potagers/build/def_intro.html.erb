@@ -1,17 +1,53 @@
 <div class="wrapper">
   <div class="container">
 
-<div class="introduction">
-  <h2>Pour concevoir votre potager, assurez-vous de connaître :</h2>
-    <ol>
-      <li>les dimensions de votre potager</li>
-      <li>son orientation (N/S)</li>
-      <li>votre type de terre (argileux, sableux, limoneux, humifère ou calcaire)</li>
-    </ol>
-  <h2>Planifiez votre démarrage</h2>
-  <p>Nos propositions tiendront compte de votre agenda ! Afin de mettre en route votre potager avec nos conseils, réfléchissez en amont au mois idéal pour vous lancer.</p>
-  <div>
-    <%= form_for @potager, url: wizard_path, method: :put do |f| %>
+    <div class="introduction">
+      <h1>Avant de commencer ...</h1>
+      <h2>je m'assure de connaître</h2>
+      <div class="row intro">
+        <div class="col-xs-12 col-sm-6">
+          <div class="introknow">
+          les <strong>dimensions</strong> de mon potager
+
+            <div class="intro-image">
+            <%= cl_image_tag("terracognita/ruler",
+                  width: 50) %>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6">
+          <div class="introknow">
+            l'<strong>orientation</strong> de mon potager <br> <span class="intro-span">(Nord / Sud)</span>
+            <div class="intro-image">
+              <%= cl_image_tag("terracognita/compass",
+              width: 50) %>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6">
+          <div class="introknow">
+            le <strong>type</strong> de ma terre <br><span class="intro-span">(argileux, sableux, limoneux, humifère ou calcaire)</span>
+            <div class="intro-image">
+              <%= cl_image_tag("terracognita/shovel",
+              width: 50) %>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6">
+          <div class="introknow">
+            le <strong>mois</strong> où je souhaite me lancer
+            <div class="intro-image">
+              <%= cl_image_tag("terracognita/calendar",
+                  width: 50) %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+      <%= form_for @potager, url: wizard_path, method: :put do |f| %>
         <%= f.submit "C'est parti !", class: "continue btn btn-primary" %>
         <% end %>
       </div>
@@ -19,5 +55,4 @@
     </div>
   </div>
 </div>
-</div>
-</div>
+
