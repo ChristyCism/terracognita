@@ -24,6 +24,7 @@ class PotagersController < ApplicationController
   end
 
   def show
+    @veg_parcels = VegetablesParcel.where(params[:potager_id])
   end
 
   def update
