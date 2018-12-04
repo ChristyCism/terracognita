@@ -5,5 +5,4 @@ class ChoicesController < ApplicationController
     @potager = Potager.find(params[:potager_id])
     @vegetables = Vegetable.where("'Mai'=ANY(month_planted)")
   end
-
 end
