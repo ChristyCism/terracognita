@@ -40,5 +40,8 @@
 
 }
 
+.gif .progressbar .pb-image {
+  filter: grayscale(0%);
+}
 
 // <%= render 'shared/progressbar' %>
