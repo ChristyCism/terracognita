@@ -308,6 +308,53 @@
   margin-top: 50px;
 }
 
+.date-de-debut {
+  .form {
+    margin-top: 170px;
+  }
+  .abs-position {
+    position: relative;
+    margin: 0;
+    height: 1px;
+    background-color : transparent;
+  }
+  .hide-arrow {
+    position : absolute;
+    right: 103px;
+    top: 29px;
+    width: 15px;
+    height: 15px;
+    background-color: white;
+  }
+input, select, textarea {
+  background-color: white;
+  border: none;
+  text-align: center;
+  width: 500px;
+  text-decoration: none;
+};
+.ui-state-default, .ui-widget-content .ui-state-default {
+  border: none;
+  background-color : $green;
+  border-radius: 50px;
+  height: 30px;
+  width : 30px;
+
+}
+select#minbeds {
+  font-size: 1.5em;
+  text-align: center;
+  width : 200px;
+  margin : 20px;
+  margin-left: 200px;
+}
+div#slider {
+  width: 500px;
+  height: 22px;
+}
+
+}
+
 
 // - - - - - - - Progress bar - - - - - -
 

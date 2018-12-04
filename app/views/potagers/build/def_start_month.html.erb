@@ -1,9 +1,5 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>jQuery UI Slider - Slider bound to select</title>
+ <head>
+
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -18,6 +14,7 @@
           slide: function( event, ui ) {
             select[ 0 ].selectedIndex = ui.value - 1;
           }
+
       });
 
       $( "#minbeds" ).on( "change", function() {
@@ -36,7 +33,9 @@
           <div class="form">
             <%= form_for @potager, url: wizard_path, method: :put do |f| %>
             <%= f.hidden_field :start_month %><br />
-            <label for="minbeds">Mois de lancement</label>
+            <div class="abs-position">
+            <div class="hide-arrow"></div>
+            </div>
             <select name="potager[start_month]" id="minbeds">
               <option>Janvier</option>
               <option>Février</option>
@@ -55,16 +54,15 @@
                 <i class="fas fa-angle-right"></i>
             </button>
             <% end %>
+            </div>
             <%= link_to previous_wizard_path, class: "nav-arrow-back" do %>
             <i class="fas fa-angle-left"></i>
             <% end %>
-            <%= link_to previous_wizard_path, class: "nav-arrow-back" do %>
-      <i class="fas fa-angle-left"></i>
-      <% end %>
-          </div>
+
+
           <%= render 'shared/progressbar' %>
         </div>
       </div>
     </div>
   </body>
-</html>
+
