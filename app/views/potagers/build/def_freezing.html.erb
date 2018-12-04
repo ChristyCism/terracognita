@@ -15,6 +15,9 @@
             <i class="fas fa-angle-right"></i>
         </button>
          <% end %>
+         <%= link_to previous_wizard_path, class: "nav-arrow-back" do %>
+      <i class="fas fa-angle-left"></i>
+      <% end %>
          <%= render 'shared/progressbar' %>
        </div>
   </div>
