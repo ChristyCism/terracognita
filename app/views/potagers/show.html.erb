@@ -16,13 +16,36 @@
       <%= link_to "Créer un compte", new_user_registration_path, class:"btn btn-home btn-lg btn-final" %>
   </div>
 
+
+
+<% @potager.vegetables.each do |vegetable| %>
+ <p><%= vegetable.name %></p>
+<% end %>
+
+<% @potager.vegetables.each do |vegetable| %>
+ <p><%= vegetable.photo %></p>
+<% end %>
+
+<% @potager.parcels.each do |p| %>
+  <p>Order :<%= p.order_from_south %></p>
+  <p>Size :<%= p.size %></p>
+<% end %>
+
+<p>Vegp: <%= @veg_parcels %></p>
+
+<table>
+  <% @potager.parcels.each do |pv| %>
+   <tr> <% @potager.vegetables.each do |vegetable| %>
+     <td><%= vegetable.name %></td>
+    <% end %><tr>
+
+  <% end %>
+</table>
+
 </div>
 
-<!-- pour afficher les choix de légumes
-  <% @potager.vegetables.each do |vegetable| %>
-    <p><%= vegetable.name %></p>
-  <% end %>
--->
+
+
 
 <!-- pour afficher la nav bar avec la carotte colorée
   <%= render 'shared/progressbar' %>

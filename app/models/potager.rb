@@ -14,22 +14,15 @@ class Potager < ApplicationRecord
 
   def create_vegetables_parcels
     @solutions = []
-    ap vegetables.count
-    ap vegetables.uniq.count
     nb_vegs = vegetables.uniq.count
     nb_parcels = parcels.count
     mini = nb_vegs < nb_parcels ? nb_vegs : nb_parcels
-
-    ap "nb_vegs: #{nb_vegs}"
-    ap "nb_parcels: #{nb_parcels}"
-    ap "mini: #{mini}"
 
     ######################################### FIND BEST SOLUTION
     generate_solutions([], vegetables.uniq, mini)
 
     ordered_solutions = @solutions.sort_by { |sol| score(sol) }
     best_solution = ordered_solutions.last
-
 
     ################################## FILL PARCELS WITH VEGS
     distribution = parcels_distribution(vegetables.uniq.count, parcels.count)
@@ -66,9 +59,7 @@ class Potager < ApplicationRecord
     end
   end
 
-
   private
-
 
   # LIST OF COMBINATIONS
   # gives all possible combination of n (rows) vegetables (ex: "tomato cabbage bean")
