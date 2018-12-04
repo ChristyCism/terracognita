@@ -34,8 +34,12 @@ class PotagersController < ApplicationController
     @potager.create_vegetables_parcels
 
     if @potager.update(params_for_potager)
+
+      redirect_to potager_path(@potager)
+
       #on appelle les méthodes create_parcels et create_parcels_vegetables
       redirect_to engine_potager_path(@potager)
+
     else
       render 'choices/new'
     end
