@@ -1,3 +1,6 @@
+.container {
+  position: relative;
+}
 .progressbar {
   margin-top: 30px !important;
   margin: 0 auto;
@@ -5,7 +8,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 90%;
+  width: 85%;
+  position: absolute;
+  bottom: 25px;
 }
 
 .pb-background {
@@ -14,8 +19,6 @@
     width: 15%;
     position: relative;
   }
-
-
 
 .pb-bg-4 .pb-image, .pb-bg-5 .pb-image, {
     bottom: -20px;

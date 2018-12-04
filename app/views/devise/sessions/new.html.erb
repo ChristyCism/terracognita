@@ -9,7 +9,7 @@
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-inputs">
     <%= f.input :email,
-                :label => 'Prénom',
+                :label => 'Email',
                 required: false,
                 autofocus: true,
                 input_html: { autocomplete: "email" } %>
@@ -29,8 +29,8 @@
     </div>
 
 
-
-<div class="form-actions subscription">
+<div class="form-actions form-actions-last"=>
+  <p>Pas encore de compte ?</p>
   <%= link_to "S'inscrire", new_registration_path(resource_name), class: "btn btn-home btn-lg btn-final-transparent" %>
 </div>
 <% end %>

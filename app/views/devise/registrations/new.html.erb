@@ -1,7 +1,7 @@
 <div class="container signinform">
 <div class="banner signup-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://res.cloudinary.com/earlyad/image/upload/v1543249479/terracognita/l5lfb3uyixp6dkcse4sg.jpg');">
 <div class="banner-content">
-<h1>S'inscrire</h1>
+<h1>Bienvenue !</h1>
 </div>
 </div>
 
@@ -24,15 +24,10 @@
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
   </div>
-  <div class="signup-links password">
-    <%= link_to "Mot de passe oublié ?", new_password_path(resource_name) %>
-  </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "S'inscrire", class: "btn btn-home btn-lg btn-final" %>
+    <%= f.button :submit, "Je m'inscris", class: "btn btn-home btn-lg btn-final" %>
   </div>
 <% end %>
-<div class="form-actions subscription">
-<%= link_to "Se connecter", new_session_path(resource_name) , class: "btn btn-home btn-lg btn-final-transparent" %>
-</div>
+
 </div>

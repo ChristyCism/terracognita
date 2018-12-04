@@ -1,0 +1,26 @@
+@media print {
+  @page {
+   size: A4 landscape;
+   margin: 0;
+  }
+
+  .container::after {
+    margin-top: 50px;
+    content: "Généré avec passion sur www.terracognita.life";
+  }
+
+  .compte {
+    display: none;
+  }
+
+  .btn-pdf {
+    display: none;
+  }
+
+  .navbar-wagon {
+   display: none;
+  }
+
+}
+
+
