@@ -8,6 +8,45 @@
   height: calc(100vh - 110px);
 }
 
+.intro {
+  margin: 0 30px;
+
+}
+.introduction {
+  h1 {
+  margin-bottom : 50px;
+  text-align: center;
+  }
+  h2 {
+  margin-bottom : 30px;
+  text-align: center;
+}
+}
+
+
+.introknow {
+  padding: 15px;
+  margin: 20px 40px;
+  color: white;
+  font-size: 1.2em;
+  height: 125px;
+  background-color: $blue;
+  border-radius: 2px;
+  box-shadow: 1px 1px 1px #666666;
+  position: relative;
+}
+
+.intro-image {
+  position: absolute;
+  bottom: 5px;
+  right: 8px;
+}
+
+.intro-span {
+  font-size: 0.8em;
+  color: #666666;
+}
+
 .dimensions h3, .orientation h3, .terre h3, .gel h3, .date-de-debut h3 {
   margin-bottom: 80px;
 }
