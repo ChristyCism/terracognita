@@ -1,12 +1,12 @@
 .vegetables-choices {
   padding: 20px;
   width: 90%;
-  margin: auto;
-  margin-top: 0px;
+  margin: 20px auto;
   background-color: white;
   box-shadow: 1px 1px 1px #666666;
-  min-height: calc(100vh - 70px);
+  min-height: calc(100vh - 110px);
 }
+
 
 .couple-nom-photo {
   display: block !important;
@@ -140,5 +140,10 @@
 .choices-new {
   .vegetables-choices .pb-bg-1 .pb-image, .vegetables-choices .pb-bg-2 .pb-image, .vegetables-choices .pb-bg-3 .pb-image, .vegetables-choices .pb-bg-4 .pb-image, .vegetables-choices .pb-bg-5 .pb-image {
     filter: grayscale(0%);
+  }
+}
+ .choices-new {
+  .progressbar {
+margin-left : 80px;
   }
 }

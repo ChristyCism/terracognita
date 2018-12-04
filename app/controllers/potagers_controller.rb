@@ -2,7 +2,8 @@ class PotagersController < ApplicationController
   skip_before_action :authenticate_user!
 
   def new
-    @potager = Potager.new
+    @potager = Potager.create!(width: 3, length: 3, orientation: 'C')
+    redirect_to potager_build_path(@potager, :def_intro)
   end
 
   def create
@@ -10,6 +11,7 @@ class PotagersController < ApplicationController
     @potager.save
     if @potager.save
       redirect_to new_potager_choice_path(@potager)
+
     else
       p "error"
     end

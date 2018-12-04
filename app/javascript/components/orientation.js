@@ -41,18 +41,19 @@ function getDragAngle(event) {
   var angle = Math.atan2(center.y - event.clientY,
                          center.x - event.clientX);
 
-  document.getElementById("angle").value = angle;
+  document.getElementById("potager_orientation").value = angle;
+
 
   let anglePlusPi = angle + Math.PI;
 
   if (anglePlusPi >= (0.75 * Math.PI) && anglePlusPi < (1.25 * Math.PI)) {
-    document.getElementById("angle").value = "D";
+    document.getElementById("potager_orientation").value = "D";
   } else if (anglePlusPi >= (1.25 * Math.PI) && anglePlusPi < (1.75 * Math.PI)) {
-    document.getElementById("angle").value = "A";
+    document.getElementById("potager_orientation").value = "A";
   } else if (anglePlusPi >= (0.25 * Math.PI) && anglePlusPi < (0.75 * Math.PI)) {
-    document.getElementById("angle").value = "C";
+    document.getElementById("potager_orientation").value = "C";
   } else {
-    document.getElementById("angle").value = "B";
+    document.getElementById("potager_orientation").value = "B";
   }
   ;
 
