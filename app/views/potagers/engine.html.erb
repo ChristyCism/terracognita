@@ -1,14 +1,71 @@
 <% content_for :custom_meta do %>
-  <meta http-equiv="refresh" content="3;url=<%= potager_path(@potager) %>" />
+  <meta http-equiv="refresh" content="3000;url=<%= potager_path(@potager) %>" />
 <% end %>
 
 <div class="wrapper">
-  <div class="container gif">
+  <div class="container">
+    <div class="gif">
+      <h2>L'algorithme super puissant étudie toutes les possibilités...</h2>
+      <img src="https://media.giphy.com/media/l0HlCc9qfYJ6lZrzO/giphy.gif" alt="GIF" class="gifanim">
 
-      <h1>L'algorythme super puissant étudie toutes les possibilités...</h1>
-        <iframe src="https://giphy.com/embed/l0HlCc9qfYJ6lZrzO" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/animation-cute-smile-l0HlCc9qfYJ6lZrzO">via GIPHY</a></p>
-    <%= render 'shared/progressbar' %>
+
+
+          <div class="progressbar loading">
+            <div class="pb-background pb-bg-1">
+              <%= cl_image_tag("terracognita/boots",
+            width: 50, class: "pb-img0") %>
+              <div class="pb-image">
+                <%= cl_image_tag("terracognita/ruler",
+                width: 50) %>
+              </div>
+            </div>
+
+
+            <div class="pb-background pb-bg-2">
+              <div class="pb-image">
+              <%= cl_image_tag("terracognita/compass",
+              width: 50) %>
+              </div>
+            </div>
+
+
+            <div class="pb-background pb-bg-3">
+              <div class="pb-image">
+              <%= cl_image_tag("terracognita/shovel",
+              width: 50) %>
+              </div>
+            </div>
+
+            <div class="pb-background pb-bg-4">
+              <div class="pb-image">
+                <%= cl_image_tag("terracognita/snowflake",
+                width: 50) %>
+              </div>
+            </div>
+
+
+            <div class="pb-background pb-bg-5">
+              <div class="pb-image">
+                <%= cl_image_tag("terracognita/calendar",
+                width: 50) %>
+              </div>
+            </div>
+
+
+            <div class="pb-background pb-bg-6 shake-horizontal">
+              <div class="pb-image">
+                <%= cl_image_tag("terracognita/carrot",
+                width: 50) %>
+              </div>
+            </div>
+
+          </div>
+        </div>
   </div>
+
+
 </div>
+
+
 
 
