@@ -16,7 +16,7 @@ class PotagersController < ApplicationController
       p "error"
     end
     create_parcels
-    create_parcel_vegetables
+    create_vegetables_parcels
   end
 
   def show
