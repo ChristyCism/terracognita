@@ -27,19 +27,12 @@ class PotagersController < ApplicationController
   end
 
   def update
-
-    puts "Je suis dans update potager"
-
     @potager = Potager.find(params[:id])
-    @potager.create_vegetables_parcels
-
+    p params
+    @potager.choices.destroy_all if params[:potager].key? :choices_attributes
     if @potager.update(params_for_potager)
-
-      redirect_to potager_path(@potager)
-
-      #on appelle les méthodes create_parcels et create_parcels_vegetables
+      @potager.create_vegetables_parcels
       redirect_to engine_potager_path(@potager)
-
     else
       render 'choices/new'
     end

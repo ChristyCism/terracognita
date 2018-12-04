@@ -14,16 +14,33 @@ class Potager < ApplicationRecord
 
   def create_vegetables_parcels
     @solutions = []
-    generate_solutions([], vegetables, parcels.count)
-    ordered_solutions = @solutions.sort_by { |sol| score(sol) }
+    ap vegetables.count
+    ap vegetables.uniq.count
+    nb_vegs = vegetables.uniq.count
+    nb_parcels = parcels.count
+    mini = nb_vegs < nb_parcels ? nb_vegs : nb_parcels
 
+    ap "nb_vegs: #{nb_vegs}"
+    ap "nb_parcels: #{nb_parcels}"
+    ap "mini: #{mini}"
+
+    ######################################### FIND BEST SOLUTION
+    generate_solutions([], vegetables.uniq, mini)
+
+    ordered_solutions = @solutions.sort_by { |sol| score(sol) }
     best_solution = ordered_solutions.last
 
-    parcels.each_with_index do |parcel, order_from_south|
-      parcel.vegetables_parcel.destroy if parcel.vegetables_parcel
-      vegetable = best_solution[order_from_south]
 
-      VegetablesParcel.create!(vegetable: vegetable, parcel: parcel)
+    ################################## FILL PARCELS WITH VEGS
+    distribution = parcels_distribution(vegetables.uniq.count, parcels.count)
+    parcels_array = parcels.to_a
+
+    i = 0
+    best_solution.each_with_index do |vege, index|
+      distribution[index].times do
+        VegetablesParcel.create!(vegetable: vege, parcel: parcels_array[i])
+        i += 1
+      end
     end
   end
 
@@ -92,5 +109,17 @@ class Potager < ApplicationRecord
 
   def active_or_start_month?
     status.include?('def_start_month') || active?
+  end
+
+  def parcels_distribution(nb_vegs, nb_parcels)
+    mini = nb_vegs < nb_parcels ? nb_vegs : nb_parcels
+    parcels_size = nb_parcels / mini
+    nb_parcels_extra = nb_parcels % mini
+    results = []
+
+    mini.times do |i|
+      results << parcels_size + (i < nb_parcels_extra ? 1 : 0)
+    end
+    results
   end
 end
