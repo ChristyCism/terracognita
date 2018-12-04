@@ -25,13 +25,11 @@ class Potager < ApplicationRecord
     end
   end
 
-  def create_parcel_vegetables
-    vegetables_parcel = Vegetables_Parcel.new
-    combinaison([], choices, number_of_parcels)
+  def create_vegetables_parcels
+    SOLUTIONS = combinaison([], choices, number_of_parcels)
     ordered_solutions = SOLUTIONS.sort_by { |sol| score(sol) }
 
     # on a N parcels (number_of_parcels) (chaque parcel a un index (order_from_south)
-
     # on va selectionner la premiere combinaison
     # pour obtenir les vegetable_id
 
@@ -39,10 +37,12 @@ class Potager < ApplicationRecord
     # en leur attribuant un parcel_id (grace a order_from_south)
     # en leur attribuant un vegetable_id (grace a l'index de la combinaison)
 
-    # on save nos vegetables_parcels
-
-    number_of_parcels.each do |order_from_south|
-      parcel.parcel_id.order_from_south << ordered_solutions[order_from_south]
+    parcels.each do |order_from_south|
+      vegetables_parcel = Vegetables_Parcel.new
+      vegetables_parcel.parcel_id = parcel[order_from_south].id
+      vegetables_parcel.vegetable_id = ordered_solutions[0][order_from_south].vegetable_id
+      # on save nos vegetables_parcels
+      vegetables_parcel.save
     end
   end
 
