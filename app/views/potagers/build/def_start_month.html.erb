@@ -1,0 +1,68 @@
+ <head>
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+      $( function() {
+        var select = $( "#minbeds" );
+        var slider = $( "<div id='slider'></div>" ).insertAfter( select ).slider({
+          min: 1,
+          max: 12,
+          range: "min",
+          value: select[ 0 ].selectedIndex + 1,
+          slide: function( event, ui ) {
+            select[ 0 ].selectedIndex = ui.value - 1;
+          }
+
+      });
+
+      $( "#minbeds" ).on( "change", function() {
+        slider.slider( "value", this.selectedIndex + 1 );
+        });
+      });
+
+    </script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <div class="date-de-debut" id="date-de-debut">
+          <h2>Quand est-ce que je veux démarrer mon potager ?</h2>
+
+          <div class="form">
+            <%= form_for @potager, url: wizard_path, method: :put do |f| %>
+            <%= f.hidden_field :start_month %><br />
+            <div class="abs-position">
+            <div class="hide-arrow"></div>
+            </div>
+            <select name="potager[start_month]" id="minbeds">
+              <option>Janvier</option>
+              <option>Février</option>
+              <option>Mars</option>
+              <option>Avril</option>
+              <option>Mai</option>
+              <option>Juin</option>
+              <option>Juillet</option>
+              <option>Août</option>
+              <option>Septembre</option>
+              <option>Octobre</option>
+              <option>Novembre</option>
+              <option>Décembre</option>
+            </select>
+            <button type="submit" class="nav-arrow">
+                <i class="fas fa-angle-right"></i>
+            </button>
+            <% end %>
+            </div>
+            <%= link_to previous_wizard_path, class: "nav-arrow-back" do %>
+            <i class="fas fa-angle-left"></i>
+            <% end %>
+
+
+          <%= render 'shared/progressbar' %>
+        </div>
+      </div>
+    </div>
+  </body>
+

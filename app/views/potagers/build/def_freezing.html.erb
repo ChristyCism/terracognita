@@ -1,0 +1,25 @@
+<div class="wrapper">
+  <div class="container">
+
+      <div class="gel" id="gel">
+         <h3>Est-ce que ma terre gèle ?</h3>
+         <div class="select-gel">
+             <input class="gel-2" type="radio" name="potager[freezing]" id="no">
+             <label for="no"><i class="far fa-sun"></i>Non</label>
+             <input class="gel-2" type="radio" name="potager[freezing]" id="yes">
+             <label for="yes">Oui<i class="far fa-snowflake"></i></label>
+         </div>
+
+         <%= form_for @potager, url: wizard_path, method: :put do |f| %>
+         <button type="submit" class="nav-arrow">
+            <i class="fas fa-angle-right"></i>
+        </button>
+         <% end %>
+         <%= link_to previous_wizard_path, class: "nav-arrow-back" do %>
+      <i class="fas fa-angle-left"></i>
+      <% end %>
+         <%= render 'shared/progressbar' %>
+       </div>
+  </div>
+</div>
+

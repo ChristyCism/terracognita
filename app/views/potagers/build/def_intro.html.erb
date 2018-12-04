@@ -1,0 +1,23 @@
+<div class="wrapper">
+  <div class="container">
+
+<div class="introduction">
+  <h2>Pour concevoir votre potager, assurez-vous de connaître :</h2>
+    <ol>
+      <li>les dimensions de votre potager</li>
+      <li>son orientation (N/S)</li>
+      <li>votre type de terre (argileux, sableux, limoneux, humifère ou calcaire)</li>
+    </ol>
+  <h2>Planifiez votre démarrage</h2>
+  <p>Nos propositions tiendront compte de votre agenda ! Afin de mettre en route votre potager avec nos conseils, réfléchissez en amont au mois idéal pour vous lancer.</p>
+  <div>
+    <%= form_for @potager, url: wizard_path, method: :put do |f| %>
+        <%= f.submit "C'est parti !", class: "continue btn btn-primary" %>
+        <% end %>
+      </div>
+      <%= render 'shared/progressbar' %>
+    </div>
+  </div>
+</div>
+</div>
+</div>
