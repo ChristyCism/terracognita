@@ -1,6 +1,11 @@
 class PotagersController < ApplicationController
   skip_before_action :authenticate_user!
 
+  before_action :set_potager, only: [:show, :update, :engine]
+
+  def engine
+  end
+
   def new
     @potager = Potager.create!(width: 3, length: 3, orientation: 'C')
     redirect_to potager_build_path(@potager, :def_intro)
@@ -20,22 +25,24 @@ class PotagersController < ApplicationController
   end
 
   def show
-    @potager = Potager.last
   end
 
   def update
     puts "Je suis dans update potager"
-    @potager = Potager.find(params[:id])
 
     if @potager.update(params_for_potager)
       #on appelle les méthodes create_parcels et create_parcels_vegetables
-      redirect_to potager_path(@potager)
+      redirect_to engine_potager_path(@potager)
     else
       render 'choices/new'
     end
   end
 
   private
+
+  def set_potager
+    @potager = Potager.find(params[:id])
+  end
 
   def params_for_potager
     params.require(:potager).permit(:length, :width, :freezing, :orientation, :start_month, choices_attributes: [:vegetable_id])
