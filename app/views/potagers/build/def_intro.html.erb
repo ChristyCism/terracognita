@@ -2,22 +2,20 @@
   <div class="container">
 
 <div class="introduction">
-            <h1>Fabrication du potager</h1>
-            <p>Sur cette page nous vous demander quelques renseignements permettant de mieux affiner l'organisation de votre potager que nous allons vous suggérer.</p>
-            <p>Les prochaines étapes s'intéressent :</p>
-            <ol>
-              <li>aux dimensions de votre potager</li>
-              <li>à son orientation</li>
-              <li>à votre terre</li>
-              <li>à la température la plus basse de cette dernière</li>
-              <li>à la date à laquelle vous souhaitez démarrer !</li>
-            </ol>
-            <div>
-              <%= form_for @potager, url: wizard_path, method: :put do |f| %>
-                  <%= f.submit "Je commence", class: "continue btn btn-primary" %>
-                  <% end %>
-                </div>
-                <%= render 'shared/progressbar' %>
+  <h2>Pour concevoir votre potager, assurez-vous de connaître :</h2>
+    <ol>
+      <li>les dimensions de votre potager</li>
+      <li>son orientation (N/S)</li>
+      <li>votre type de terre (argileux, sableux, limoneux, humifère ou calcaire)</li>
+    </ol>
+  <h2>Planifiez votre démarrage</h2>
+  <p>Nos propositions tiendront compte de votre agenda ! Afin de mettre en route votre potager avec nos conseils, réfléchissez en amont au mois idéal pour vous lancer.</p>
+  <div>
+    <%= form_for @potager, url: wizard_path, method: :put do |f| %>
+        <%= f.submit "C'est parti !", class: "continue btn btn-primary" %>
+        <% end %>
+      </div>
+      <%= render 'shared/progressbar' %>
     </div>
   </div>
 </div>

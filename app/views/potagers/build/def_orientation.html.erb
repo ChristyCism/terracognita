@@ -25,9 +25,14 @@
               <%= form_for @potager, url: wizard_path, method: :put do |f| %>
               <%= f.hidden_field :orientation %><br />
 
-              <%= f.submit "Continuer", class: "continue btn btn-primary" %>
+              <button type="submit" class="nav-arrow">
+                <i class="fas fa-angle-right"></i>
+              </button>
               <% end %>
             </div>
+            <%= link_to previous_wizard_path, class: "nav-arrow-back" do %>
+      <i class="fas fa-angle-left"></i>
+      <% end %>
           </div>
 
           <div class="list-inline text-center">
