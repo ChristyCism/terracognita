@@ -48,8 +48,8 @@ class Potager < ApplicationRecord
   # end
 
   def create_parcels
-    number_of_parcels = ['a', 'c'].include?(orientation) ? length : width
-    parcel_size = ['a', 'c'].include?(orientation) ? width : length
+    number_of_parcels = ['A', 'C'].include?(orientation.upcase) ? length : width
+    parcel_size = ['A', 'C'].include?(orientation.upcase) ? width : length
     number_of_parcels.times do |i|
       Parcel.create(
         order_from_south: i + 1,
