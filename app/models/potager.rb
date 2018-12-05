@@ -3,6 +3,7 @@ class Potager < ApplicationRecord
   has_many :parcels
   has_many :choices
   has_many :vegetables, through: :choices
+  has_many :vegetables_parcels, through: :parcels
 
   validates :length, presence: true, if: :active_or_dimension?
   validates :width, presence: true, if: :active_or_dimension?
