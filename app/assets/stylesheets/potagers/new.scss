@@ -14,7 +14,8 @@
 }
 .introduction {
   h1 {
-  margin-bottom : 50px;
+  margin-top : 30px;
+  margin-bottom : 70px;
   text-align: center;
   }
   h2 {
@@ -42,6 +43,13 @@
   right: 8px;
 }
 
+.intro-image-calendar {
+  position: absolute;
+  bottom: 5px;
+  right: -150px;
+  transform: rotate(10deg)
+}
+
 .intro-span {
   font-size: 0.7em;
   color: #666666;
@@ -52,10 +60,12 @@
 }
 
 .textintro {
-  margin-left: 30px;
-  margin-right: 30px;
-  padding-left: 20px;
-  padding-right: 20px;
+  position: relative;
+  width: 65%;
+  text-align: justify;
+  margin-left: 50px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 /* - - - - - - DIMENSIONS SPECIFIC - - - - - - - */

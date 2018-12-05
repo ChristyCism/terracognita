@@ -67,14 +67,10 @@
 
 
 <% @potager.parcels.each do |p| %>
-  <p>Order :<%= p.order_from_south %></p>
-  <p>Size :<%= p.size %></p>
-  <% @potager.vegetables_parcels.each do |vegetable| %>
-     <%= vegetable.name %>
-    <% end %>
-
+  <tr><% p.vegetables.each do |vegetable| %>
+     <td><%= vegetable.name %></td>
+  <% end %></tr>
 <% end %>
-
 
 
 <!------------ pas touch à la div en-dessous ----->

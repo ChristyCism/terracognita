@@ -39,12 +39,21 @@
       <br>
       <br>
         <h2>Je planifie mon démarrage</h2>
-  <p class="textintro">Les propositions tiendront compte de mon agenda ! <br>
-  Afin de mettre en route mon potager avec les conseils de Terra Cognita, je réfléchis en amont au mois idéal pour me lancer.</p>
+
+  <div class="textintro">Les propositions tiendront compte de mon agenda ! <br>
+  Afin de mettre en route mon potager avec les conseils de <strong>Terra Cognita</strong>, je réfléchis en amont au mois idéal pour me lancer.
+    <div class="intro-image-calendar">
+              <%= cl_image_tag("terracognita/calendar",
+              width: 70) %>
+            </div>
+  </div>
 
       <div>
       <%= form_for @potager, url: wizard_path, method: :put do |f| %>
-        <%= f.submit "C'est parti !", class: "continue btn btn-primary" %>
+        <button type="submit" class="nav-arrow nav-arrow-final">
+            <i class="fas fa-angle-double-right"></i>
+            </button>
+            <p class="final-button">ALLONS-Y</p>
         <% end %>
       </div>
       <%= render 'shared/progressbar' %>
