@@ -17,6 +17,25 @@
   text-align: center;
 }
 
+.garden {
+  width: 500px;
+  height: 300px;
+  display: grid;
+  background: yellow;
+  grid-row-gap: 2px;
+
+  .veg {
+    background-color: #a5682a;
+    img {
+      width:  100%;
+      height: 100%;
+      padding: 20px;
+    }
+  }
+}
+
+
+
 // ----------------------------- Partie basse : création d'un compte ------
 
 .compte {
