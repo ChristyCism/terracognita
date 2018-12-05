@@ -77,6 +77,9 @@
   background-color: white;
   box-shadow: 1px 1px 1px #666666;
   height: calc(100vh - 110px);
+  h3 {
+    margin-bottom: 150px;
+  }
 }
 
 #parent {
@@ -267,7 +270,7 @@
   grid-template-columns: 102px 102px 102px 102px 102px;
   grid-template-rows: 1fr;
   width: 90%;
-  margin: 30% auto;
+  margin: 25% auto;
   color: black;
   justify-content: space-around;
 }
