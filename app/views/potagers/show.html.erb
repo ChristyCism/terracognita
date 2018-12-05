@@ -35,12 +35,49 @@
 
 <table>
   <% @potager.parcels.each do |pv| %>
-   <tr> <% @potager.vegetables.each do |vegetable| %>
+   <tr> X <% @potager.vegetables.each do |vegetable| %>
      <td><%= vegetable.name %></td>
     <% end %><tr>
 
   <% end %>
 </table>
+
+
+<table>
+  <% @potager.parcels.each do |pv| %>
+   <tr> <% @potager.vegetables.each do |vegetable| %>
+     <%= vegetable.name %>
+    <% end %> <br>
+
+  <% end %>
+</table>
+
+------------ avec les index ----->
+<table>
+  <% @potager.parcels.each do |pv| %>
+  <tr><td><% @potager.vegetables.each do |vegetable| %>
+     <%= vegetable.name %>
+    <% end %></td></tr>
+
+
+  <% end %>
+</table>
+
+------------- avec phil ------->
+
+
+<% @potager.parcels.each do |p| %>
+  <p>Order :<%= p.order_from_south %></p>
+  <p>Size :<%= p.size %></p>
+  <% @potager.vegetables_parcels.each do |vegetable| %>
+     <%= vegetable.name %>
+    <% end %>
+
+<% end %>
+
+
+
+<!------------ pas touch à la div en-dessous ----->
 
 </div>
 
