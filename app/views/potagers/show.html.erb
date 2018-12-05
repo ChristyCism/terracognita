@@ -2,7 +2,18 @@
 
   <div class="modelisation">
     <h1>Votre potager</h1>
-    <%= cl_image_tag("terracognita/rendu-final", width: 400) %>
+
+    <% grid_template_columns = "1fr " * @potager.parcels.last.size %>
+    <% grid_template_rows = "1fr " * @potager.parcels.count %>
+
+    <div class="garden" style="grid-template-columns: <%= grid_template_columns %>; grid-template-rows: <%= grid_template_rows %>;">
+    <% @potager.parcels.each do |parcel| %>
+      <% parcel.size.times do  %>
+        <div class="veg"><%= cl_image_tag("#{parcel.vegetables_parcel.vegetable.photo}") %></div>
+      <% end %>
+    <% end %>
+    </div>
+
     <input type="button" value="Générer un PDF" onClick="window.print()" class="btn   btn-home btn-lg btn-final-transparent btn-pdf">
   </div>
 
@@ -16,67 +27,4 @@
       <%= link_to "Créer un compte", new_user_registration_path, class:"btn btn-home btn-lg btn-final" %>
   </div>
 
-
-
-<% @potager.vegetables.each do |vegetable| %>
- <p><%= vegetable.name %></p>
-<% end %>
-
-<% @potager.vegetables.each do |vegetable| %>
- <p><%= vegetable.photo %></p>
-<% end %>
-
-<% @potager.parcels.each do |p| %>
-  <p>Order :<%= p.order_from_south %></p>
-  <p>Size :<%= p.size %></p>
-<% end %>
-
-<p>Vegp: <%= @veg_parcels %></p>
-
-<table>
-  <% @potager.parcels.each do |pv| %>
-   <tr> X <% @potager.vegetables.each do |vegetable| %>
-     <td><%= vegetable.name %></td>
-    <% end %><tr>
-
-  <% end %>
-</table>
-
-
-<table>
-  <% @potager.parcels.each do |pv| %>
-   <tr> <% @potager.vegetables.each do |vegetable| %>
-     <%= vegetable.name %>
-    <% end %> <br>
-
-  <% end %>
-</table>
-
------------- avec les index ----->
-<table>
-  <% @potager.parcels.each do |pv| %>
-  <tr><td><% @potager.vegetables.each do |vegetable| %>
-     <%= vegetable.name %>
-    <% end %></td></tr>
-
-
-  <% end %>
-</table>
-
------------- avec les index ----->
-
-
-
-
-
-<!------------ pas touch à la div en-dessous ----->
-
 </div>
-
-
-
-
-<!-- pour afficher la nav bar avec la carotte colorée
-  <%= render 'shared/progressbar' %>
--->
-
