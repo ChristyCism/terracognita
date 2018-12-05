@@ -1,20 +1,24 @@
 <div class="container final-connect">
 
-  <div class="modelisation">
-    <h1>Votre potager</h1>
+  <div class="row">
+    <div class="modelisation">
+      <h1>Votre potager</h1>
 
-    <% grid_template_columns = "1fr " * @potager.parcels.last.size %>
-    <% grid_template_rows = "1fr " * @potager.parcels.count %>
+      <% grid_template_columns = "1fr " * @potager.parcels.last.size %>
+      <% grid_template_rows = "1fr " * @potager.parcels.count %>
 
-    <div class="garden" style="grid-template-columns: <%= grid_template_columns %>; grid-template-rows: <%= grid_template_rows %>;">
-    <% @potager.parcels.each do |parcel| %>
-      <% parcel.size.times do  %>
-        <div class="veg"><%= cl_image_tag("#{parcel.vegetables_parcel.vegetable.photo}") %></div>
+      <div class="garden" style="grid-template-columns: <%= grid_template_columns %>; grid-template-rows: <%= grid_template_rows %>;">
+      <% @potager.parcels.each do |parcel| %>
+        <% parcel.size.times do  %>
+          <div class="veg">
+            <%= cl_image_tag("#{parcel.vegetables_parcel.vegetable.photo}", height: 40) %>
+            <p><strong><%= parcel.vegetables_parcel.vegetable.name.capitalize %></strong></p>
+          </div>
+        <% end %>
       <% end %>
-    <% end %>
+      </div>
     </div>
-
-    <input type="button" value="Générer un PDF" onClick="window.print()" class="btn   btn-home btn-lg btn-final-transparent btn-pdf">
+    <div class="pdf"><input type="button" value="Générer un PDF" onClick="window.print()" class="btn   btn-home btn-lg btn-final-transparent btn-pdf"></div>
   </div>
 
   <div class="compte">
