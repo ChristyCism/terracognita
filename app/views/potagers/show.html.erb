@@ -63,17 +63,9 @@
   <% end %>
 </table>
 
-------------- avec phil ------->
+------------ avec les index ----->
 
 
-<% @potager.parcels.each do |p| %>
-  <p>Order :<%= p.order_from_south %></p>
-  <p>Size :<%= p.size %></p>
-  <% @potager.vegetables_parcels.each do |vegetable| %>
-     <%= vegetable.name %>
-    <% end %>
-
-<% end %>
 
 
 
