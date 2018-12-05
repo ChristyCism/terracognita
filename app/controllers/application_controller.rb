@@ -7,8 +7,12 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    @potager = Potager.last
-    potager_path(@potager)
+    resource.potager = Potager.last
+    if resource.potager
+    potager_path(resource.potager)
+    else
+    root_path
+    end
   end
 
   # def after_sign_in_path_for(resource)
