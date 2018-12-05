@@ -73,13 +73,13 @@
 
       <div>
       <%= form_for @potager, url: wizard_path, method: :put do |f| %>
-        <button type="submit" class="nav-arrow nav-arrow-final">
+        <button type="submit" class="nav-arrow nav-arrow-start">
             <i class="fas fa-angle-double-right"></i>
             </button>
-            <p class="final-button">ALLONS-Y</p>
+            <p class="start-button">ALLONS-Y</p>
         <% end %>
       </div>
-      <%= render 'shared/progressbar' %>
+
     </div>
   </div>
 </div>
