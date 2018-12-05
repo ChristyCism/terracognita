@@ -43,5 +43,8 @@
 .gif .progressbar .pb-image {
   filter: grayscale(0%);
 }
+.gif .progressbar .pb-background {
+  background-color: $blue;
+}
 
 // <%= render 'shared/progressbar' %>
