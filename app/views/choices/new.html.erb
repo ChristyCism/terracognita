@@ -1,40 +1,44 @@
 <div class="wrapper">
-<div class="container vegetables-choices">
+  <div class="container">
+    <div class="vegetables-choices">
+      <h1>Quels légumes souhaitez-vous planter ?</h1>
+      <div class="form-post">
+      <%= simple_form_for @potager do |f| %>
+        <div class="row">
 
-  <h1>Quels légumes souhaitez-vous planter ?</h1>
-  <div class="form-post">
-    <%= simple_form_for @potager do |f| %>
-      <div class="row">
-
-        <% @vegetables.each do |veg| %>
+          <% @vegetables.each do |veg| %>
           <div class="col-xs-4 col-sm-2 nopad text-center couple-nom-photo">
 
             <label class="image-checkbox">
               <div>
-                <%= cl_image_tag(veg.photo, height: 100) %>
+                <%= cl_image_tag(veg.photo, height: 80) %>
                 <input type="checkbox" name="potager[choices_attributes][][vegetable_id]" value=<%= veg.id %> />
               </div>
               <div class="veg-name">
               <%= veg.name.capitalize %>
               </div>
             </label>
-
-
-
           </div>
-        <% end %>
+          <% end %>
 
+        </div>
+
+          <button type="submit" class="nav-arrow nav-arrow-final">
+            <i class="fas fa-angle-double-right"></i>
+            </button>
+            <p class="final-button">FINALISER</p>
+
+      <% end %>
+      <%= link_to potager_build_path(@potager, :def_start_month), class: "nav-arrow-back" do %>
+        <i class="fas fa-angle-left"></i>
+      <% end %>
+      <%= render 'shared/progressbar' %>
       </div>
-      <div class='submit-veg'>
-        <%= f.button :submit, 'Finaliser', class: 'btn btn-primary btn-choices' %>
-      </div>
-    <% end %>
-    <%= render 'shared/progressbar' %>
+    </div>
   </div>
 </div>
-</div>
 
 
 
-
+<i class="fas fa-angle-double-right"></i>
 

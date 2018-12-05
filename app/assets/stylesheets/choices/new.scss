@@ -4,18 +4,18 @@
   margin: 20px auto;
   background-color: white;
   box-shadow: 1px 1px 1px #666666;
-  min-height: calc(100vh - 110px);
+  height: calc(100vh - 110px);
 }
-
 
 .couple-nom-photo {
   display: block !important;
   text-align: center;
   align-items: center;
   padding-bottom: 35px;
-  width: 230px;
-  height: 180px;
+  width: 185px;
+  height: 150px;
   .veg-name {
+    font-size: 0.9em;
     padding-top: 10px;
   }
 }
@@ -40,9 +40,9 @@
 
   margin-bottom: 0;
   outline: 0;
-  padding: 10px;
-  width: 200px;
-  height: 150px;
+  padding: 15px;
+  width: 170px;
+  height: 130px;
 }
 .image-checkbox input[type="checkbox"] {
   display: none;
@@ -65,8 +65,19 @@
   display: block !important;
 }*/
 
+.final-button {
+  font-size: 0.9em;
+  color: $blue;
+  position: absolute;
+  right: -28px;
+  top: 480px;
+}
+
+.nav-arrow-final {
+  right: -25px;
+}
+
 .form-post {
-  background: white;
   margin-top: 50px;
   padding: 20px;
   border-radius: 5px;
@@ -81,11 +92,6 @@
   .btn {
     padding: 10px 20px;
     font-weight: bold;
-  }
-  .submit-veg {
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 }
 
@@ -142,8 +148,4 @@
     filter: grayscale(0%);
   }
 }
- .choices-new {
-  .progressbar {
-margin-left : 80px;
-  }
-}
+
