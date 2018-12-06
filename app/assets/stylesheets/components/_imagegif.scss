@@ -1,7 +1,21 @@
+.potagers-engine {
+  .navbar-wagon-right {
+    display: none;
+  }
+}
+
+.gif {
+  padding: 20px;
+  width: 90%;
+  margin: 20px auto;
+  background-color: white;
+  box-shadow: 1px 1px 1px #666666;
+  height: calc(100vh - 110px);
+}
+
 .gif {
   display:flex;
   flex-direction: column;
-  height: 700px;
 }
 
 .gif h2 {
@@ -13,12 +27,6 @@
   height: 450px;
   margin: 0 auto;
 }
-
-.loading {
-  margin-top: 70px;
-  margin-left: 54px;
-}
-
 
 
 .shake-horizontal {

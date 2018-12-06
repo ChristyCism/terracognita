@@ -49,17 +49,26 @@
 // ----------------------------- Partie basse : création d'un compte ------
 
 .compte {
+  width: 30%;
+  margin: 0 auto;
+  box-shadow: 1px 1px 1px #666666;
+  border-radius: 3px;
   text-align: center;
+  border: 2px solid $blue;
+  padding: 20px 15px;
+  margin-top: 30px;
 }
 
 .compte-list {
-  width: 90%;
+  width: 100%;
   margin-top: 30px;
   margin-bottom: 30px;
-  font-size: 1.2em;
+  font-size: 1.1em;
   line-height: 26pt;
   text-align: justify;
+
   li {
+
     margin-bottom: 10px;
   }
   i {
@@ -68,16 +77,3 @@
   }
 
 
-// ----------------------------- Progress bar ------
-
-.potagers-show {
-  .final-connect .pb-bg-1, .final-connect .pb-bg-2, .final-connect .pb-bg-3, .final-connect .pb-bg-4, .final-connect .pb-bg-5, .final-connect .pb-bg-6 {
-    background-color: $blue;
-
-  }
-}
-.potagers-show {
-  .final-connect .pb-bg-1 .pb-image, .final-connect .pb-bg-2 .pb-image, .final-connect .pb-bg-3 .pb-image, .final-connect .pb-bg-4 .pb-image, .final-connect .pb-bg-5 .pb-image, .final-connect .pb-bg-6 .pb-image {
-    filter: grayscale(0%);
-  }
-}
