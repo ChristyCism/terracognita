@@ -1,16 +1,7 @@
 <div class="container final-connect">
-
   <div class="row">
+    <h1 id=title-potager>Votre potager</h1>
     <div class="modelisation">
-      <h1>Votre potager</h1>
-      <%= @potager.orientation %>
-
-      <br>
-      <%= @potager.parcels.count %>
-      <br>
-      <%= @potager.parcels.last.size %>
-      <br>
-
       <% if @potager.orientation.in?(["A", "C"]) %>
         <% height                 = "#{@potager.parcels.count * 100}" + "px" %>
         <% width                  = "#{@potager.parcels.last.size * 100}" + "px" %>
@@ -28,7 +19,7 @@
         <% grid_auto_flow        = "column" %>
       <% end %>
 
-      <div class="garden" style="grid-auto-flow: <%= grid_auto_flow %>; grid-template-columns: <%= grid_template_columns %>; grid-template-rows: <%= grid_template_rows %>; grid-row-gap: <%= grid_row_gap %>; grid-column-gap: <%= grid_column_gap %>; width: <%= width %>; height: <%= height %>;">
+      <div class="garden col-xs-6" style="grid-auto-flow: <%= grid_auto_flow %>; grid-template-columns: <%= grid_template_columns %>; grid-template-rows: <%= grid_template_rows %>; grid-row-gap: <%= grid_row_gap %>; grid-column-gap: <%= grid_column_gap %>; width: <%= width %>; height: <%= height %>;">
 
         <% @potager.parcels.toto(@potager.orientation).each do |parcel| %>
           <% parcel.size.times do  %>
@@ -39,11 +30,21 @@
           <% end %>
         <% end %>
       </div>
+
+      <div class="right-side col-xs-6">
+        <p>Félicitations ! Votre potager est désormais modélisé.</p>
+        <p>Nous vous invitons à suivre ce plan de culture construit <br> selon les informations que vous nous avez transmis.</p>
+        <br>
+        <p>Pour rappel, nous avons construit un potager avec les dimensions suivantes :</p>
+        <p>- <strong><%= @potager.parcels.count %> mètres</strong> de large.</p>
+        <p>- <strong><%= @potager.parcels.last.size %> mètres</strong> de long.</p>
+        <br>
+        <p>Vous trouverez juste en dessous les plantes aromatiques conseillées pour vos légumes.</p>
+
+        <input type="button" value="Générer un PDF" onClick="window.print()" class="btn   btn-home btn-lg btn-final-transparent btn-pdf">
+      </div>
     </div>
-
-    <div class="pdf"><input type="button" value="Générer un PDF" onClick="window.print()" class="btn   btn-home btn-lg btn-final-transparent btn-pdf"></div>
   </div>
-
 
   <div class="aromatics-illu" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://res.cloudinary.com/earlyad/image/upload/v1544103034/terracognita/aromatics-illu.jpg');">
     <div>
@@ -64,13 +65,12 @@
                   <p><%= aromatics.capitalize %></p>
                 </div>
               <% end %>
+            </div>
           </div>
         <% end %>
       </div>
     </div>
   </div>
-
-
   <div class="compte">
     <h2>Grâce à mon compte :</h2>
       <ul class="list-unstyled compte-list">
@@ -80,5 +80,5 @@
       </ul>
       <%= link_to "Créer un compte", new_user_registration_path, class:"btn btn-home btn-lg btn-final" %>
   </div>
-
 </div>
+

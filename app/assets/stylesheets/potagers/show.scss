@@ -13,7 +13,14 @@
 
 // ----------------------------- Partie modélisation ------
 
-.modelisation h1 {
+.modelisation {
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 50px auto;
+}
+
+#title-potager {
   text-align: center;
 }
 
