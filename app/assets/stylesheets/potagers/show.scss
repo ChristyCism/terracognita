@@ -19,6 +19,7 @@
   justify-content: space-around;
   align-items: center;
   margin: 100px auto;
+  margin-bottom: 0px;
 }
 
 #title-potager {
@@ -51,11 +52,12 @@
 }
 
 .right-side {
-  padding: 50px;
+  padding: 0px 50px;
 }
 
 .pdf {
   text-align: center;
+  margin-bottom: 50px;
 }
 
 // ----------------------------- Partie aromatics ------
