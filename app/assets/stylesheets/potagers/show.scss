@@ -4,7 +4,8 @@
   padding: 20px;
   width: 90%;
   margin: auto;
-  margin-top: 0px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   background-color: white;
   box-shadow: 1px 1px 1px #666666;
   min-height: calc(100vh - 70px);
@@ -17,7 +18,7 @@
   display:flex;
   justify-content: space-around;
   align-items: center;
-  margin: 50px auto;
+  margin: 100px auto;
 }
 
 #title-potager {
@@ -30,21 +31,27 @@
   width: 30%;
 
   .veg {
-
+    display:block;
+    justify-content: center;
     height: 100px;
     width: 100px;
     background-color: #a5682a;
-    padding: 5px;
-    img {
-      justify-content: center;
-    }
-    p {
-      font-size: 12px;
-      color: white;
-      text-align: center;
-      padding: 0;
-    }
+    padding: 30px;
+    padding-top: 20px;
+      img {
+        margin: 0 auto;
+      }
+      p {
+        font-size: 12px;
+        color: white;
+        text-align: center;
+        padding: 0;
+      }
   }
+}
+
+.right-side {
+  padding: 50px;
 }
 
 .pdf {
