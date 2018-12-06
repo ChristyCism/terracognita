@@ -5,41 +5,39 @@
       <h1>Votre potager</h1>
       <%= @potager.orientation %>
 
-      <% if @potager.orientation == "A" || "C" %>
+      <br>
+      <%= @potager.parcels.count %>
+      <br>
+      <%= @potager.parcels.last.size %>
+      <br>
+
+      <% if @potager.orientation.in?(["A", "C"]) %>
+        <% height                 = "#{@potager.parcels.count * 100}" + "px" %>
+        <% width                  = "#{@potager.parcels.last.size * 100}" + "px" %>
         <% grid_template_columns = "1fr " * @potager.parcels.last.size %>
         <% grid_template_rows    = "1fr " * @potager.parcels.count %>
-        <% width                 = "#{@potager.parcels.last.size * 100}" + "px" %>
-        <% height                = "#{@potager.parcels.count * 100}" + "px" %>
         <% grid_row_gap          = "2px" %>
         <% grid_auto_flow        = "row" %>
 
-      <% elsif @potager.orientation == "B" || "D" %>
+      <% else %>
+        <% width                 = "#{@potager.parcels.count * 100}" + "px" %>
+        <% height                  = "#{@potager.parcels.last.size * 100}" + "px" %>
         <% grid_template_columns = "1fr " * @potager.parcels.count %>
         <% grid_template_rows    = "1fr " * @potager.parcels.last.size %>
-        <% width                 = "#{@potager.parcels.count * 100}" + "px" %>
-        <% height                = "#{@potager.parcels.last.size * 100})" + "px" %>
         <% grid_column_gap       = "2px" %>
         <% grid_auto_flow        = "column" %>
-
-
       <% end %>
 
-      <% if @potager.orientation == "B" %>
-        <% direction = "rtl" %>
-      <% elsif @potager.orientation == "D" %>
-        <% direction = "ltr" %>
-      <% end %>
+      <div class="garden" style="grid-auto-flow: <%= grid_auto_flow %>; grid-template-columns: <%= grid_template_columns %>; grid-template-rows: <%= grid_template_rows %>; grid-row-gap: <%= grid_row_gap %>; grid-column-gap: <%= grid_column_gap %>; width: <%= width %>; height: <%= height %>;">
 
-
-      <div class="garden" style="grid-auto-flow: <%= grid_auto_flow %>; grid-template-columns: <%= grid_template_columns %>; grid-template-rows: <%= grid_template_rows %>; grid-row-gap: <%= grid_row_gap %>; grid-column-gap: <%= grid_column_gap %>; width: <%= width %>; height: <%= height %>; direction: <%= direction %>">
-      <% @potager.parcels.each do |parcel| %>
-        <% parcel.size.times do  %>
-          <div class="veg">
-            <%= cl_image_tag("#{parcel.vegetables_parcel.vegetable.photo}", height: 40) %>
-            <p><strong><%= parcel.vegetables_parcel.vegetable.name.capitalize %></strong></p>
-          </div>
+        <% @potager.parcels.toto(@potager.orientation).each do |parcel| %>
+          <% parcel.size.times do  %>
+            <div class="veg">
+              <%= cl_image_tag("#{parcel.vegetables_parcel.vegetable.photo}", height: 40) %>
+              <p><strong><%= parcel.vegetables_parcel.vegetable.name.capitalize %></strong></p>
+            </div>
+          <% end %>
         <% end %>
-      <% end %>
       </div>
     </div>
 
