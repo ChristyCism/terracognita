@@ -145,6 +145,11 @@
   background-color: white;
   box-shadow: 1px 1px 1px #666666;
   height: calc(100vh - 110px);
+
+    .grid {
+      margin-top: 150px;
+    }
+
   h3 {
     margin-bottom: 150px;
   }
@@ -154,6 +159,7 @@
   display: inline-block;
   width: 100%;
   height: 50vh;
+
 
   .item-draggable{
     background-color: #A0733E;

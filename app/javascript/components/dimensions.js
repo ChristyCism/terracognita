@@ -2,7 +2,7 @@ import interact from 'interactjs'
 
 const castPixelsToMeters = (pixelString) => {
   const lrg     = pixelString.match(/\d+/)[0];
-  const meters  = Math.round(Number(lrg) / 30);
+  const meters  = Math.round(Number(lrg) / 50);
 
   return meters;
 };
@@ -48,7 +48,7 @@ interact('.item-draggable')
     target.setAttribute('data-x', x);
     target.setAttribute('data-y', y);
 
-    target.textContent = Math.round(event.rect.height / 30) + "m" + ' x ' + Math.round(event.rect.width / 30) + "m" ;
+    target.textContent = Math.round(event.rect.height / 50) + "m" + ' x ' + Math.round(event.rect.width / 50) + "m" ;
 
 
     document.getElementById("width").value = castPixelsToMeters(target.style.width);
