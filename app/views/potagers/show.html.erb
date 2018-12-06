@@ -52,15 +52,14 @@
       <p>Vos légumes ont des amis, faites-les se retrouver dans votre potager.</p>
     </div>
     <div class="aromatics-text">
-      <div class="row">
+      <div class="card-container">
         <% @potager.vegetables.each do |vegetable| %>
-          <div class="col-xs-12 col-sm-3">
-            <div class="card">
-              <div class="card-leg">
-                <div class="card-img">
-                  <%= cl_image_tag("#{vegetable.photo}", height: 50) %>
-                </div>
-              </div>
+          <div class="card">
+            <div class="card-leg">
+              <div class="card-img">
+            <%= cl_image_tag("#{vegetable.photo}", height: 50) %>
+            </div>
+            </div>
               <% vegetable.aromatics.each do |aromatics|  %>
                 <div class="card-description">
                   <p><%= aromatics.capitalize %></p>
