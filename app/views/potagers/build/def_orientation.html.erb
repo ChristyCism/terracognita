@@ -15,7 +15,7 @@
       <div class="formulaire">
         <div class="form">
           <%= form_for @potager, url: wizard_path, method: :put do |f| %>
-          <%= f.text_field :orientation %><br />
+          <%= f.hidden_field :orientation %><br />
           <button type="submit" class="nav-arrow">
             <i class="fas fa-angle-right"></i>
           </button>
