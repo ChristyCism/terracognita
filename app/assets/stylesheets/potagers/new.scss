@@ -7,6 +7,8 @@
 ///
 
 .flip-card {
+  width: 100%;
+  height: 180px;
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
 }
 
@@ -18,6 +20,9 @@
   text-align: center;
   transition: transform 0.8s;
   transform-style: preserve-3d;
+  .introknow {
+    padding-top : 70px;
+  }
 }
 
 /* Do an horizontal flip when you move the mouse over the flip box container */
@@ -35,12 +40,37 @@
 
 /* Style the front side (fallback if image is missing) */
 .flip-card-front {
-
+  padding: 20px;
+  border: 2px solid $blue;
+  color: white;
+  font-size: 1.1em;
+  height: 180px;
+  background-color: $blue;
+  border-radius: 2px;
+  box-shadow: 1px 1px 1px #666666;
 }
 
 /* Style the back side */
 .flip-card-back {
   transform: rotateY(180deg);
+  background-color: white;
+  text-align: justify;
+  padding: 25px 15px;
+  font-size: 1.1em;
+  border: 2px solid $blue;
+  height: 180px;
+  border-radius: 2px;
+  box-shadow: 1px 1px 1px #666666;
+  p {
+    margin-bottom: 5px;
+  }
+  ul {
+    list-style-type: none;
+  }
+  li {
+    font-size: 0.6em;
+    font-weight: bold;
+}
 }
 
 ///
@@ -55,38 +85,27 @@
 }
 
 .intro {
-  margin: 0 30px;
+  margin: 30px 30px;
+
 
 }
 .introduction {
   h1 {
   margin-top : 30px;
-  margin-bottom : 70px;
+  margin-bottom : 40px;
   text-align: center;
   }
   h2 {
-  margin-bottom : 30px;
+  margin-top : 50px;
+  margin-bottom : 50px;
   text-align: center;
 }
-}
-
-
-.introknow {
-  padding: 15px;
-  margin: 10px 25px;
-  color: white;
-  font-size: 1.1em;
-  height: 160px;
-  background-color: $blue;
-  border-radius: 2px;
-  box-shadow: 1px 1px 1px #666666;
-  position: relative;
 }
 
 .intro-image {
   position: absolute;
-  bottom: 5px;
-  right: 8px;
+  top: 13px;
+  left: 119px;
 }
 
 .intro-image-calendar {
@@ -99,6 +118,7 @@
 .intro-span {
   font-size: 0.7em;
   color: #666666;
+
 }
 
 .dimensions h3, .orientation h3, .terre h3, .gel h3, .date-de-debut h3 {
@@ -114,25 +134,33 @@
   padding-right: 15px;
 }
 
-.final-button {
-
-}
-
-.nav-arrow-final {
-
+.intro-link {
+  position: absolute;
+  bottom: 3px;
+  right: 6px;
 }
 
 .nav-arrow-start {
-  right: 500px;
-  bottom: -250px;
+  right: 162px;
+  top: 160px;
 
 }
 .start-button {
   font-size: 0.9em;
   color: $blue;
   position: absolute;
-  right: 500px;
-  bottom: 60px;
+  right: 157px;
+  bottom: -197px;
+  font-weight: bold;
+
+}
+
+.flip-intro {
+  font-size: 1em;
+  color: white;
+  position: absolute;
+  right: 127px;
+  bottom: 8px;
   font-weight: bold;
 
 }

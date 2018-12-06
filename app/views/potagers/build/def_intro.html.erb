@@ -5,81 +5,92 @@
       <h1>Avant de commencer</h1>
       <h2>Je m'assure de connaître</h2>
       <div class="row intro">
-        <div class="col-xs-12 col-sm-4">
-<div class="flip-card">
-  <div class="flip-card-inner">
-          <div class="introknow flip-card-front">
-
-          1. Les <strong>dimensions</strong> de mon potager
-
-            <div class="intro-image">
-            <%= cl_image_tag("terracognita/ruler",
-                  width: 50) %>
-            </div>
-          </div>
-          <div class="flip-card-back">
-            <p>Astuce de dev</p>
-          </div>
-        </div>
-  </div>
-</div>
 
         <div class="col-xs-12 col-sm-4">
-<div class="flip-card">
-  <div class="flip-card-inner">
-          <div class="introknow flip-card-front">
-            2. L'<strong>orientation</strong> de mon terrain <br> <span class="intro-span">(Nord / Sud)</span>
-            <div class="intro-image">
-              <%= cl_image_tag("terracognita/compass",
-              width: 50) %>
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="introknow flip-card-front">
+
+                Les <strong>dimensions</strong> de<br>mon potager
+
+                <div class="intro-image">
+                  <%= cl_image_tag("terracognita/ruler",
+                  width: 40) %>
+                </div>
+                <div class="flip-intro"><i class="far fa-question-circle"></i></div>
+              </div>
+              <div class="flip-card-back">
+                <p class="intro-span">À définir en <strong>mètres</strong>, sans décimal.<br>Pour une récolte facile de vos légumes, les différentes parcelles de votre potager auront une largeur d’un mètre.</p>
+              </div>
             </div>
           </div>
-          <div class="flip-card-back">
-            <p>Astuce de dev</p>
-          </div>
         </div>
-  </div>
-</div>
 
         <div class="col-xs-12 col-sm-4">
-<div class="flip-card">
-  <div class="flip-card-inner">
-          <div class="introknow flip-card-front">
-            3. Mon <strong>type</strong> de terre <br><span class="intro-span">(argileux, sableux, limoneux, humifère ou calcaire)</span>
-            <div class="intro-image">
-              <%= cl_image_tag("terracognita/shovel",
-              width: 50) %>
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="introknow flip-card-front">
+                L'<strong>orientation</strong> de<br>mon terrain
+                <div class="intro-image">
+                  <%= cl_image_tag("terracognita/compass",
+                  width: 40) %>
+                </div>
+                <div class="flip-intro"><i class="far fa-question-circle"></i></div>
+              </div>
+              <div class="flip-card-back">
+                <p class="intro-span">Imaginez-vous face à votre potager, le côté sur lequel vous vous tenez sera votre côté référent. La direction <strong>(Nord / Sud / Est / Ouest)</strong> en face de vous définit l’orientation de votre potager.</p>
+              </div>
             </div>
           </div>
-          <div class="flip-card-back">
-            <p>Astuce de dev</p>
+        </div>
+
+        <div class="col-xs-12 col-sm-4">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="introknow flip-card-front">
+                Mon <strong>type</strong> de terre
+                <div class="intro-image">
+                  <%= cl_image_tag("terracognita/shovel",
+                  width: 40) %>
+                </div>
+                <div class="flip-intro"><i class="far fa-question-circle"></i></div>
+              </div>
+              <div class="flip-card-back">
+                <p class="intro-span">Choisissez une tendance générale, entre les types suivants :</p>
+                  <ul>
+                    <li>Argileux</li>
+                    <li>Sableux</li>
+                    <li>Limoneux</li>
+                    <li>Calcaire</li>
+                    <li>Humifère</li>
+                  </ul>
+
+                <div class="intro-link"> <%= link_to "https://jardinage.lemonde.fr/dossier-285-differents-types-sol-jardin.html", :target => "_blank" do %>
+                <i class="fas fa-plus-circle"></i>
+                <% end %>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-  </div>
-</div>
-
       </div>
-      <br>
-      <br>
         <h2>Je planifie mon démarrage</h2>
 
-  <div class="textintro">Les propositions tiendront compte de mon agenda ! <br>
-  Afin de mettre en route mon potager avec les conseils de <strong>Terra Cognita</strong>, je réfléchis en amont au mois idéal pour me lancer.
-    <div class="intro-image-calendar">
-              <%= cl_image_tag("terracognita/calendar",
+        <div class="textintro">Les propositions tiendront compte de mon agenda ! <br>
+        Afin de mettre en route mon potager avec les conseils de <strong>Terra Cognita</strong>, je réfléchis en amont au mois idéal pour me lancer.
+        <div class="intro-image-calendar">
+          <%= cl_image_tag("terracognita/calendar",
               width: 70) %>
-            </div>
-  </div>
+        </div>
 
-      <div>
-      <%= form_for @potager, url: wizard_path, method: :put do |f| %>
-        <button type="submit" class="nav-arrow nav-arrow-start">
+        <div>
+          <%= form_for @potager, url: wizard_path, method: :put do |f| %>
+            <button type="submit" class="nav-arrow nav-arrow-start">
             <i class="fas fa-angle-double-right"></i>
             </button>
             <p class="start-button">ALLONS-Y</p>
-        <% end %>
-      </div>
-
+          <% end %>
+        </div>
     </div>
   </div>
 </div>
