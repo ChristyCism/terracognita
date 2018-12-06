@@ -46,6 +46,36 @@
     <div class="pdf"><input type="button" value="Générer un PDF" onClick="window.print()" class="btn   btn-home btn-lg btn-final-transparent btn-pdf"></div>
   </div>
 
+
+  <div class="aromatics-illu" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://res.cloudinary.com/earlyad/image/upload/v1544103034/terracognita/aromatics-illu.jpg');">
+    <div>
+      <h2>Plantes et aromates conseillés</h2>
+      <p>Vos légumes ont des amis, faites-les se retrouver dans votre potager.</p>
+    </div>
+    <div class="aromatics-text">
+    <div class="row">
+      <% @potager.vegetables.each do |vegetable| %>
+        <div class="col-xs-12 col-sm-3">
+          <div class="card">
+            <div class="card-leg">
+              <div class="card-img">
+            <%= cl_image_tag("#{vegetable.photo}", height: 50) %>
+            </div>
+            </div>
+              <% vegetable.aromatics.each do |aromatics|  %>
+                <div class="card-description">
+                  <p><%= aromatics.capitalize %></p>
+                </div>
+              <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    </div>
+    </div>
+  </div>
+
+
   <div class="compte">
     <h2>Grâce à mon compte :</h2>
       <ul class="list-unstyled compte-list">
