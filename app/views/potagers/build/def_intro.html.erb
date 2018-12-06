@@ -6,7 +6,10 @@
       <h2>Je m'assure de connaître</h2>
       <div class="row intro">
         <div class="col-xs-12 col-sm-4">
-          <div class="introknow">
+<div class="flip-card">
+  <div class="flip-card-inner">
+          <div class="introknow flip-card-front">
+
           1. Les <strong>dimensions</strong> de mon potager
 
             <div class="intro-image">
@@ -14,40 +17,69 @@
                   width: 50) %>
             </div>
           </div>
+          <div class="flip-card-back">
+            <p>Astuce de dev</p>
+          </div>
         </div>
+  </div>
+</div>
 
         <div class="col-xs-12 col-sm-4">
-          <div class="introknow">
+<div class="flip-card">
+  <div class="flip-card-inner">
+          <div class="introknow flip-card-front">
             2. L'<strong>orientation</strong> de mon terrain <br> <span class="intro-span">(Nord / Sud)</span>
             <div class="intro-image">
               <%= cl_image_tag("terracognita/compass",
               width: 50) %>
             </div>
           </div>
+          <div class="flip-card-back">
+            <p>Astuce de dev</p>
+          </div>
         </div>
+  </div>
+</div>
 
         <div class="col-xs-12 col-sm-4">
-          <div class="introknow">
+<div class="flip-card">
+  <div class="flip-card-inner">
+          <div class="introknow flip-card-front">
             3. Mon <strong>type</strong> de terre <br><span class="intro-span">(argileux, sableux, limoneux, humifère ou calcaire)</span>
             <div class="intro-image">
               <%= cl_image_tag("terracognita/shovel",
               width: 50) %>
             </div>
           </div>
+          <div class="flip-card-back">
+            <p>Astuce de dev</p>
+          </div>
         </div>
+  </div>
+</div>
+
       </div>
       <br>
       <br>
         <h2>Je planifie mon démarrage</h2>
-  <p class="textintro">Les propositions tiendront compte de mon agenda ! <br>
-  Afin de mettre en route mon potager avec les conseils de Terra Cognita, je réfléchis en amont au mois idéal pour me lancer.</p>
+
+  <div class="textintro">Les propositions tiendront compte de mon agenda ! <br>
+  Afin de mettre en route mon potager avec les conseils de <strong>Terra Cognita</strong>, je réfléchis en amont au mois idéal pour me lancer.
+    <div class="intro-image-calendar">
+              <%= cl_image_tag("terracognita/calendar",
+              width: 70) %>
+            </div>
+  </div>
 
       <div>
       <%= form_for @potager, url: wizard_path, method: :put do |f| %>
-        <%= f.submit "C'est parti !", class: "continue btn btn-primary" %>
+        <button type="submit" class="nav-arrow nav-arrow-start">
+            <i class="fas fa-angle-double-right"></i>
+            </button>
+            <p class="start-button">ALLONS-Y</p>
         <% end %>
       </div>
-      <%= render 'shared/progressbar' %>
+
     </div>
   </div>
 </div>
