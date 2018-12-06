@@ -3,8 +3,8 @@
     <h1 id=title-potager>Votre potager</h1>
     <div class="modelisation">
       <% if @potager.orientation.in?(["A", "C"]) %>
-        <% height                 = "#{@potager.parcels.count * 100}" + "px" %>
-        <% width                  = "#{@potager.parcels.last.size * 100}" + "px" %>
+        <% height                = "#{@potager.parcels.count * 100}" + "px" %>
+        <% width                 = "#{@potager.parcels.last.size * 100}" + "px" %>
         <% grid_template_columns = "1fr " * @potager.parcels.last.size %>
         <% grid_template_rows    = "1fr " * @potager.parcels.count %>
         <% grid_row_gap          = "2px" %>
@@ -12,7 +12,7 @@
 
       <% else %>
         <% width                 = "#{@potager.parcels.count * 100}" + "px" %>
-        <% height                  = "#{@potager.parcels.last.size * 100}" + "px" %>
+        <% height                = "#{@potager.parcels.last.size * 100}" + "px" %>
         <% grid_template_columns = "1fr " * @potager.parcels.count %>
         <% grid_template_rows    = "1fr " * @potager.parcels.last.size %>
         <% grid_column_gap       = "2px" %>
@@ -57,20 +57,20 @@
           <div class="card">
             <div class="card-leg">
               <div class="card-img">
-            <%= cl_image_tag("#{vegetable.photo}", height: 50) %>
+                <%= cl_image_tag("#{vegetable.photo}", height: 50) %>
+              </div>
             </div>
-            </div>
-              <% vegetable.aromatics.each do |aromatics|  %>
-                <div class="card-description">
-                  <p><%= aromatics.capitalize %></p>
-                </div>
-              <% end %>
-            </div>
+            <% vegetable.aromatics.each do |aromatics|  %>
+              <div class="card-description">
+                <p><%= aromatics.capitalize %></p>
+              </div>
+            <% end %>
           </div>
         <% end %>
       </div>
     </div>
   </div>
+
   <div class="compte">
     <h2>Grâce à mon compte :</h2>
       <ul class="list-unstyled compte-list">
