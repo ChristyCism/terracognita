@@ -51,9 +51,8 @@
       <p>Vos légumes ont des amis, faites-les se retrouver dans votre potager.</p>
     </div>
     <div class="aromatics-text">
-    <div class="row">
-      <% @potager.vegetables.each do |vegetable| %>
-        <div class="col-xs-12 col-sm-3">
+      <div class="card-container">
+        <% @potager.vegetables.each do |vegetable| %>
           <div class="card">
             <div class="card-leg">
               <div class="card-img">
@@ -66,10 +65,8 @@
                 </div>
               <% end %>
           </div>
-        </div>
-      <% end %>
-    </div>
-    </div>
+        <% end %>
+      </div>
     </div>
   </div>
 
