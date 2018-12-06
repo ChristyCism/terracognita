@@ -11,24 +11,23 @@
       </div>
       <div class="icons">
         <p class="farmer">
-                <i class="fas fa-map-marker-alt"></i> <br>
-            </p>
-          <div class="bottom-tag">Depuis ce point de vue, j'indique où est le Sud. </div>
-          </div>
-
+          <i class="fas fa-map-marker-alt"></i> <br>
+        </p>
+        <div class="bottom-tag">Depuis ce point de vue, j'indique où est le Sud. </div>
+      </div>
 
       <div class="formulaire">
         <div class="form">
           <%= form_for @potager, url: wizard_path, method: :put do |f| %>
-          <%= f.hidden_field :orientation %><br />
+          <%= f.text_field :orientation %><br />
           <button type="submit" class="nav-arrow">
-                <i class="fas fa-angle-right"></i>
+            <i class="fas fa-angle-right"></i>
           </button>
-              <% end %>
+          <% end %>
         </div>
-          <%= link_to previous_wizard_path, class: "nav-arrow-back" do %>
-            <i class="fas fa-angle-left"></i>
-            <% end %>
+        <%= link_to previous_wizard_path, class: "nav-arrow-back" do %>
+          <i class="fas fa-angle-left"></i>
+        <% end %>
       </div>
       <%= render 'shared/progressbar' %>
     </div>

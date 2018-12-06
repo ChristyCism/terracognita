@@ -35,6 +35,7 @@
         <p>Félicitations ! Votre potager est désormais modélisé.</p>
         <p>Nous vous invitons à suivre ce plan de culture construit <br> selon les informations que vous nous avez transmis.</p>
         <br>
+        <%= @potager.orientation %>
         <p>Pour rappel, nous avons construit un potager avec les dimensions suivantes :</p>
         <p>- <strong><%= @potager.parcels.count %> mètres</strong> de large.</p>
         <p>- <strong><%= @potager.parcels.last.size %> mètres</strong> de long.</p>
