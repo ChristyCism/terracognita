@@ -18,18 +18,18 @@
 }
 
 .garden {
+  display: grid;
   margin: 0 auto;
   width: 30%;
-  display: grid;
-  grid-row-gap: 2px;
 
   .veg {
-    height: 100%;
-    width: 100%;
+
+    height: 100px;
+    width: 100px;
     background-color: #a5682a;
     padding: 5px;
     img {
-      text-align: center;
+      justify-content: center;
     }
     p {
       font-size: 12px;
