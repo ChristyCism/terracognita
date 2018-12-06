@@ -16,11 +16,11 @@
             <div class="icons">
               <div class="bottom-tag">Depuis ce point de vue </div>
               <div class="farmer">
-              <%= cl_image_tag("terracognita/farmer",
-              width: 80) %>
+              <i class="fas fa-map-marker-alt"></i>
               </div>
               <div class="bottom-tag"> j'indique où est le sud !</div>
             </div>
+            <%= render 'shared/progressbar' %>
           </div>
 
           <div class="formulaire">
@@ -37,7 +37,6 @@
       <i class="fas fa-angle-left"></i>
       <% end %>
           </div>
-          <%= render 'shared/progressbar' %>
         </div>
 
     </div>
