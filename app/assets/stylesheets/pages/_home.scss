@@ -77,10 +77,10 @@
   padding-left: 10px;
 }
 
-a, button {
+a, button, .ui-slider-handle {
    outline: 0;
 }
 
-a:hover, a:active, a:focus, button:hover, button:active, button:focus {
+a:hover, a:active, a:focus, button:hover, button:active, button:focus, .ui-slider-handle:hover, .ui-slider-handle:active, .ui-slider-handle:focus {
   outline: 0;
 }
