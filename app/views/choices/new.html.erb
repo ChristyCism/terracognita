@@ -1,7 +1,7 @@
 <div class="wrapper">
   <div class="container">
     <div class="vegetables-choices">
-      <h1>Quels légumes souhaitez-vous planter ?</h1>
+      <h3>Que souhaitez-vous planter ?</h3>
       <div class="form-post">
       <%= simple_form_for @potager do |f| %>
         <div class="row">
@@ -11,7 +11,7 @@
 
             <label class="image-checkbox">
               <div>
-                <%= cl_image_tag(veg.photo, height: 80) %>
+                <%= cl_image_tag(veg.photo, height: 60) %>
                 <input type="checkbox" name="potager[choices_attributes][][vegetable_id]" value=<%= veg.id %> />
               </div>
               <div class="veg-name">
@@ -37,8 +37,4 @@
     </div>
   </div>
 </div>
-
-
-
-<i class="fas fa-angle-double-right"></i>
 

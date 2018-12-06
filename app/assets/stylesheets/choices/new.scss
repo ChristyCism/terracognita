@@ -4,7 +4,7 @@
   margin: 20px auto;
   background-color: white;
   box-shadow: 1px 1px 1px #666666;
-  height: calc(100vh - 110px);
+  min-height: calc(100vh - 110px);
 }
 
 .couple-nom-photo {
@@ -12,10 +12,10 @@
   text-align: center;
   align-items: center;
   padding-bottom: 35px;
-  width: 185px;
-  height: 150px;
+  width: 180px;
+  height: 140px;
   .veg-name {
-    font-size: 0.9em;
+    font-size: 0.8em;
     padding-top: 10px;
   }
 }
@@ -41,7 +41,7 @@
   margin-bottom: 0;
   outline: 0;
   padding: 15px;
-  width: 170px;
+  width: 160px;
   height: 130px;
 }
 .image-checkbox input[type="checkbox"] {
@@ -70,7 +70,7 @@
   color: $blue;
   position: absolute;
   right: -28px;
-  top: 480px;
+  top: 361px;
   font-weight: bold;
 }
 
@@ -79,8 +79,9 @@
 }
 
 .form-post {
-  margin-top: 50px;
-  padding: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
   border-radius: 5px;
   h1 {
     text-align: center;
