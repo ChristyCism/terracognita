@@ -3,11 +3,35 @@
   <div class="row">
     <div class="modelisation">
       <h1>Votre potager</h1>
+      <%= @potager.orientation %>
 
-      <% grid_template_columns = "1fr " * @potager.parcels.last.size %>
-      <% grid_template_rows = "1fr " * @potager.parcels.count %>
+      <% if @potager.orientation == "A" || "C" %>
+        <% grid_template_columns = "1fr " * @potager.parcels.last.size %>
+        <% grid_template_rows    = "1fr " * @potager.parcels.count %>
+        <% width                 = "#{@potager.parcels.last.size * 100}" + "px" %>
+        <% height                = "#{@potager.parcels.count * 100}" + "px" %>
+        <% grid_row_gap          = "2px" %>
+        <% grid_auto_flow        = "row" %>
 
-      <div class="garden" style="grid-template-columns: <%= grid_template_columns %>; grid-template-rows: <%= grid_template_rows %>;">
+      <% elsif @potager.orientation == "B" || "D" %>
+        <% grid_template_columns = "1fr " * @potager.parcels.count %>
+        <% grid_template_rows    = "1fr " * @potager.parcels.last.size %>
+        <% width                 = "#{@potager.parcels.count * 100}" + "px" %>
+        <% height                = "#{@potager.parcels.last.size * 100})" + "px" %>
+        <% grid_column_gap       = "2px" %>
+        <% grid_auto_flow        = "column" %>
+
+
+      <% end %>
+
+      <% if @potager.orientation == "B" %>
+        <% direction = "rtl" %>
+      <% elsif @potager.orientation == "D" %>
+        <% direction = "ltr" %>
+      <% end %>
+
+
+      <div class="garden" style="grid-auto-flow: <%= grid_auto_flow %>; grid-template-columns: <%= grid_template_columns %>; grid-template-rows: <%= grid_template_rows %>; grid-row-gap: <%= grid_row_gap %>; grid-column-gap: <%= grid_column_gap %>; width: <%= width %>; height: <%= height %>; direction: <%= direction %>">
       <% @potager.parcels.each do |parcel| %>
         <% parcel.size.times do  %>
           <div class="veg">
@@ -18,6 +42,7 @@
       <% end %>
       </div>
     </div>
+
     <div class="pdf"><input type="button" value="Générer un PDF" onClick="window.print()" class="btn   btn-home btn-lg btn-final-transparent btn-pdf"></div>
   </div>
 
