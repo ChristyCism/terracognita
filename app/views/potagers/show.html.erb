@@ -57,20 +57,20 @@
           <div class="card">
             <div class="card-leg">
               <div class="card-img">
-            <%= cl_image_tag("#{vegetable.photo}", height: 50) %>
+                <%= cl_image_tag("#{vegetable.photo}", height: 50) %>
+              </div>
             </div>
-            </div>
-              <% vegetable.aromatics.each do |aromatics|  %>
-                <div class="card-description">
-                  <p><%= aromatics.capitalize %></p>
-                </div>
-              <% end %>
-            </div>
+            <% vegetable.aromatics.each do |aromatics|  %>
+              <div class="card-description">
+                <p><%= aromatics.capitalize %></p>
+              </div>
+            <% end %>
           </div>
         <% end %>
       </div>
     </div>
   </div>
+
   <div class="compte">
     <h2>Grâce à mon compte :</h2>
       <ul class="list-unstyled compte-list">
