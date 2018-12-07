@@ -142,8 +142,13 @@
   margin-top: 30px;
 }
 
+.account {
+  display: flex;
+  justify-content: center;
+}
+
 .compte-list {
-  width: 100%;
+  width: 60%;
   margin-top: 30px;
   margin-bottom: 30px;
   font-size: 1.1em;
