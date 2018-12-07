@@ -1,7 +1,7 @@
 class Potager < ApplicationRecord
   belongs_to :user, optional: true
-  has_many :parcels
-  has_many :choices
+  has_many :parcels, dependent: :destroy
+  has_many :choices, dependent: :destroy
   has_many :vegetables, through: :choices
   has_many :vegetables_parcels, through: :parcels
 
