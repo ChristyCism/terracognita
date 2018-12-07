@@ -1,7 +1,7 @@
 <div class="wrapper">
   <div class="container">
     <div class="vegetables-choices">
-      <h3>Parmi les légumes à planter en <%= Potager.last.start_month %>. Lesquels souhaitez-vous cultiver?</h3>
+      <h3>Parmi les légumes à planter en <%= Potager.last.start_month.downcase %>, lesquels souhaitez-vous cultiver ?</h3>
       <div class="form-post">
       <%= simple_form_for @potager do |f| %>
         <div class="row">
@@ -26,7 +26,7 @@
           <button type="submit" class="nav-arrow nav-arrow-final">
             <i class="fas fa-angle-double-right"></i>
             </button>
-            <p class="final-button">Prêt? <br>PLANTEZ!</p>
+            <p class="final-button">Prêt ? <br>Plantez !</p>
 
       <% end %>
       <%= link_to potager_build_path(@potager, :def_start_month), class: "nav-arrow-back" do %>
