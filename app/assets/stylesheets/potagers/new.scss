@@ -6,73 +6,6 @@
 
 ///
 
-.flip-card {
-  width: 100%;
-  height: 180px;
-  perspective: 1000px; /* Remove this if you don't want the 3D effect */
-}
-
-/* This container is needed to position the front and back side */
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-  .introknow {
-    padding-top : 70px;
-  }
-}
-
-/* Do an horizontal flip when you move the mouse over the flip box container */
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
-
-/* Position the front and back side */
-.flip-card-front, .flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-}
-
-/* Style the front side (fallback if image is missing) */
-.flip-card-front {
-  padding: 20px;
-  border: 2px solid $blue;
-  color: white;
-  font-size: 1em;
-  height: 180px;
-  background-color: $blue;
-  border-radius: 2px;
-  box-shadow: 1px 1px 1px #666666;
-}
-
-/* Style the back side */
-.flip-card-back {
-  transform: rotateY(180deg);
-  background-color: white;
-  text-align: justify;
-  padding: 25px 15px;
-  font-size: 1em;
-  border: 2px solid $blue;
-  height: 180px;
-  border-radius: 2px;
-  box-shadow: 1px 1px 1px #666666;
-  p {
-    margin-bottom: 5px;
-  }
-  ul {
-    list-style-type: none;
-  }
-  li {
-    font-size: 0.6em;
-    font-weight: bold;
-}
-}
-
 ///
 
 .introduction {
@@ -83,29 +16,24 @@
   box-shadow: 1px 1px 1px #666666;
   height: calc(100vh - 110px);
       h1 {
-        margin-top : 10px;
-        margin-bottom : 20px;
+        margin-top : 30px;
+        margin-bottom : 30px;
         text-align: center;
         font-size: 1.8em;
-  }
+      }
       h2 {
         font-size: 1.3em;
-        margin : 70px 0px 30px 0px;
+        margin : 80px 0px 50px 0px;
         text-align: center;
-}
+    }
+
 }
 
 .intro {
   margin: 30px 30px;
-
-
 }
 
-.intro-image {
-  position: absolute;
-  top: 13px;
-  left: 119px;
-}
+
 
 .intro-image-calendar {
   position: absolute;
@@ -114,11 +42,7 @@
   transform: rotate(10deg)
 }
 
-.intro-span {
-  font-size: 0.7em;
-  color: #666666;
 
-}
 
 .dimensions h3, .orientation h3, .terre h3, .gel h3, .date-de-debut h3 {
   margin-bottom: 80px;
@@ -127,7 +51,7 @@
 .textintro {
   position: relative;
   width: 65%;
-  font-size: 0.8em;
+  font-size: 0.95em;
   text-align: justify;
   margin-left: 50px;
   padding-left: 15px;
@@ -141,30 +65,21 @@
 }
 
 .nav-arrow-start {
-  // right: 164px;
-  // top: 80px;
-  justify-content: center;
-
+  right: 163px;
+  top: 150px;
 }
+
 .start-button {
   font-size: 0.9em;
   color: $blue;
   position: absolute;
-  right: 164px;
-  bottom: -114px;
+  right: 163px;
+  bottom: -200px;
   font-weight: bold;
 
 }
 
-.flip-intro {
-  font-size: 1em;
-  color: white;
-  position: absolute;
-  right: 127px;
-  bottom: 8px;
-  font-weight: bold;
 
-}
 /* - - - - - - DIMENSIONS SPECIFIC - - - - - - - */
 .farmer {
   position: absolute;
