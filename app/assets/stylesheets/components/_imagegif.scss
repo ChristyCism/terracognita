@@ -11,21 +11,19 @@
   background-color: white;
   box-shadow: 1px 1px 1px #666666;
   height: calc(100vh - 110px);
-}
-
-.gif {
   display:flex;
   flex-direction: column;
-}
-
-.gif h2 {
-  text-align: center;
-  margin-bottom: 50px;
+    h2 {
+      text-align: center;
+      margin-bottom: 50px;
+    }
 }
 
 .gif .gifanim {
   height: 300px;
   margin: 0 auto;
+  margin-top: 20vh;
+
 }
 
 

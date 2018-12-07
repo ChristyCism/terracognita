@@ -99,7 +99,7 @@
   min-height: calc(100vh - 110px);
 
     .grid {
-      margin-top: 60px;
+      margin-top: 20vh;
     }
 
   h3 {
@@ -253,6 +253,7 @@
   width: 90%;
   color: black;
   margin: auto;
+  margin-top: 30vh;
   margin-bottom: 10px;
 }
 
@@ -272,6 +273,7 @@
   display:flex;
   justify-content:center;
   align-items: center;
+  margin-top: 3vh;
 }
 
 .orientation h3 {
@@ -305,7 +307,7 @@
   grid-template-columns: 102px 102px 102px 102px 102px;
   grid-template-rows: 1fr;
   width: 90%;
-  margin: 15% auto;
+  margin: 28vh auto;
   color: black;
   justify-content: space-around;
 }
@@ -383,7 +385,7 @@
 }
 
 .gel .select-gel {
-  margin: 20% auto;
+  margin: 32vh auto;
 }
 
 
@@ -411,7 +413,7 @@
 
 .date-de-debut {
   .form {
-    margin-top: 80px;
+    margin-top: 23vh;
   }
   .abs-position {
     position: relative;
