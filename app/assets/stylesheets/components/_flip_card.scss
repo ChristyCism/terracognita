@@ -15,16 +15,15 @@
 }
 
 
-// .intro-span {
-//   font-size: 0.7em;
-//   color: #666666;
+ .intro-span {
+     font-size: 0.7em;
+   color: #666666;
+}
 
-// }
-
-// /* Do an horizontal flip when you move the mouse over the flip box container */
-// .flip-card:hover .flip-card-inner {
-//   transform: rotateY(180deg);
-// }
+ /* Do an horizontal flip when you move the mouse over the flip box container */
+ .flip-card:hover .flip-card-inner {
+   transform: rotateY(180deg);
+ }
 
 /* Position the front and back side */
 .flip-card-front, .flip-card-back {
@@ -62,27 +61,27 @@
 }
 
 
-// /* Style the back side */
-// .flip-card-back {
-//   transform: rotateY(180deg);
-//   background-color: white;
-//   text-align: justify;
-//   padding: 25px 15px;
-//   font-size: 1em;
-//   border: 2px solid $blue;
-//   height: 180px;
-//   border-radius: 2px;
-//   box-shadow: 1px 1px 1px #666666;
-//   p {
-//     margin-bottom: 5px;
-//   }
-//   ul {
-//     list-style-type: none;
-//   }
-//   li {
-//     font-size: 0.6em;
-//     font-weight: bold;
-// }
-// }
+ /* Style the back side */
+ .flip-card-back {
+   transform: rotateY(180deg);
+   background-color: white;
+   text-align: justify;
+   padding: 25px 15px;
+   font-size: 1em;
+   border: 2px solid $blue;
+   height: 180px;
+   border-radius: 2px;
+   box-shadow: 1px 1px 1px #666666;
+   p {
+     margin-bottom: 5px;
+   }
+   ul {
+     list-style-type: none;
+   }
+   li {
+     font-size: 0.6em;
+     font-weight: bold;
+ }
+ }
 
 
