@@ -34,6 +34,8 @@ interact('.drag-rotate')
 function getDragAngle(event) {
   var element = event.target;
   var startAngle = parseFloat(element.dataset.angle) || 0;
+  // console.log("element.dataset.angle");
+  // console.log(element.dataset.angle);
   var center = {
     x: parseFloat(element.dataset.centerX) || 0,
     y: parseFloat(element.dataset.centerY) || 0,
@@ -41,21 +43,25 @@ function getDragAngle(event) {
   var angle = Math.atan2(center.y - event.clientY,
                          center.x - event.clientX);
 
-  document.getElementById("potager_orientation").value = angle;
+  let anglePlusPi = (angle + 2.25 * Math.PI - startAngle) % (2 * Math.PI );
 
+  document.getElementById("potager_orientation").value = anglePlusPi;
 
-  let anglePlusPi = angle + Math.PI;
+  let angleValue;
 
-  if (anglePlusPi >= (0.75 * Math.PI) && anglePlusPi < (1.25 * Math.PI)) {
-    document.getElementById("potager_orientation").value = "D";
-  } else if (anglePlusPi >= (1.25 * Math.PI) && anglePlusPi < (1.75 * Math.PI)) {
-    document.getElementById("potager_orientation").value = "A";
-  } else if (anglePlusPi >= (0.25 * Math.PI) && anglePlusPi < (0.75 * Math.PI)) {
-    document.getElementById("potager_orientation").value = "C";
+  if (anglePlusPi >= 0 && anglePlusPi < 0.5 * Math.PI) {
+    angleValue = "C";
+  } else if (anglePlusPi >= 0.5 * Math.PI && anglePlusPi < Math.PI) {
+    angleValue = "D";
+  } else if (anglePlusPi >= Math.PI && anglePlusPi < 1.5 * Math.PI) {
+    angleValue = "A";
   } else {
-    document.getElementById("potager_orientation").value = "B";
+    angleValue = "B";
   }
   ;
+
+  document.getElementById("potager_orientation").value = angleValue;
+
 
   return angle - startAngle;
 }
