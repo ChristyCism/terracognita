@@ -96,7 +96,7 @@
   height: calc(100vh - 110px);
 
     .grid {
-      margin-top: 60px;
+      margin-top: 20vh;
     }
 
   h3 {
@@ -192,6 +192,15 @@
   background-color: white;
   box-shadow: 1px 1px 1px #666666;
   height: calc(100vh - 110px);
+    .grid {
+      margin: 20vh 5vh auto;
+      display:grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 4fr 1fr;
+      width: 90%;
+      color: black;
+
+    }
 }
 
 .orientation .form {
@@ -243,16 +252,6 @@
   margin-top: 50px;
 }
 
-.orientation .grid {
-  display:grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 4fr 1fr;
-  width: 90%;
-  color: black;
-  margin: auto;
-  margin-bottom: 10px;
-}
-
 .compass {
   grid-row: 1 / span 1;
   grid-column: 1 / 1;
@@ -266,6 +265,7 @@
 }
 
 .icons {
+  margin-top: 1vh;
   display:flex;
   justify-content:center;
   align-items: center;
@@ -302,7 +302,7 @@
   grid-template-columns: 102px 102px 102px 102px 102px;
   grid-template-rows: 1fr;
   width: 90%;
-  margin: 15% auto;
+  margin: 28vh auto;
   color: black;
   justify-content: space-around;
 }
@@ -380,7 +380,7 @@
 }
 
 .gel .select-gel {
-  margin: 20% auto;
+  margin: 32vh auto;
 }
 
 
@@ -408,7 +408,7 @@
 
 .date-de-debut {
   .form {
-    margin-top: 80px;
+    margin-top: 23vh;
   }
   .abs-position {
     position: relative;
