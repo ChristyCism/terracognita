@@ -5,7 +5,6 @@
       <h1>Avant de commencer</h1>
       <h2>Je m'assure de connaître</h2>
       <div class="row intro">
-
         <div class="col-xs-12 col-sm-4">
           <div class="flip-card">
             <div class="flip-card-inner">
@@ -79,24 +78,32 @@
           </div>
         </div>
       </div>
+
+      <div>
         <h2>Je planifie mon démarrage</h2>
 
-        <div class="textintro">Les propositions tiendront compte de mon agenda. <br>
-        Afin de mettre en route mon potager avec les conseils de <strong>Terra Cognita</strong>, je réfléchis en amont au mois idéal pour me lancer.
-        <div class="intro-image-calendar">
-          <%= cl_image_tag("terracognita/calendar",
-              width: 60) %>
+        <div class="textintro">
+          <div class="row">
+            <div class="col-xs-8">
+              Les propositions tiendront compte de mon agenda. <br>
+              Afin de mettre en route mon potager avec les conseils de <strong>Terra Cognita</strong>, je réfléchis en amont au mois idéal pour me lancer.
+            </div>
+            <div class="col-xs-4">
+              <div class="intro-image-calendar">
+                <%= cl_image_tag("terracognita/calendar",
+                  width: 60) %>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div>
-          <%= form_for @potager, url: wizard_path, method: :put do |f| %>
-            <button type="submit" class="nav-arrow nav-arrow-start">
+        <%= form_for @potager, url: wizard_path, method: :put, html: { id: 'start-edit-potager' } do |f| %>
+          <button type="submit" class="nav-arrow nav-arrow-start">
             <i class="fas fa-angle-double-right"></i>
-            </button>
-            <p class="start-button">ALLONS-Y</p>
-          <% end %>
-        </div>
+          </button>
+          <p class="start-button">ALLONS-Y</p>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
-
