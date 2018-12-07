@@ -82,26 +82,23 @@
   background-color: white;
   box-shadow: 1px 1px 1px #666666;
   height: calc(100vh - 110px);
+      h1 {
+        margin-top : 10px;
+        margin-bottom : 20px;
+        text-align: center;
+        font-size: 1.8em;
+  }
+      h2 {
+        font-size: 1.3em;
+        margin : 70px 0px 30px 0px;
+        text-align: center;
+}
 }
 
 .intro {
   margin: 30px 30px;
 
 
-}
-.introduction {
-  h1 {
-  margin-top : 10px;
-  margin-bottom : 20px;
-  text-align: center;
-  font-size: 1.8em;
-  }
-  h2 {
-    font-size: 1.3em;
-  margin-top : 35px;
-  margin-bottom : 30px;
-  text-align: center;
-}
 }
 
 .intro-image {
@@ -144,8 +141,9 @@
 }
 
 .nav-arrow-start {
-  right: 164px;
-  top: 80px;
+  // right: 164px;
+  // top: 80px;
+  justify-content: center;
 
 }
 .start-button {
